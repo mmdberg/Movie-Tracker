@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './styles.css';
 import { getMovie } from '../../helpers/api-helpers.js';
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
 
-class App extends Component {
+export class App extends Component {
 
   async componentDidMount() {
     const movie = await getMovie();
-
-
   }
 
 
@@ -22,4 +22,10 @@ class App extends Component {
   }
 }
 
-export default App;
+export const mapDispatchToProps = dispatch => {
+  return {
+    loadCards: movies => dispatch(actions.loadCards(movies))
+  };
+};
+
+export default connect()(App);

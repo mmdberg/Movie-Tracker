@@ -1,7 +1,29 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './index';
+import { App, mapDispatchToProps } from './index';
+import { shallow } from 'enzyme';
+import * as actions from '../../actions';
+import mockMovies from '../../mockData';
 
-it('renders without crashing', () => {
+describe('App', () => {
+  let wrapper;
 
+  beforeEach( () => {
+    wrapper = shallow(<App />, { disableLifecycleMethods: true });
+  });
+
+  it.skip('should match snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+});
+
+describe('mapDispatchToProps', () => {
+  it('should call dispatch with the right params', () => {
+    const mockDispatch = jest.fn();
+
+    const mapped = mapDispatchToProps(mockDispatch);
+    mapped.loadCards(mockMovies);
+
+    const expected = actions.loadCards(mockMovies);
+    expect(mockDispatch).toHaveBeenCalledWith(expected);
+  });
 });
