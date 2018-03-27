@@ -7,7 +7,8 @@ import * as actions from '../../actions';
 export class App extends Component {
 
   async componentDidMount() {
-    const movie = await getMovie();
+    const movies = await getMovie();
+    this.props.loadCards(movies);
   }
 
 
@@ -28,4 +29,4 @@ export const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect()(App);
+export default connect(null, mapDispatchToProps)(App);
