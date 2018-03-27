@@ -23,13 +23,8 @@ describe('Actions', () => {
         type: 'LOAD_CARDS',
         movies
       }
-      expect(actions.loadCards).toEqual(expected)
-
-
+      expect(actions.loadCards(movies)).toEqual(expected)
 
     })
   })
-
-
-
 })

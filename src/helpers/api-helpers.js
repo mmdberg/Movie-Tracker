@@ -7,3 +7,12 @@ export const getMovie = async () => {
   return movie.results
 
 }
+
+
+// createObject = (movieArray) => {
+//   let cleanObject = movieArray.reduce((array, movie) => {
+//     let movieObject = Object.keys(movie)
+
+//   }, [])
+//   return cleanObject
+// }

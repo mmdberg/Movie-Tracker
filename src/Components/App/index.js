@@ -6,7 +6,7 @@ class App extends Component {
 
   async componentDidMount() {
     const movie = await getMovie()
-    console.log(movie)
+
 
   }
 
