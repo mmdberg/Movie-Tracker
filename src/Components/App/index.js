@@ -5,7 +5,7 @@ import { getMovie } from '../../helpers/api-helpers.js';
 class App extends Component {
 
   async componentDidMount() {
-    const movie = await getMovie()
+    const movie = await getMovie();
 
 
   }

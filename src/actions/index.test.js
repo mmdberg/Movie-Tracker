@@ -16,15 +16,15 @@ describe('Actions', () => {
         "genre_ids": [35],
         "backdrop_path": "/a3Ipy3B4APTPx1ISkls95XSs5fU.jpg",
         "adult": false,
-        "overview": "A comedy that follows an con who lands a position at a school.",
+        "overview": "A comedy that follows an con who lands a position.",
         "release_date": "2017-10-26"
-      }]
+      }];
       const expected = {
         type: 'LOAD_CARDS',
         movies
-      }
-      expect(actions.loadCards(movies)).toEqual(expected)
+      };
+      expect(actions.loadCards(movies)).toEqual(expected);
 
-    })
-  })
-})
+    });
+  });
+});
