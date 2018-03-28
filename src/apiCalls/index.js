@@ -10,19 +10,22 @@ export const getMovies = async () => {
 };
 
 export const addUser = async (user) => {
-  try { const response = await fetch('http://localhost:3000/api/users/new/', 
+  try {
+    const response = await fetch('api/users/new/', 
       {
         method: 'POST',
-        body: JSON.stringify(user),
-        mode: 'no-cors',
+        body: JSON.stringify({email: user.email, password: user.password, name: user.name}),
         headers: {
           'Content-Type': 'application/json'
         }
-      }) } catch(error) {
-    console.log(error)
+      });
+    const parsed = await response.json();
+    console.log(parsed);
+  } catch (error) {
+    console.log({error})
   }
   // const validation = await response.json()
   // console.log(validation)
   // return validation
 
-}
+};
