@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import './styles.css';
 import CardContainer from '../CardContainer';
+import { Route, Switch, NavLink } from 'react-router-dom';
+import Login from '../../components/Login';
 
 export class App extends Component {
 
@@ -12,14 +14,19 @@ export class App extends Component {
     const movies = await getMovies();
     this.props.loadCards(movies);
   }
+  addUser = user => {
 
+  }
   render = () => {
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Welcome to Movie Tracker</h1>
         </header>
-        <CardContainer />
+        <Switch>
+          <Route path='/' component={CardContainer}/>
+          <Route path='/login' render={() => <Login addUser={this.addUser} /> } />
+        </Switch>
       </div>
     );
   }

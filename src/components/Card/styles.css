@@ -1,6 +1,7 @@
 .movie-card {
   width: 30%;
-  background-position: center;
-  height: 500px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 53em;
   color: white;
 }
