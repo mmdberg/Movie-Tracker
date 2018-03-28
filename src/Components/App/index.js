@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import './styles.css';
-import { getMovie } from '../../helpers/api-helpers.js';
+import PropTypes from 'prop-types';
+import { getMovies } from '../../apiCalls/';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
+import './styles.css';
 
 export class App extends Component {
 
-  async componentDidMount() {
-    const movies = await getMovie();
+  componentDidMount = async () => {
+    const movies = await getMovies();
     this.props.loadCards(movies);
   }
 
-
-  render() {
+  render = () => {
     return (
       <div className="App">
         <header className="App-header">
@@ -27,6 +27,10 @@ export const mapDispatchToProps = dispatch => {
   return {
     loadCards: movies => dispatch(actions.loadCards(movies))
   };
+};
+
+App.propTypes = {
+  loadCards: PropTypes.func.isRequired
 };
 
 export default connect(null, mapDispatchToProps)(App);
