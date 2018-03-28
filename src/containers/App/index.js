@@ -4,6 +4,7 @@ import { getMovies } from '../../apiCalls/';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import './styles.css';
+import CardContainer from '../CardContainer';
 
 export class App extends Component {
 
@@ -18,6 +19,7 @@ export class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Welcome to Movie Tracker</h1>
         </header>
+        <CardContainer />
       </div>
     );
   }
