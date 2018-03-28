@@ -12,19 +12,19 @@ describe('Actions', () => {
       expect(actions.loadCards(movies)).toEqual(expected);
     });
   });
-  describe('ADD_USER', () => {
-    it('should return action type of add user', () => {
-      const user = {
-        name: 'Stevo',
-        email: 'stevo@taco.com',
-        password: 'taco'
-      };
-      const expected = {
-        type: 'ADD_USER',
-        user
-      };
+  // describe('ADD_USER', () => {
+  //   it('should return action type of add user', () => {
+  //     const user = {
+  //       name: 'Stevo',
+  //       email: 'stevo@taco.com',
+  //       password: 'taco'
+  //     };
+  //     const expected = {
+  //       type: 'ADD_USER',
+  //       user
+  //     };
 
-      expect(actions.addUser(user)).toEqual(expected);
-    });
-  });
+  //     expect(actions.addUser(user)).toEqual(expected);
+  //   });
+  // });
 });

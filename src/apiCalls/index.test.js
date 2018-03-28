@@ -27,3 +27,36 @@ describe('getMovies', () => {
     expect(moviesWrangler).toHaveBeenCalledWith(mockData.mockMovies);
   });
 });
+
+describe('addUser', () => {
+  let mockUser;
+
+  beforeEach(() => {
+    mockUser = {
+      name: 'Stevo',
+      email: 'stevo@taco.com',
+      password: 'taco'
+    }
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      ok:true, 
+      json: () => Promise.resolve()
+    }));
+  });
+
+  it('should call fetch with the correct params', () => {
+    const expected = [
+      'localhost:3000/api/users/new', 
+      {
+        method: 'POST',
+        body: JSON.stringify({user: mockUser}),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }
+    ];
+
+    api.addUser(mockUser);
+
+    expect(window.fetch).toHaveBeenCalledWith(...expected);
+  });
+});

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { getMovies } from '../../apiCalls/';
+import * as api from '../../apiCalls/';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import './styles.css';
@@ -11,12 +11,16 @@ import Login from '../../components/Login';
 export class App extends Component {
 
   componentDidMount = async () => {
-    const movies = await getMovies();
+    const movies = await api.getMovies();
     this.props.loadCards(movies);
   }
-  addUser = user => {
 
+  addUser = async user => {
+    console.log(user)
+    const validation = await api.addUser(user);
+    console.log(validation)
   }
+
   render = () => {
     return (
       <div className="App">
@@ -24,7 +28,7 @@ export class App extends Component {
           <h1 className="App-title">Welcome to Movie Tracker</h1>
         </header>
         <Switch>
-          <Route path='/' component={CardContainer}/>
+          <Route exact path='/' component={CardContainer}/>
           <Route path='/login' render={() => <Login addUser={this.addUser} /> } />
         </Switch>
       </div>
