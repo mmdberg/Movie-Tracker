@@ -19,13 +19,11 @@ export const addUser = async (user) => {
           'Content-Type': 'application/json'
         }
       });
-    const parsed = await response.json();
-    console.log(parsed);
+    console.log('response', response)
+    // const parsed = await response.json();
+    // console.log('parsed', parsed)
   } catch (error) {
     console.log({error})
   }
-  // const validation = await response.json()
-  // console.log(validation)
-  // return validation
 
 };
