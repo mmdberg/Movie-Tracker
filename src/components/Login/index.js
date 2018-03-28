@@ -3,17 +3,18 @@ import React, { Component } from 'react';
 export default class Login extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       name: '',
       email: '',
       password: '',
     }
   }
+
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.addUser(this.state);
   }
+
   render() {
     return (
       <form onSubmit={(event) => this.handleSubmit(event)}>
