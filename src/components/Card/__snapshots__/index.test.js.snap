@@ -1,0 +1,206 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should match the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    id={437670}
+    overview="A comedy that follows an con who lands a position at a"
+    posterPath="/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg"
+    releaseDate="2017-10-26"
+    title="Suck Me Shakespeer 3"
+    voteAverage={6.2}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h3>
+          Suck Me Shakespeer 3
+</h3>,
+        <p>
+          Released: 
+          2017-10-26
+</p>,
+        <p>
+          Rating: 
+          6.2
+</p>,
+        <p>
+          A comedy that follows an con who lands a position at a
+</p>,
+      ],
+      "className": "movie-card",
+      "style": Object {
+        "backgroundImage": "url(https://image.tmdb.org/t/p/w500//cypnifmPJ5JbTjzpZI6MwJdvP7.jpg)",
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Suck Me Shakespeer 3",
+        },
+        "ref": null,
+        "rendered": "Suck Me Shakespeer 3",
+        "type": "h3",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Released: ",
+            "2017-10-26",
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Released: ",
+          "2017-10-26",
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Rating: ",
+            6.2,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          "Rating: ",
+          6.2,
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "A comedy that follows an con who lands a position at a",
+        },
+        "ref": null,
+        "rendered": "A comedy that follows an con who lands a position at a",
+        "type": "p",
+      },
+    ],
+    "type": "article",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h3>
+            Suck Me Shakespeer 3
+</h3>,
+          <p>
+            Released: 
+            2017-10-26
+</p>,
+          <p>
+            Rating: 
+            6.2
+</p>,
+          <p>
+            A comedy that follows an con who lands a position at a
+</p>,
+        ],
+        "className": "movie-card",
+        "style": Object {
+          "backgroundImage": "url(https://image.tmdb.org/t/p/w500//cypnifmPJ5JbTjzpZI6MwJdvP7.jpg)",
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Suck Me Shakespeer 3",
+          },
+          "ref": null,
+          "rendered": "Suck Me Shakespeer 3",
+          "type": "h3",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Released: ",
+              "2017-10-26",
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Released: ",
+            "2017-10-26",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Rating: ",
+              6.2,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            "Rating: ",
+            6.2,
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "A comedy that follows an con who lands a position at a",
+          },
+          "ref": null,
+          "rendered": "A comedy that follows an con who lands a position at a",
+          "type": "p",
+        },
+      ],
+      "type": "article",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
