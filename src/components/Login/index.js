@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import  PropTypes from 'prop-types';
 
 export default class Login extends Component {
   constructor(props) {
@@ -6,8 +7,8 @@ export default class Login extends Component {
     this.state = {
       name: '',
       email: '',
-      password: '',
-    }
+      password: ''
+    };
   }
 
   handleSubmit = (event) => {
@@ -44,3 +45,7 @@ export default class Login extends Component {
     );
   }
 }
+
+Login.propTypes = {
+  addUser: PropTypes.func
+};

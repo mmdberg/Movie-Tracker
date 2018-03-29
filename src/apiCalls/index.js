@@ -14,14 +14,19 @@ export const addUser = async (user) => {
     const response = await fetch('/api/users/new/', 
       {
         method: 'POST',
-        body: JSON.stringify({name: user.name, email: user.email, password: user.password}),
+        body: JSON.stringify({
+          name: user.name, 
+          email: user.email, 
+          password: user.password
+        }),
         headers: {
           'Content-Type': 'application/json'
         }
       });
     const parsed = await response.json();
+    return parsed;
   } catch (error) {
-    console.log({error})
+    console.log({error});
   }
 
 };

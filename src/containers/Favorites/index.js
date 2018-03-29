@@ -6,13 +6,14 @@ import { Card } from '../../components/Card';
 import * as actions from '../../actions/';
 
 export const Favorites = ({favorites, handleClick}) => {
-  const favoritesList = favorites.map(movie => <Card information={movie} addFavorite={handleClick} key={movie.id}/>);
+  const favoritesList = favorites.map(movie => 
+    <Card information={movie} addFavorite={handleClick} key={movie.id}/>);
   return (
     <div className='favorites-container'>
       {favoritesList}
     </div>
-  )
-}
+  );
+};
 
 export const mapStateToProps = state => ({
   favorites: state.favorites
@@ -20,6 +21,11 @@ export const mapStateToProps = state => ({
 
 export const mapDispatchToProps = dispatch => ({
   handleClick: movie => dispatch(actions.addFavorite(movie))
-})
+});
 
-export default connect(mapStateToProps)(Favorites)
+export default connect(mapStateToProps)(Favorites);
+
+Favorites.propTypes = {
+  favorites: PropTypes.object,
+  handleClick: PropTypes.func
+};

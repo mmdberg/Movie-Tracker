@@ -19,10 +19,11 @@ describe('Actions', () => {
       const expected = {
         type: 'ADD_FAVORITE',
         movie
-      }
-      expect(actions.addFavorite(movie)).toEqual(expected)
-    })
-  })
+      };
+
+      expect(actions.addFavorite(movie)).toEqual(expected);
+    });
+  });
 
   describe('CAPTURE_USER_ID', () => {
     it('should return action type of capture user id', () => {
@@ -30,10 +31,10 @@ describe('Actions', () => {
       const expected = {
         type: 'CAPTURE_USER_ID',
         id
-      }
-      expect(actions.captureUserId(id)).toEqual(expected)
-    })
-  })
-
+      };
+      
+      expect(actions.captureUserId(id)).toEqual(expected);
+    });
+  });
 
 });
