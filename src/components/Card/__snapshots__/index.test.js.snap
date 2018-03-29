@@ -5,12 +5,16 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Unknown
-    id={437670}
-    overview="A comedy that follows an con who lands a position at a"
-    posterPath="/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg"
-    releaseDate="2017-10-26"
-    title="Suck Me Shakespeer 3"
-    voteAverage={6.2}
+    information={
+        Object {
+            "id": 437670,
+            "overview": "A comedy that follows an con who lands a position at a",
+            "poster_path": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
+            "release_date": "2017-10-26",
+            "title": "Suck Me Shakespeer 3",
+            "vote_average": 6.2,
+          }
+    }
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -30,19 +34,18 @@ ShallowWrapper {
 </h3>,
         <p>
           Released: 
-          2017-10-26
 </p>,
         <p>
           Rating: 
-          6.2
 </p>,
         <p>
           A comedy that follows an con who lands a position at a
 </p>,
       ],
       "className": "movie-card",
+      "onClick": [Function],
       "style": Object {
-        "backgroundImage": "url(https://image.tmdb.org/t/p/w500//cypnifmPJ5JbTjzpZI6MwJdvP7.jpg)",
+        "backgroundImage": "url(https://image.tmdb.org/t/p/w500/undefined)",
       },
     },
     "ref": null,
@@ -65,13 +68,13 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             "Released: ",
-            "2017-10-26",
+            undefined,
           ],
         },
         "ref": null,
         "rendered": Array [
           "Released: ",
-          "2017-10-26",
+          undefined,
         ],
         "type": "p",
       },
@@ -82,13 +85,13 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             "Rating: ",
-            6.2,
+            undefined,
           ],
         },
         "ref": null,
         "rendered": Array [
           "Rating: ",
-          6.2,
+          undefined,
         ],
         "type": "p",
       },
@@ -118,19 +121,18 @@ ShallowWrapper {
 </h3>,
           <p>
             Released: 
-            2017-10-26
 </p>,
           <p>
             Rating: 
-            6.2
 </p>,
           <p>
             A comedy that follows an con who lands a position at a
 </p>,
         ],
         "className": "movie-card",
+        "onClick": [Function],
         "style": Object {
-          "backgroundImage": "url(https://image.tmdb.org/t/p/w500//cypnifmPJ5JbTjzpZI6MwJdvP7.jpg)",
+          "backgroundImage": "url(https://image.tmdb.org/t/p/w500/undefined)",
         },
       },
       "ref": null,
@@ -153,13 +155,13 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               "Released: ",
-              "2017-10-26",
+              undefined,
             ],
           },
           "ref": null,
           "rendered": Array [
             "Released: ",
-            "2017-10-26",
+            undefined,
           ],
           "type": "p",
         },
@@ -170,13 +172,13 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               "Rating: ",
-              6.2,
+              undefined,
             ],
           },
           "ref": null,
           "rendered": Array [
             "Rating: ",
-            6.2,
+            undefined,
           ],
           "type": "p",
         },
