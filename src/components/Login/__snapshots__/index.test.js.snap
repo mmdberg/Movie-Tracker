@@ -20,6 +20,7 @@ ShallowWrapper {
       "children": Array [
         <input
           aria-label="name"
+          name="name"
           onChange={[Function]}
           placeholder="enter name"
           type="text"
@@ -27,6 +28,7 @@ ShallowWrapper {
 />,
         <input
           aria-label="email"
+          name="email"
           onChange={[Function]}
           placeholder="enter email"
           type="email"
@@ -34,6 +36,7 @@ ShallowWrapper {
 />,
         <input
           aria-label="password"
+          name="password"
           onChange={[Function]}
           placeholder="password"
           type="password"
@@ -55,6 +58,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "aria-label": "name",
+          "name": "name",
           "onChange": [Function],
           "placeholder": "enter name",
           "type": "text",
@@ -70,6 +74,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "aria-label": "email",
+          "name": "email",
           "onChange": [Function],
           "placeholder": "enter email",
           "type": "email",
@@ -85,6 +90,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "aria-label": "password",
+          "name": "password",
           "onChange": [Function],
           "placeholder": "password",
           "type": "password",
@@ -118,6 +124,7 @@ ShallowWrapper {
         "children": Array [
           <input
             aria-label="name"
+            name="name"
             onChange={[Function]}
             placeholder="enter name"
             type="text"
@@ -125,6 +132,7 @@ ShallowWrapper {
 />,
           <input
             aria-label="email"
+            name="email"
             onChange={[Function]}
             placeholder="enter email"
             type="email"
@@ -132,6 +140,7 @@ ShallowWrapper {
 />,
           <input
             aria-label="password"
+            name="password"
             onChange={[Function]}
             placeholder="password"
             type="password"
@@ -153,6 +162,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "aria-label": "name",
+            "name": "name",
             "onChange": [Function],
             "placeholder": "enter name",
             "type": "text",
@@ -168,6 +178,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "aria-label": "email",
+            "name": "email",
             "onChange": [Function],
             "placeholder": "enter email",
             "type": "email",
@@ -183,6 +194,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "aria-label": "password",
+            "name": "password",
             "onChange": [Function],
             "placeholder": "password",
             "type": "password",

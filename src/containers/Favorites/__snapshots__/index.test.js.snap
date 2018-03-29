@@ -10,10 +10,10 @@ ShallowWrapper {
             Object {
               "id": 437670,
               "overview": "A comedy that follows an con who lands a position at a",
-              "poster_path": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
-              "release_date": "2017-10-26",
+              "posterPath": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
+              "releaseDate": "2017-10-26",
               "title": "Suck Me Shakespeer 3",
-              "vote_average": 6.2,
+              "voteAverage": 6.2,
             },
           ]
     }
@@ -38,10 +38,10 @@ ShallowWrapper {
                     Object {
                               "id": 437670,
                               "overview": "A comedy that follows an con who lands a position at a",
-                              "poster_path": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
-                              "release_date": "2017-10-26",
+                              "posterPath": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
+                              "releaseDate": "2017-10-26",
                               "title": "Suck Me Shakespeer 3",
-                              "vote_average": 6.2,
+                              "voteAverage": 6.2,
                             }
           }
 />,
@@ -59,10 +59,10 @@ ShallowWrapper {
           "information": Object {
             "id": 437670,
             "overview": "A comedy that follows an con who lands a position at a",
-            "poster_path": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
-            "release_date": "2017-10-26",
+            "posterPath": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
+            "releaseDate": "2017-10-26",
             "title": "Suck Me Shakespeer 3",
-            "vote_average": 6.2,
+            "voteAverage": 6.2,
           },
         },
         "ref": null,
@@ -85,10 +85,10 @@ ShallowWrapper {
                         Object {
                                     "id": 437670,
                                     "overview": "A comedy that follows an con who lands a position at a",
-                                    "poster_path": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
-                                    "release_date": "2017-10-26",
+                                    "posterPath": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
+                                    "releaseDate": "2017-10-26",
                                     "title": "Suck Me Shakespeer 3",
-                                    "vote_average": 6.2,
+                                    "voteAverage": 6.2,
                                   }
             }
 />,
@@ -106,10 +106,10 @@ ShallowWrapper {
             "information": Object {
               "id": 437670,
               "overview": "A comedy that follows an con who lands a position at a",
-              "poster_path": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
-              "release_date": "2017-10-26",
+              "posterPath": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
+              "releaseDate": "2017-10-26",
               "title": "Suck Me Shakespeer 3",
-              "vote_average": 6.2,
+              "voteAverage": 6.2,
             },
           },
           "ref": null,

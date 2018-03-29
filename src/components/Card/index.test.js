@@ -4,20 +4,21 @@ import React from 'react';
 import * as mockData from '../../mockData';
 
 describe('Card', () => {
+  let wrapper;
   const movie = mockData.mockMovie[0];
+  const mockAddFavorite = jest.fn();
+  beforeEach(() => {
+    wrapper = shallow(
+      <Card information={movie} addFavorite={mockAddFavorite} />
+    );
+  });
 
   it('should match the snapshot', () => {
-    const wrapper = shallow(<Card information={movie}/>);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should call addFavorites with the right params on click', () => {
-    const mockAddFavorite = jest.fn();
-    const wrapper = 
-      shallow(<Card information={movie} addFavorite={mockAddFavorite}/>);
-
     wrapper.find('article').simulate('click');
-
     expect(mockAddFavorite).toHaveBeenCalledWith(movie);
 
   });

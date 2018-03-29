@@ -26,6 +26,6 @@ export const mapDispatchToProps = dispatch => ({
 export default connect(mapStateToProps)(Favorites);
 
 Favorites.propTypes = {
-  favorites: PropTypes.object,
-  handleClick: PropTypes.func
+  favorites: PropTypes.array.isRequired,
+  handleClick: PropTypes.func.isRequired
 };

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Redirect} from 'react-router-dom';
 import  PropTypes from 'prop-types';
 
 export default class Login extends Component {
@@ -7,42 +8,58 @@ export default class Login extends Component {
     this.state = {
       name: '',
       email: '',
-      password: ''
+      password: '',
+      loggedIn: false
     };
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.addUser(this.state);
+    this.setState({
+      name: '',
+      email: '',
+      password: '',
+      loggedIn: true
+    });
+  }
+
+  handleChange = event => {
+    const {value, name} = event.target;
+    this.setState({[name]: value});
   }
 
   render() {
-    return (
-      <form onSubmit={(event) => this.handleSubmit(event)}>
+    const {name, email, password, loggedIn} = this.state;
+    return loggedIn ? <Redirect to="/" /> :
+      (<form onSubmit={event => this.handleSubmit(event)}>
         <input
-          value={this.state.name}
-          onChange={(event) => this.setState({ name: event.target.value})}
+          value={name}
+          name="name"
+          onChange={event => this.handleChange(event)}
           type='text'
           placeholder='enter name'
           aria-label='name'
         />
         <input
-          value={this.state.email}
-          onChange={(event) => this.setState({ email: event.target.value})}
+          value={email}
+          name="email"
+          onChange={event => this.handleChange(event)}
           type='email'
           placeholder='enter email'
           aria-label='email'
         />
         <input
-          value={this.state.password}
-          onChange={(event) => this.setState({ password: event.target.value})}
+          value={password}
+          name="password"
+          onChange={event => this.handleChange(event)}
           type='password'
           placeholder='password'
           aria-label='password'
         />
         <button type='submit'>Enter</button>
       </form>
-    );
+      );
   }
 }
 

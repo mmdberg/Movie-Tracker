@@ -9,8 +9,11 @@ describe('Card Container', () => {
   let wrapper;
 
   beforeEach(() => {
+    const mockAddFavorite = jest.fn();
     const movies = helper.moviesWrangler(mockData.mockMovies);
-    wrapper = shallow(<CardContainer movies={movies}/>);
+    wrapper = shallow(
+      <CardContainer movies={movies} handleClick={mockAddFavorite}/>
+    );
   });
 
   it('should match the snapshot', () => {

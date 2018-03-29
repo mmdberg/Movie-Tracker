@@ -17,8 +17,13 @@ export class App extends Component {
   }
 
   addUser = async user => {
+    const {name, email} = user;
     const validation = await api.addUser(user);
-    this.props.captureUserID(validation.id);
+    this.props.captureUser({name, email, id: validation.id});
+  }
+
+  logOut = () => {
+    
   }
 
   render = () => {
@@ -26,7 +31,11 @@ export class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Welcome to Movie Tracker</h1>
-          <NavLink to='/login/'>Sign In/Sign Up</NavLink>
+          {
+            this.props.user.email ? (
+              <button>Log Out</button> ):
+              <NavLink to='/login/'>Sign Up</NavLink>
+          }
           <NavLink to='/favorites/'>Favorites</NavLink>
         </header>
         <Switch>
@@ -40,21 +49,25 @@ export class App extends Component {
   }
 }
 
-export const mapStateToProps = state => {
-  userID: state.userID;
-};
+export const mapStateToProps = state => ({
+  user: state.user
+});
 
 export const mapDispatchToProps = dispatch => {
   return {
     loadCards: movies => dispatch(actions.loadCards(movies)),
-    captureUserID: id => dispatch(actions.captureUserId(id))
+    captureUser: user => dispatch(actions.captureUser(user))
   };
 };
 
 App.propTypes = {
   loadCards: PropTypes.func.isRequired,
-  captureUserID: PropTypes.func,
-  userID: PropTypes.number
+  captureUser: PropTypes.func.isRequired,
+  user: PropTypes.shape({
+    name: PropTypes.string,
+    email: PropTypes.string,
+    id: PropTypes.number
+  })
 };
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
