@@ -7,7 +7,8 @@ import './styles.css';
 import CardContainer from '../CardContainer';
 import Favorite from '../Favorites';
 import { Route, Switch, NavLink, withRouter } from 'react-router-dom';
-import Login from '../../components/Login';
+import SignUp from '../../components/SignUp';
+import LogIn from '../../components/LogIn';
 
 export class App extends Component {
 
@@ -22,6 +23,11 @@ export class App extends Component {
     this.props.captureUser({name, email, id: validation.id});
   }
 
+  logIn = async credentials => {
+    const validation = await api.signIn(credentials);
+    this.props.captureUser(validation.data);
+  }
+
   logOut = () => {
     this.props.logOutUser()
   }
@@ -33,15 +39,27 @@ export class App extends Component {
           <h1 className="App-title">Welcome to Movie Tracker</h1>
           {
             this.props.user.email ? (
-              <button onClick={() => this.logOut()}>Log Out</button> ):
-              <NavLink to='/login/'>Sign Up</NavLink>
+              <div>
+                <NavLink to='/favorites/'>Favorites</NavLink>
+                <button onClick={() => this.logOut()}>Log Out</button>
+              </div>
+              ):
+              (
+                <div>
+                  <NavLink to='/signup'>Sign Up</NavLink>
+                  <NavLink to='/login'>Log In</NavLink>
+                </div>
+
+              )
           }
-          <NavLink to='/favorites/'>Favorites</NavLink>
+          <NavLink to='/'>Home</NavLink>
         </header>
         <Switch>
           <Route exact path='/' component={CardContainer}/>
-          <Route exact path='/login/' render={() =>
-            <Login addUser={this.addUser} /> } />
+          <Route exact path='/login' render={() =>
+            <LogIn logIn={this.logIn}/>} />
+          <Route exact path='/signup' render={() =>
+            <SignUp addUser={this.addUser} /> } />
           <Route exact path='/favorites/' component={Favorite}/>
         </Switch>
       </div>

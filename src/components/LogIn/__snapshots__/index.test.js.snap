@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Login should match the snapshot 1`] = `
+exports[`LogIn should match the snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Login />,
+  Symbol(enzyme.__unrendered__): <LogIn />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -19,23 +19,13 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <input
-          aria-label="name"
-          name="name"
-          onChange={[Function]}
-          placeholder="enter name"
-          type="text"
-          value=""
-/>,
-        <input
-          aria-label="email"
           name="email"
           onChange={[Function]}
-          placeholder="enter email"
+          placeholder="email"
           type="email"
           value=""
 />,
         <input
-          aria-label="password"
           name="password"
           onChange={[Function]}
           placeholder="password"
@@ -45,7 +35,7 @@ ShallowWrapper {
         <button
           type="submit"
 >
-          Enter
+          Log In
 </button>,
       ],
       "onSubmit": [Function],
@@ -57,26 +47,9 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "aria-label": "name",
-          "name": "name",
-          "onChange": [Function],
-          "placeholder": "enter name",
-          "type": "text",
-          "value": "",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": "input",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "aria-label": "email",
           "name": "email",
           "onChange": [Function],
-          "placeholder": "enter email",
+          "placeholder": "email",
           "type": "email",
           "value": "",
         },
@@ -89,7 +62,6 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "aria-label": "password",
           "name": "password",
           "onChange": [Function],
           "placeholder": "password",
@@ -105,11 +77,11 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Enter",
+          "children": "Log In",
           "type": "submit",
         },
         "ref": null,
-        "rendered": "Enter",
+        "rendered": "Log In",
         "type": "button",
       },
     ],
@@ -123,23 +95,13 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <input
-            aria-label="name"
-            name="name"
-            onChange={[Function]}
-            placeholder="enter name"
-            type="text"
-            value=""
-/>,
-          <input
-            aria-label="email"
             name="email"
             onChange={[Function]}
-            placeholder="enter email"
+            placeholder="email"
             type="email"
             value=""
 />,
           <input
-            aria-label="password"
             name="password"
             onChange={[Function]}
             placeholder="password"
@@ -149,7 +111,7 @@ ShallowWrapper {
           <button
             type="submit"
 >
-            Enter
+            Log In
 </button>,
         ],
         "onSubmit": [Function],
@@ -161,26 +123,9 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "aria-label": "name",
-            "name": "name",
-            "onChange": [Function],
-            "placeholder": "enter name",
-            "type": "text",
-            "value": "",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "input",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "aria-label": "email",
             "name": "email",
             "onChange": [Function],
-            "placeholder": "enter email",
+            "placeholder": "email",
             "type": "email",
             "value": "",
           },
@@ -193,7 +138,6 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "aria-label": "password",
             "name": "password",
             "onChange": [Function],
             "placeholder": "password",
@@ -209,11 +153,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Enter",
+            "children": "Log In",
             "type": "submit",
           },
           "ref": null,
-          "rendered": "Enter",
+          "rendered": "Log In",
           "type": "button",
         },
       ],

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Redirect} from 'react-router-dom';
 import  PropTypes from 'prop-types';
 
-export default class Login extends Component {
+export default class SignUp extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -63,6 +63,6 @@ export default class Login extends Component {
   }
 }
 
-Login.propTypes = {
+SignUp.propTypes = {
   addUser: PropTypes.func
 };
