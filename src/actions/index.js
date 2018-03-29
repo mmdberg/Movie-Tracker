@@ -3,7 +3,7 @@ export const loadCards = (movies) => ({
   movies
 });
 
-// export const addUser = (user) => ({
-//   type: 'ADD_USER',
-//   user
-// });
+export const addFavorite = (movie) => ({
+  type: 'ADD_FAVORITE',
+  movie
+})

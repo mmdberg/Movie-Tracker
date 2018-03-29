@@ -12,19 +12,17 @@ describe('Actions', () => {
       expect(actions.loadCards(movies)).toEqual(expected);
     });
   });
-  // describe('ADD_USER', () => {
-  //   it('should return action type of add user', () => {
-  //     const user = {
-  //       name: 'Stevo',
-  //       email: 'stevo@taco.com',
-  //       password: 'taco'
-  //     };
-  //     const expected = {
-  //       type: 'ADD_USER',
-  //       user
-  //     };
 
-  //     expect(actions.addUser(user)).toEqual(expected);
-  //   });
-  // });
+  describe('ADD_FAVORITE', () => {
+    it('should return action type of add favorite', () => {
+      const movie = mockData.mockMovie;
+      const expected = {
+        type: 'ADD_FAVORITE',
+        movie
+      }
+      expect(actions.addFavorite(movie)).toEqual(expected)
+    })
+  })
+
+
 });

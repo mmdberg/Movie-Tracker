@@ -45,10 +45,10 @@ describe('addUser', () => {
 
   it('should call fetch with the correct params', () => {
     const expected = [
-      'localhost:3000/api/users/new', 
+      'api/users/new/', 
       {
         method: 'POST',
-        body: JSON.stringify({user: mockUser}),
+        body: JSON.stringify(mockUser),
         headers: {
           'Content-Type': 'application/json'
         }
