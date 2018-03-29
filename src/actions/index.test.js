@@ -24,5 +24,16 @@ describe('Actions', () => {
     })
   })
 
+  describe('CAPTURE_USER_ID', () => {
+    it('should return action type of capture user id', () => {
+      const id = 5;
+      const expected = {
+        type: 'CAPTURE_USER_ID',
+        id
+      }
+      expect(actions.captureUserId(id)).toEqual(expected)
+    })
+  })
+
 
 });

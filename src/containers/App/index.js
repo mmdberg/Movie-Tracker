@@ -19,7 +19,6 @@ export class App extends Component {
   addUser = async user => {
     console.log('user info', user)
     const validation = await api.addUser(user);
-
   }
 
   render = () => {
@@ -27,7 +26,7 @@ export class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Welcome to Movie Tracker</h1>
-          <NavLink to='/login/'>Log In</NavLink>
+          <NavLink to='/login/'>Sign In/Sign Up</NavLink>
           <NavLink to='/favorites/'>Favorites</NavLink>
         </header>
         <Switch>

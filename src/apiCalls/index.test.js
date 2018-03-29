@@ -45,7 +45,7 @@ describe('addUser', () => {
 
   it('should call fetch with the correct params', () => {
     const expected = [
-      'api/users/new/', 
+      '/api/users/new/', 
       {
         method: 'POST',
         body: JSON.stringify(mockUser),

@@ -1,5 +1,5 @@
 import { mockMovie } from '../MockData';
-import { favoritesReducer } from './favoritesReducer';
+import favoritesReducer from './favoritesReducer';
 import * as actions from '../actions';
 
 describe('Favorites Reducer', () => {
