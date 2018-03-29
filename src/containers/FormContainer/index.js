@@ -53,13 +53,24 @@ export class FormContainer extends Component {
   }
 
   addUser = async user => {
-    const validation = await api.addUser(user);
-    this.props.captureUser({ ...user, id: validation.id });
-    this.setState({
-      email: '',
-      password: '',
-      loggedIn: true
-    });
+    const userList = await api.getUsers()
+    const validation = userList.data.find(registeredUser => user.email === registeredUser.email)
+    if (validation) {
+      this.setState({
+        name: '',
+        email: '',
+        password: '',
+        errorMessage: 'This email has already been used. Please log in or use a new email'
+      })
+    } else {
+      const newUser = await api.addUser(user);
+      this.props.captureUser({ ...user, id: newUser.id });
+      this.setState({
+        email: '',
+        password: '',
+        loggedIn: true
+      });
+    }
   }
 
   render() {
