@@ -33,10 +33,14 @@ export class App extends Component {
           <h1 className="App-title">Welcome to Movie Tracker</h1>
           {
             this.props.user.email ? (
-              <button onClick={() => this.logOut()}>Log Out</button> ):
+              <div>
+                <NavLink to='/favorites/'>Favorites</NavLink>
+                <button onClick={() => this.logOut()}>Log Out</button>
+              </div>
+              ):
               <NavLink to='/login/'>Sign Up</NavLink>
           }
-          <NavLink to='/favorites/'>Favorites</NavLink>
+          <NavLink to='/'>Home</NavLink>
         </header>
         <Switch>
           <Route exact path='/' component={CardContainer}/>
