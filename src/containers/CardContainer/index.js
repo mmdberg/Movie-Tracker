@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { Card } from '../../components/Card';
 import * as actions from '../../actions/';
 
-export const CardContainer = ({movies, favorites, handleClick}) => {
+export const CardContainer = ({movies, handleClick}) => {
   const moviesList = movies.map(movie => <Card information={movie} addFavorite={handleClick} key={movie.id}/>);
   return (
     <div className="card-container">
@@ -15,8 +15,7 @@ export const CardContainer = ({movies, favorites, handleClick}) => {
 };
 
 export const mapStateToProps = state => ({
-  movies: state.movies,
-  favorites: state.favorites
+  movies: state.movies
 });
 
 export const mapDispatchToState = dispatch => ({

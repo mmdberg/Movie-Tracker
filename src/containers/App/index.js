@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import './styles.css';
 import CardContainer from '../CardContainer';
+import Favorite from '../Favorites'
 import { Route, Switch, NavLink, withRouter } from 'react-router-dom';
 import Login from '../../components/Login';
 
@@ -27,10 +28,12 @@ export class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Welcome to Movie Tracker</h1>
           <NavLink to='/login/'>Log In</NavLink>
+          <NavLink to='/favorites/'>Favorites</NavLink>
         </header>
         <Switch>
           <Route exact path='/' component={CardContainer}/>
           <Route exact path='/login/' render={() => <Login addUser={this.addUser} /> } />
+          <Route exact path='/favorites/' component={Favorite}/> 
         </Switch>
       </div>
     );
