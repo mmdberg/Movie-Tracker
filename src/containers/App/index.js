@@ -7,8 +7,7 @@ import './styles.css';
 import CardContainer from '../CardContainer';
 import Favorite from '../Favorites';
 import { Route, Switch, NavLink, withRouter } from 'react-router-dom';
-import SignUp from '../../components/SignUp';
-import LogIn from '../../components/LogIn';
+import FormContainer from '../FormContainer';
 
 export class App extends Component {
 
@@ -17,14 +16,8 @@ export class App extends Component {
     this.props.loadCards(movies);
   }
 
-  addUser = async user => {
-    const {name, email} = user;
-    const validation = await api.addUser(user);
-    this.props.captureUser({name, email, id: validation.id});
-  }
-
   logOut = () => {
-    this.props.logOutUser()
+    this.props.logOutUser();
   }
 
   render = () => {
@@ -38,11 +31,11 @@ export class App extends Component {
                 <NavLink to='/favorites/'>Favorites</NavLink>
                 <button onClick={() => this.logOut()}>Log Out</button>
               </div>
-              ):
+            ):
               (
                 <div>
-                  <NavLink to='/signup'>Sign Up</NavLink>
-                  <NavLink to='/login'>Log In</NavLink>
+                  <NavLink to='/forms/signup'>Sign Up</NavLink>
+                  <NavLink to='/forms/login'>Log In</NavLink>
                 </div>
               )
           }
@@ -50,10 +43,8 @@ export class App extends Component {
         </header>
         <Switch>
           <Route exact path='/' component={CardContainer}/>
-          <Route exact path='/login' render={() =>
-            <LogIn logIn={this.logIn}/>} />
-          <Route exact path='/signup' render={() =>
-            <SignUp addUser={this.addUser} /> } />
+          <Route exact path='/forms/:id' render={({match}) => 
+            <FormContainer match={match}/>} />
           <Route exact path='/favorites/' component={Favorite}/>
         </Switch>
       </div>
@@ -80,7 +71,8 @@ App.propTypes = {
     name: PropTypes.string,
     email: PropTypes.string,
     id: PropTypes.number
-  })
+  }),
+  logOutUser: PropTypes.func.isRequired
 };
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
