@@ -30,13 +30,22 @@ ShallowWrapper {
           >
                     Welcome to Movie Tracker
           </h1>
-          <NavLink
-                    activeClassName="active"
-                    ariaCurrent="true"
-                    to="/login/"
-          >
-                    Sign Up
-          </NavLink>
+          <div>
+                    <NavLink
+                              activeClassName="active"
+                              ariaCurrent="true"
+                              to="/signup"
+                    >
+                              Sign Up
+                    </NavLink>
+                    <NavLink
+                              activeClassName="active"
+                              ariaCurrent="true"
+                              to="/login"
+                    >
+                              Log In
+                    </NavLink>
+          </div>
           <NavLink
                     activeClassName="active"
                     ariaCurrent="true"
@@ -53,7 +62,12 @@ ShallowWrapper {
           />
           <Route
                     exact={true}
-                    path="/login/"
+                    path="/login"
+                    render={[Function]}
+          />
+          <Route
+                    exact={true}
+                    path="/signup"
                     render={[Function]}
           />
           <Route
@@ -78,13 +92,22 @@ ShallowWrapper {
 >
               Welcome to Movie Tracker
 </h1>,
-            <NavLink
-              activeClassName="active"
-              ariaCurrent="true"
-              to="/login/"
->
-              Sign Up
-</NavLink>,
+            <div>
+              <NavLink
+                            activeClassName="active"
+                            ariaCurrent="true"
+                            to="/signup"
+              >
+                            Sign Up
+              </NavLink>
+              <NavLink
+                            activeClassName="active"
+                            ariaCurrent="true"
+                            to="/login"
+              >
+                            Log In
+              </NavLink>
+</div>,
             <NavLink
               activeClassName="active"
               ariaCurrent="true"
@@ -112,16 +135,57 @@ ShallowWrapper {
           Object {
             "instance": null,
             "key": undefined,
-            "nodeType": "function",
+            "nodeType": "host",
             "props": Object {
-              "activeClassName": "active",
-              "ariaCurrent": "true",
-              "children": "Sign Up",
-              "to": "/login/",
+              "children": Array [
+                <NavLink
+                  activeClassName="active"
+                  ariaCurrent="true"
+                  to="/signup"
+>
+                  Sign Up
+</NavLink>,
+                <NavLink
+                  activeClassName="active"
+                  ariaCurrent="true"
+                  to="/login"
+>
+                  Log In
+</NavLink>,
+              ],
             },
             "ref": null,
-            "rendered": "Sign Up",
-            "type": [Function],
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "activeClassName": "active",
+                  "ariaCurrent": "true",
+                  "children": "Sign Up",
+                  "to": "/signup",
+                },
+                "ref": null,
+                "rendered": "Sign Up",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "activeClassName": "active",
+                  "ariaCurrent": "true",
+                  "children": "Log In",
+                  "to": "/login",
+                },
+                "ref": null,
+                "rendered": "Log In",
+                "type": [Function],
+              },
+            ],
+            "type": "div",
           },
           Object {
             "instance": null,
@@ -153,7 +217,12 @@ ShallowWrapper {
 />,
             <Route
               exact={true}
-              path="/login/"
+              path="/login"
+              render={[Function]}
+/>,
+            <Route
+              exact={true}
+              path="/signup"
               render={[Function]}
 />,
             <Route
@@ -184,7 +253,20 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "exact": true,
-              "path": "/login/",
+              "path": "/login",
+              "render": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "exact": true,
+              "path": "/signup",
               "render": [Function],
             },
             "ref": null,
@@ -225,13 +307,22 @@ ShallowWrapper {
             >
                         Welcome to Movie Tracker
             </h1>
-            <NavLink
-                        activeClassName="active"
-                        ariaCurrent="true"
-                        to="/login/"
-            >
-                        Sign Up
-            </NavLink>
+            <div>
+                        <NavLink
+                                    activeClassName="active"
+                                    ariaCurrent="true"
+                                    to="/signup"
+                        >
+                                    Sign Up
+                        </NavLink>
+                        <NavLink
+                                    activeClassName="active"
+                                    ariaCurrent="true"
+                                    to="/login"
+                        >
+                                    Log In
+                        </NavLink>
+            </div>
             <NavLink
                         activeClassName="active"
                         ariaCurrent="true"
@@ -248,7 +339,12 @@ ShallowWrapper {
             />
             <Route
                         exact={true}
-                        path="/login/"
+                        path="/login"
+                        render={[Function]}
+            />
+            <Route
+                        exact={true}
+                        path="/signup"
                         render={[Function]}
             />
             <Route
@@ -273,13 +369,22 @@ ShallowWrapper {
 >
                 Welcome to Movie Tracker
 </h1>,
-              <NavLink
-                activeClassName="active"
-                ariaCurrent="true"
-                to="/login/"
->
-                Sign Up
-</NavLink>,
+              <div>
+                <NavLink
+                                activeClassName="active"
+                                ariaCurrent="true"
+                                to="/signup"
+                >
+                                Sign Up
+                </NavLink>
+                <NavLink
+                                activeClassName="active"
+                                ariaCurrent="true"
+                                to="/login"
+                >
+                                Log In
+                </NavLink>
+</div>,
               <NavLink
                 activeClassName="active"
                 ariaCurrent="true"
@@ -307,16 +412,57 @@ ShallowWrapper {
             Object {
               "instance": null,
               "key": undefined,
-              "nodeType": "function",
+              "nodeType": "host",
               "props": Object {
-                "activeClassName": "active",
-                "ariaCurrent": "true",
-                "children": "Sign Up",
-                "to": "/login/",
+                "children": Array [
+                  <NavLink
+                    activeClassName="active"
+                    ariaCurrent="true"
+                    to="/signup"
+>
+                    Sign Up
+</NavLink>,
+                  <NavLink
+                    activeClassName="active"
+                    ariaCurrent="true"
+                    to="/login"
+>
+                    Log In
+</NavLink>,
+                ],
               },
               "ref": null,
-              "rendered": "Sign Up",
-              "type": [Function],
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "activeClassName": "active",
+                    "ariaCurrent": "true",
+                    "children": "Sign Up",
+                    "to": "/signup",
+                  },
+                  "ref": null,
+                  "rendered": "Sign Up",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "activeClassName": "active",
+                    "ariaCurrent": "true",
+                    "children": "Log In",
+                    "to": "/login",
+                  },
+                  "ref": null,
+                  "rendered": "Log In",
+                  "type": [Function],
+                },
+              ],
+              "type": "div",
             },
             Object {
               "instance": null,
@@ -348,7 +494,12 @@ ShallowWrapper {
 />,
               <Route
                 exact={true}
-                path="/login/"
+                path="/login"
+                render={[Function]}
+/>,
+              <Route
+                exact={true}
+                path="/signup"
                 render={[Function]}
 />,
               <Route
@@ -379,7 +530,20 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "exact": true,
-                "path": "/login/",
+                "path": "/login",
+                "render": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "exact": true,
+                "path": "/signup",
                 "render": [Function],
               },
               "ref": null,

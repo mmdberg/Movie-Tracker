@@ -8,6 +8,7 @@ import CardContainer from '../CardContainer';
 import Favorite from '../Favorites';
 import { Route, Switch, NavLink, withRouter } from 'react-router-dom';
 import SignUp from '../../components/SignUp';
+import LogIn from '../../components/LogIn';
 
 export class App extends Component {
 
@@ -38,13 +39,20 @@ export class App extends Component {
                 <button onClick={() => this.logOut()}>Log Out</button>
               </div>
               ):
-              <NavLink to='/login/'>Sign Up</NavLink>
+              (
+                <div>
+                  <NavLink to='/signup'>Sign Up</NavLink>
+                  <NavLink to='/login'>Log In</NavLink>
+                </div>
+
+              )
           }
           <NavLink to='/'>Home</NavLink>
         </header>
         <Switch>
           <Route exact path='/' component={CardContainer}/>
-          <Route exact path='/login/' render={() =>
+          <Route exact path='/login' render={() => <LogIn />} />
+          <Route exact path='/signup' render={() =>
             <SignUp addUser={this.addUser} /> } />
           <Route exact path='/favorites/' component={Favorite}/>
         </Switch>
