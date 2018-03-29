@@ -23,7 +23,7 @@ export class App extends Component {
   }
 
   logOut = () => {
-    
+    this.props.logOutUser()
   }
 
   render = () => {
@@ -33,16 +33,16 @@ export class App extends Component {
           <h1 className="App-title">Welcome to Movie Tracker</h1>
           {
             this.props.user.email ? (
-              <button>Log Out</button> ):
+              <button onClick={() => this.logOut()}>Log Out</button> ):
               <NavLink to='/login/'>Sign Up</NavLink>
           }
           <NavLink to='/favorites/'>Favorites</NavLink>
         </header>
         <Switch>
           <Route exact path='/' component={CardContainer}/>
-          <Route exact path='/login/' render={() => 
+          <Route exact path='/login/' render={() =>
             <Login addUser={this.addUser} /> } />
-          <Route exact path='/favorites/' component={Favorite}/> 
+          <Route exact path='/favorites/' component={Favorite}/>
         </Switch>
       </div>
     );
@@ -56,7 +56,8 @@ export const mapStateToProps = state => ({
 export const mapDispatchToProps = dispatch => {
   return {
     loadCards: movies => dispatch(actions.loadCards(movies)),
-    captureUser: user => dispatch(actions.captureUser(user))
+    captureUser: user => dispatch(actions.captureUser(user)),
+    logOutUser: () => dispatch(actions.logOutUser())
   };
 };
 
