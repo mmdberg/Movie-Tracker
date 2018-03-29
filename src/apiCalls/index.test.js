@@ -36,7 +36,7 @@ describe('addUser', () => {
       name: 'Stevo',
       email: 'stevo@taco.com',
       password: 'taco'
-    }
+    };
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       ok:true, 
       json: () => Promise.resolve()
@@ -45,7 +45,7 @@ describe('addUser', () => {
 
   it('should call fetch with the correct params', () => {
     const expected = [
-      'api/users/new/', 
+      '/api/users/new/', 
       {
         method: 'POST',
         body: JSON.stringify(mockUser),

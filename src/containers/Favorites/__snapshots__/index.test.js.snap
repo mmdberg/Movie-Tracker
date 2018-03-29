@@ -1,22 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Card Container should match the snapshot 1`] = `
+exports[`Favorite should match the snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Unknown
-    movies={
+    favorites={
         Array [
             Object {
               "id": 437670,
               "overview": "A comedy that follows an con who lands a position at a",
-              "posterPath": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
-              "releaseDate": "2017-10-26",
+              "poster_path": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
+              "release_date": "2017-10-26",
               "title": "Suck Me Shakespeer 3",
-              "voteAverage": 6.2,
+              "vote_average": 6.2,
             },
           ]
     }
+    handleClick={[Function]}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -32,20 +33,20 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <Unknown
-          addFavorite={undefined}
+          addFavorite={[Function]}
           information={
                     Object {
                               "id": 437670,
                               "overview": "A comedy that follows an con who lands a position at a",
-                              "posterPath": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
-                              "releaseDate": "2017-10-26",
+                              "poster_path": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
+                              "release_date": "2017-10-26",
                               "title": "Suck Me Shakespeer 3",
-                              "voteAverage": 6.2,
+                              "vote_average": 6.2,
                             }
           }
 />,
       ],
-      "className": "card-container",
+      "className": "favorites-container",
     },
     "ref": null,
     "rendered": Array [
@@ -54,14 +55,14 @@ ShallowWrapper {
         "key": "437670",
         "nodeType": "function",
         "props": Object {
-          "addFavorite": undefined,
+          "addFavorite": [Function],
           "information": Object {
             "id": 437670,
             "overview": "A comedy that follows an con who lands a position at a",
-            "posterPath": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
-            "releaseDate": "2017-10-26",
+            "poster_path": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
+            "release_date": "2017-10-26",
             "title": "Suck Me Shakespeer 3",
-            "voteAverage": 6.2,
+            "vote_average": 6.2,
           },
         },
         "ref": null,
@@ -79,20 +80,20 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Unknown
-            addFavorite={undefined}
+            addFavorite={[Function]}
             information={
                         Object {
                                     "id": 437670,
                                     "overview": "A comedy that follows an con who lands a position at a",
-                                    "posterPath": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
-                                    "releaseDate": "2017-10-26",
+                                    "poster_path": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
+                                    "release_date": "2017-10-26",
                                     "title": "Suck Me Shakespeer 3",
-                                    "voteAverage": 6.2,
+                                    "vote_average": 6.2,
                                   }
             }
 />,
         ],
-        "className": "card-container",
+        "className": "favorites-container",
       },
       "ref": null,
       "rendered": Array [
@@ -101,14 +102,14 @@ ShallowWrapper {
           "key": "437670",
           "nodeType": "function",
           "props": Object {
-            "addFavorite": undefined,
+            "addFavorite": [Function],
             "information": Object {
               "id": 437670,
               "overview": "A comedy that follows an con who lands a position at a",
-              "posterPath": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
-              "releaseDate": "2017-10-26",
+              "poster_path": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
+              "release_date": "2017-10-26",
               "title": "Suck Me Shakespeer 3",
-              "voteAverage": 6.2,
+              "vote_average": 6.2,
             },
           },
           "ref": null,

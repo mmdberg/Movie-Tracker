@@ -13,11 +13,12 @@ describe('Card', () => {
 
   it('should call addFavorites with the right params on click', () => {
     const mockAddFavorite = jest.fn();
-    const wrapper = shallow(<Card information={movie} addFavorite={mockAddFavorite}/>);
+    const wrapper = 
+      shallow(<Card information={movie} addFavorite={mockAddFavorite}/>);
 
     wrapper.find('article').simulate('click');
 
-    expect(mockAddFavorite).toHaveBeenCalledWith(movie)
+    expect(mockAddFavorite).toHaveBeenCalledWith(movie);
 
-  })
+  });
 });
