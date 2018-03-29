@@ -23,11 +23,6 @@ export class App extends Component {
     this.props.captureUser({name, email, id: validation.id});
   }
 
-  logIn = async credentials => {
-    const validation = await api.signIn(credentials);
-    this.props.captureUser(validation.data);
-  }
-
   logOut = () => {
     this.props.logOutUser()
   }
@@ -49,7 +44,6 @@ export class App extends Component {
                   <NavLink to='/signup'>Sign Up</NavLink>
                   <NavLink to='/login'>Log In</NavLink>
                 </div>
-
               )
           }
           <NavLink to='/'>Home</NavLink>

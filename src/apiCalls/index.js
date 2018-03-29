@@ -32,18 +32,13 @@ export const addUser = async (user) => {
 };
 
 export const signIn = async (credentials) => {
-  try {
-    const response = await fetch('/api/users',
-    {
+  const response = await fetch('/api/users/', {
     method: 'POST',
     body: JSON.stringify(credentials),
     headers: {
       'Content-Type': 'application/json'
-      }
-    });
-    const parsedUser = await response.json();
-    return parsedUser;
-  } catch (error) {
-    console.log(error);
-  }
+    }
+  });
+  const parsedUser = await response.json();
+  return parsedUser;
 }

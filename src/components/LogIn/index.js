@@ -1,26 +1,25 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import * as api from '../../apiCalls';
+import  { connect } from 'react-redux';
+import * as actions from '../../actions'
 
-export default class LogIn extends Component {
+export class LogIn extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       email: '',
       password: '',
-      loggedIn: false
+      loggedIn: false,
+      errorMessage: ''
     }
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const { email, password } = this.state;
-    this.props.logIn({email, password})
-    this.setState({
-      email: '',
-      password: '',
-      loggedIn: true
-    })
+    const { email, password, errorMessage } = this.state;
+    this.logIn({email, password})
   }
 
   handleChange = (event) => {
@@ -28,8 +27,26 @@ export default class LogIn extends Component {
     this.setState({ [name]: value });
   }
 
+  logIn = async credentials => {
+    try { 
+      const validation = await api.signIn(credentials);
+      this.props.captureUser(validation.data)
+      this.setState({
+        email: '',
+        password: '',
+        loggedIn: true
+      })
+    } catch (error) {
+      this.setState({
+        errorMessage: 'Email and password do not match',
+        email: '',
+        password: ''
+      })
+    }
+  }
+
   render() {
-    const { email, password, loggedIn } = this.state;
+    const { email, password, loggedIn, errorMessage } = this.state;
     return loggedIn ? <Redirect to='/' /> : (
       <form onSubmit={ event => this.handleSubmit(event)}>
         <input
@@ -47,7 +64,14 @@ export default class LogIn extends Component {
           onChange={ event => this.handleChange(event)}
         />
         <button type='submit'>Log In</button>
+        <p>{errorMessage}</p>
       </form>
     );
   }
 }
+
+export const mapDispatchToProps = dispatch => ({
+  captureUser: user => dispatch(actions.captureUser(user))
+})
+
+export default connect(null, mapDispatchToProps)(LogIn)
