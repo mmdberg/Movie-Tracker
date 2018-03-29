@@ -8,10 +8,12 @@ describe('App', () => {
   let wrapper;
 
   beforeEach( () => {
-    wrapper = shallow(<App />, { disableLifecycleMethods: true });
+    wrapper = shallow(
+      <App user={{}} loadCards={jest.fn()} captureUser={jest.fn()}/>,
+      { disableLifecycleMethods: true });
   });
 
-  it.skip('should match snapshot', () => {
+  it('should match snapshot', () => {
     expect(wrapper).toMatchSnapshot();
   });
 });

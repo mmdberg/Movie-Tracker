@@ -5,6 +5,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Unknown
+    handleClick={[Function]}
     movies={
         Array [
             Object {
@@ -32,7 +33,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <Unknown
-          addFavorite={undefined}
+          addFavorite={[Function]}
           information={
                     Object {
                               "id": 437670,
@@ -54,7 +55,7 @@ ShallowWrapper {
         "key": "437670",
         "nodeType": "function",
         "props": Object {
-          "addFavorite": undefined,
+          "addFavorite": [Function],
           "information": Object {
             "id": 437670,
             "overview": "A comedy that follows an con who lands a position at a",
@@ -79,7 +80,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Unknown
-            addFavorite={undefined}
+            addFavorite={[Function]}
             information={
                         Object {
                                     "id": 437670,
@@ -101,7 +102,7 @@ ShallowWrapper {
           "key": "437670",
           "nodeType": "function",
           "props": Object {
-            "addFavorite": undefined,
+            "addFavorite": [Function],
             "information": Object {
               "id": 437670,
               "overview": "A comedy that follows an con who lands a position at a",

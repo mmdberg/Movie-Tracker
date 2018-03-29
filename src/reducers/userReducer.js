@@ -1,7 +1,9 @@
-const userReducer = (state = '', actions) => {
+const userReducer = (state = {}, actions) => {
   switch (actions.type) {
-  case 'CAPTURE_USER_ID':
-    return actions.id;
+  case 'CAPTURE_USER':
+    return actions.user;
+  case 'LOG_OUT_USER':
+    return {};
   default: 
     return state;
   }

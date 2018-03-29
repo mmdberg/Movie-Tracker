@@ -21,12 +21,12 @@ export const Card = ({information, addFavorite}) => {
 };
 
 Card.propTypes = {
-  information: PropTypes.objectOf(PropTypes.shape({
+  information: PropTypes.shape({
     title: PropTypes.string.isRequired,
     releaseDate: PropTypes.string.isRequired,
     overview: PropTypes.string.isRequired,
     posterPath: PropTypes.string.isRequired,
     voteAverage: PropTypes.number.isRequired
-  })),
+  }),
   addFavorite: PropTypes.func.isRequired
 };

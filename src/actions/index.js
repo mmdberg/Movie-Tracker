@@ -8,7 +8,11 @@ export const addFavorite = (movie) => ({
   movie
 });
 
-export const captureUserId = (id) => ({
-  type: 'CAPTURE_USER_ID',
-  id
+export const captureUser = (user) => ({
+  type: 'CAPTURE_USER',
+  user
+});
+
+export const logOutUser = () => ({
+  type: "LOG_OUT_USER"
 });

@@ -25,15 +25,22 @@ describe('Actions', () => {
     });
   });
 
-  describe('CAPTURE_USER_ID', () => {
-    it('should return action type of capture user id', () => {
-      const id = 5;
+  describe('CAPTURE_USER', () => {
+    it('should return action type of capture user', () => {
+      const user = {name: "Bill", email: "Bill@gmail.com", id: 5};
       const expected = {
-        type: 'CAPTURE_USER_ID',
-        id
+        type: 'CAPTURE_USER',
+        user
       };
       
-      expect(actions.captureUserId(id)).toEqual(expected);
+      expect(actions.captureUser(user)).toEqual(expected);
+    });
+  });
+
+  describe('LOG_OUT_USER', () => {
+    it('should return action type log out user', () => {
+      const expected = {type: "LOG_OUT_USER"};
+      expect(actions.logOutUser()).toEqual(expected);
     });
   });
 
