@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as actions from '../../actions';
@@ -25,11 +26,11 @@ export class FormContainer extends Component {
   handleSubmit = event => {
     event.preventDefault();
     const { email, password, name } = this.state;
-    const id = this.props.match.params;
+    const { id } = this.props.match.params;
     if (id === 'login') {
       this.logIn({ email, password });
     } else {
-      this.addUser({name, email});
+      this.addUser({name, email, password});
     }
   }
 
@@ -52,16 +53,20 @@ export class FormContainer extends Component {
   }
 
   addUser = async user => {
-    const { name, email } = user;
     const validation = await api.addUser(user);
-    this.props.captureUser({ name, email, id: validation.id });
+    this.props.captureUser({ ...user, id: validation.id });
+    this.setState({
+      email: '',
+      password: '',
+      loggedIn: true
+    });
   }
 
   render() {
-    const {name, email, password, errorMessage} = this.state;
+    const {name, email, password, errorMessage, loggedIn} = this.state;
     const {id} = this.props.match.params;
-    return (
-      <Form 
+    return loggedIn ? <Redirect to="/" /> :
+    (<Form 
         email={email}
         errorMessage={errorMessage}
         handleChange={this.handleChange}
