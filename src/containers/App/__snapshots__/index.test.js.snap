@@ -7,6 +7,7 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <App
     captureUser={[Function]}
     loadCards={[Function]}
+    logOutUser={[Function]}
     user={Object {}}
 />,
   Symbol(enzyme.__renderer__): Object {
@@ -34,14 +35,14 @@ ShallowWrapper {
                     <NavLink
                               activeClassName="active"
                               ariaCurrent="true"
-                              to="/signup"
+                              to="/forms/signup"
                     >
                               Sign Up
                     </NavLink>
                     <NavLink
                               activeClassName="active"
                               ariaCurrent="true"
-                              to="/login"
+                              to="/forms/login"
                     >
                               Log In
                     </NavLink>
@@ -62,12 +63,7 @@ ShallowWrapper {
           />
           <Route
                     exact={true}
-                    path="/login"
-                    render={[Function]}
-          />
-          <Route
-                    exact={true}
-                    path="/signup"
+                    path="/forms/:id"
                     render={[Function]}
           />
           <Route
@@ -96,14 +92,14 @@ ShallowWrapper {
               <NavLink
                             activeClassName="active"
                             ariaCurrent="true"
-                            to="/signup"
+                            to="/forms/signup"
               >
                             Sign Up
               </NavLink>
               <NavLink
                             activeClassName="active"
                             ariaCurrent="true"
-                            to="/login"
+                            to="/forms/login"
               >
                             Log In
               </NavLink>
@@ -141,14 +137,14 @@ ShallowWrapper {
                 <NavLink
                   activeClassName="active"
                   ariaCurrent="true"
-                  to="/signup"
+                  to="/forms/signup"
 >
                   Sign Up
 </NavLink>,
                 <NavLink
                   activeClassName="active"
                   ariaCurrent="true"
-                  to="/login"
+                  to="/forms/login"
 >
                   Log In
 </NavLink>,
@@ -164,7 +160,7 @@ ShallowWrapper {
                   "activeClassName": "active",
                   "ariaCurrent": "true",
                   "children": "Sign Up",
-                  "to": "/signup",
+                  "to": "/forms/signup",
                 },
                 "ref": null,
                 "rendered": "Sign Up",
@@ -178,7 +174,7 @@ ShallowWrapper {
                   "activeClassName": "active",
                   "ariaCurrent": "true",
                   "children": "Log In",
-                  "to": "/login",
+                  "to": "/forms/login",
                 },
                 "ref": null,
                 "rendered": "Log In",
@@ -217,12 +213,7 @@ ShallowWrapper {
 />,
             <Route
               exact={true}
-              path="/login"
-              render={[Function]}
-/>,
-            <Route
-              exact={true}
-              path="/signup"
+              path="/forms/:id"
               render={[Function]}
 />,
             <Route
@@ -253,20 +244,7 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "exact": true,
-              "path": "/login",
-              "render": [Function],
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "class",
-            "props": Object {
-              "exact": true,
-              "path": "/signup",
+              "path": "/forms/:id",
               "render": [Function],
             },
             "ref": null,
@@ -311,14 +289,14 @@ ShallowWrapper {
                         <NavLink
                                     activeClassName="active"
                                     ariaCurrent="true"
-                                    to="/signup"
+                                    to="/forms/signup"
                         >
                                     Sign Up
                         </NavLink>
                         <NavLink
                                     activeClassName="active"
                                     ariaCurrent="true"
-                                    to="/login"
+                                    to="/forms/login"
                         >
                                     Log In
                         </NavLink>
@@ -339,12 +317,7 @@ ShallowWrapper {
             />
             <Route
                         exact={true}
-                        path="/login"
-                        render={[Function]}
-            />
-            <Route
-                        exact={true}
-                        path="/signup"
+                        path="/forms/:id"
                         render={[Function]}
             />
             <Route
@@ -373,14 +346,14 @@ ShallowWrapper {
                 <NavLink
                                 activeClassName="active"
                                 ariaCurrent="true"
-                                to="/signup"
+                                to="/forms/signup"
                 >
                                 Sign Up
                 </NavLink>
                 <NavLink
                                 activeClassName="active"
                                 ariaCurrent="true"
-                                to="/login"
+                                to="/forms/login"
                 >
                                 Log In
                 </NavLink>
@@ -418,14 +391,14 @@ ShallowWrapper {
                   <NavLink
                     activeClassName="active"
                     ariaCurrent="true"
-                    to="/signup"
+                    to="/forms/signup"
 >
                     Sign Up
 </NavLink>,
                   <NavLink
                     activeClassName="active"
                     ariaCurrent="true"
-                    to="/login"
+                    to="/forms/login"
 >
                     Log In
 </NavLink>,
@@ -441,7 +414,7 @@ ShallowWrapper {
                     "activeClassName": "active",
                     "ariaCurrent": "true",
                     "children": "Sign Up",
-                    "to": "/signup",
+                    "to": "/forms/signup",
                   },
                   "ref": null,
                   "rendered": "Sign Up",
@@ -455,7 +428,7 @@ ShallowWrapper {
                     "activeClassName": "active",
                     "ariaCurrent": "true",
                     "children": "Log In",
-                    "to": "/login",
+                    "to": "/forms/login",
                   },
                   "ref": null,
                   "rendered": "Log In",
@@ -494,12 +467,7 @@ ShallowWrapper {
 />,
               <Route
                 exact={true}
-                path="/login"
-                render={[Function]}
-/>,
-              <Route
-                exact={true}
-                path="/signup"
+                path="/forms/:id"
                 render={[Function]}
 />,
               <Route
@@ -530,20 +498,7 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "exact": true,
-                "path": "/login",
-                "render": [Function],
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "class",
-              "props": Object {
-                "exact": true,
-                "path": "/signup",
+                "path": "/forms/:id",
                 "render": [Function],
               },
               "ref": null,

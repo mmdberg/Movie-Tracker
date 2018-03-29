@@ -6,10 +6,17 @@ import mockMovies from '../../mockData';
 
 describe('App', () => {
   let wrapper;
-
+  const mockLoadCards = jest.fn();
+  const mockCaptureUser = jest.fn();
+  const mockLogOutUser = jest.fn();
+  
   beforeEach( () => {
     wrapper = shallow(
-      <App user={{}} loadCards={jest.fn()} captureUser={jest.fn()}/>,
+      <App 
+        user={{}}
+        loadCards={mockLoadCards}
+        captureUser={mockCaptureUser}
+        logOutUser={mockLogOutUser}/>,
       { disableLifecycleMethods: true });
   });
 

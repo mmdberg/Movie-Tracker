@@ -26,7 +26,7 @@ export const addUser = async (user) => {
     const parsed = await response.json();
     return parsed;
   } catch (error) {
-    console.log({error});
+    return error;
   }
 
 };
@@ -41,4 +41,4 @@ export const signIn = async (credentials) => {
   });
   const parsedUser = await response.json();
   return parsedUser;
-}
+};
