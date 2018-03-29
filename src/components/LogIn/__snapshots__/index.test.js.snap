@@ -21,12 +21,14 @@ ShallowWrapper {
         <input
           name="email"
           onChange={[Function]}
+          placeholder="email"
           type="email"
           value=""
 />,
         <input
           name="password"
           onChange={[Function]}
+          placeholder="password"
           type="password"
           value=""
 />,
@@ -36,6 +38,7 @@ ShallowWrapper {
           Log In
 </button>,
       ],
+      "onSubmit": [Function],
     },
     "ref": null,
     "rendered": Array [
@@ -46,6 +49,7 @@ ShallowWrapper {
         "props": Object {
           "name": "email",
           "onChange": [Function],
+          "placeholder": "email",
           "type": "email",
           "value": "",
         },
@@ -60,6 +64,7 @@ ShallowWrapper {
         "props": Object {
           "name": "password",
           "onChange": [Function],
+          "placeholder": "password",
           "type": "password",
           "value": "",
         },
@@ -92,12 +97,14 @@ ShallowWrapper {
           <input
             name="email"
             onChange={[Function]}
+            placeholder="email"
             type="email"
             value=""
 />,
           <input
             name="password"
             onChange={[Function]}
+            placeholder="password"
             type="password"
             value=""
 />,
@@ -107,6 +114,7 @@ ShallowWrapper {
             Log In
 </button>,
         ],
+        "onSubmit": [Function],
       },
       "ref": null,
       "rendered": Array [
@@ -117,6 +125,7 @@ ShallowWrapper {
           "props": Object {
             "name": "email",
             "onChange": [Function],
+            "placeholder": "email",
             "type": "email",
             "value": "",
           },
@@ -131,6 +140,7 @@ ShallowWrapper {
           "props": Object {
             "name": "password",
             "onChange": [Function],
+            "placeholder": "password",
             "type": "password",
             "value": "",
           },

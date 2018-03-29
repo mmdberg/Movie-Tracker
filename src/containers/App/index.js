@@ -23,8 +23,9 @@ export class App extends Component {
     this.props.captureUser({name, email, id: validation.id});
   }
 
-  logIn = credentials => {
-    
+  logIn = async credentials => {
+    const validation = await api.signIn(credentials);
+    this.props.captureUser(validation.data);
   }
 
   logOut = () => {
@@ -55,7 +56,8 @@ export class App extends Component {
         </header>
         <Switch>
           <Route exact path='/' component={CardContainer}/>
-          <Route exact path='/login' render={() => <LogIn />} />
+          <Route exact path='/login' render={() =>
+            <LogIn logIn={this.logIn}/>} />
           <Route exact path='/signup' render={() =>
             <SignUp addUser={this.addUser} /> } />
           <Route exact path='/favorites/' component={Favorite}/>
