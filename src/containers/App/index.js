@@ -7,7 +7,7 @@ import './styles.css';
 import CardContainer from '../CardContainer';
 import Favorite from '../Favorites';
 import { Route, Switch, NavLink, withRouter } from 'react-router-dom';
-import Login from '../../components/Login';
+import SignUp from '../../components/SignUp';
 
 export class App extends Component {
 
@@ -45,7 +45,7 @@ export class App extends Component {
         <Switch>
           <Route exact path='/' component={CardContainer}/>
           <Route exact path='/login/' render={() =>
-            <Login addUser={this.addUser} /> } />
+            <SignUp addUser={this.addUser} /> } />
           <Route exact path='/favorites/' component={Favorite}/>
         </Switch>
       </div>
