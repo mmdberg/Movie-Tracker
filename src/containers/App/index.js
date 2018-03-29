@@ -23,6 +23,10 @@ export class App extends Component {
     this.props.captureUser({name, email, id: validation.id});
   }
 
+  logIn = credentials => {
+    
+  }
+
   logOut = () => {
     this.props.logOutUser()
   }

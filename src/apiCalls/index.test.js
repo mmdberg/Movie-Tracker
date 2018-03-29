@@ -38,14 +38,14 @@ describe('addUser', () => {
       password: 'taco'
     };
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-      ok:true, 
+      ok:true,
       json: () => Promise.resolve()
     }));
   });
 
   it('should call fetch with the correct params', () => {
     const expected = [
-      '/api/users/new/', 
+      '/api/users/new/',
       {
         method: 'POST',
         body: JSON.stringify(mockUser),
@@ -59,4 +59,33 @@ describe('addUser', () => {
 
     expect(window.fetch).toHaveBeenCalledWith(...expected);
   });
+
+  describe('signIn', () => {
+    const mockCredentials = {
+      email: 'taco@taco.taco',
+      password: 'taco'
+    }
+
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      ok:true,
+      json: () => Promise.resolve()
+    }));
+
+    it('should call fetch with the correct params', () => {
+      const expected = [
+        '/api/users',
+        {
+          method: 'POST',
+          body: JSON.stringify(mockCredentials),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }
+      ];
+      api.signIn(mockCredentials);
+
+      expect(window.fetch).toHaveBeenCalledWith(...expected);
+    });
+  });
+
 });

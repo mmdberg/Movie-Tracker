@@ -11,12 +11,12 @@ export const getMovies = async () => {
 
 export const addUser = async (user) => {
   try {
-    const response = await fetch('/api/users/new/', 
+    const response = await fetch('/api/users/new/',
       {
         method: 'POST',
         body: JSON.stringify({
-          name: user.name, 
-          email: user.email, 
+          name: user.name,
+          email: user.email,
           password: user.password
         }),
         headers: {
@@ -30,3 +30,20 @@ export const addUser = async (user) => {
   }
 
 };
+
+export const signIn = async (credentials) => {
+  try {
+    const response = await fetch('/api/users',
+    {
+    method: 'POST',
+    body: JSON.stringify(credentials),
+    headers: {
+      'Content-Type': 'application/json'
+      }
+    });
+    const parsedUser = await response.json();
+    return parsedUser;
+  } catch (error) {
+    console.log(error);
+  }
+}
