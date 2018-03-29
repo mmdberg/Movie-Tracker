@@ -10,12 +10,13 @@ export const Card = ({information, addFavorite}) => {
   return (
     <article 
       style={{backgroundImage}} 
-      onClick={() => addFavorite(information)} 
+ 
       className="movie-card">
       <h3>{title}</h3>
       <p>Released: {releaseDate}</p>
       <p>Rating: {voteAverage}</p>
       <p>{overview}</p>
+      <button onClick={() => addFavorite(information)}>Favorite</button>
     </article>
   );
 };
