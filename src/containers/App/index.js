@@ -17,6 +17,7 @@ export class App extends Component {
   }
 
   logOut = () => {
+    this.props.changeLogStatus(false);
     this.props.logOutUser();
   }
 
@@ -60,7 +61,8 @@ export const mapDispatchToProps = dispatch => {
   return {
     loadCards: movies => dispatch(actions.loadCards(movies)),
     captureUser: user => dispatch(actions.captureUser(user)),
-    logOutUser: () => dispatch(actions.logOutUser())
+    logOutUser: () => dispatch(actions.logOutUser()),
+    changeLogStatus: (boolean) => dispatch(actions.changeLogStatus(boolean))
   };
 };
 

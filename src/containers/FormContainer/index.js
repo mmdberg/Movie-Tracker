@@ -38,6 +38,7 @@ export class FormContainer extends Component {
     try {
       const validation = await api.signIn(credentials);
       this.props.captureUser(validation.data);
+      this.props.changeLogStatus(true);
       this.setState({
         email: '',
         password: '',
@@ -65,6 +66,7 @@ export class FormContainer extends Component {
     } else {
       const newUser = await api.addUser(user);
       this.props.captureUser({ ...user, id: newUser.id });
+      this.props.changeLogStatus(true);
       this.setState({
         email: '',
         password: '',
@@ -91,7 +93,8 @@ export class FormContainer extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  captureUser: user => dispatch(actions.captureUser(user))
+  captureUser: user => dispatch(actions.captureUser(user)),
+  changeLogStatus: boolean => dispatch(actions.changeLogStatus(boolean))
 });
 
 FormContainer.propTypes = {

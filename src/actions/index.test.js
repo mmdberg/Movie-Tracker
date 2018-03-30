@@ -44,4 +44,16 @@ describe('Actions', () => {
     });
   });
 
+  describe('CHANGE_LOG_STATUS', () => {
+    it('should return action type change log status', () => {
+      const expected = { 
+        type: "CHANGE_LOG_STATUS",
+        status: true 
+      };
+
+      expect(actions.changeLogStatus(true)).toEqual(expected)
+    })
+
+  })
+
 });

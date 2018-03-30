@@ -18,7 +18,7 @@ describe('Card', () => {
   });
 
   it('should call addFavorites with the right params on click', () => {
-    wrapper.find('article').simulate('click');
+    wrapper.find('button').simulate('click');
     expect(mockAddFavorite).toHaveBeenCalledWith(movie);
 
   });
