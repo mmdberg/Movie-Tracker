@@ -5,10 +5,12 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <FormContainer
+    captureUser={[Function]}
+    changeLogStatus={[Function]}
     match={
         Object {
             "params": Object {
-              "id": 1,
+              "id": "",
             },
           }
     }
@@ -31,7 +33,7 @@ ShallowWrapper {
       "handleSubmit": [Function],
       "name": "",
       "password": "",
-      "routeId": 1,
+      "routeId": "",
     },
     "ref": null,
     "rendered": null,
@@ -49,7 +51,7 @@ ShallowWrapper {
         "handleSubmit": [Function],
         "name": "",
         "password": "",
-        "routeId": 1,
+        "routeId": "",
       },
       "ref": null,
       "rendered": null,

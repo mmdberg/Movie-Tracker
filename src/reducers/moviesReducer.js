@@ -1,7 +1,7 @@
-const moviesReducer = (state = [], actions) => {
-  switch (actions.type) {
+const moviesReducer = (state = [], action) => {
+  switch (action.type) {
   case 'LOAD_CARDS':
-    return actions.movies;
+    return action.movies;
   default:
     return state;
   }

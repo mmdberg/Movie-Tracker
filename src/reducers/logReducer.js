@@ -1,10 +1,10 @@
-const logReducer = (state = false, actions) => {
-  switch (actions.type) {
-    case 'CHANGE_LOG_STATUS':
-      return actions.status; 
-    default: 
-      return state;
+const logReducer = (state = false, action) => {
+  switch (action.type) {
+  case 'CHANGE_LOG_STATUS':
+    return action.status; 
+  default: 
+    return state;
   }
-}
+};
 
 export default logReducer;

@@ -9,6 +9,7 @@ describe('App', () => {
   const mockLoadCards = jest.fn();
   const mockCaptureUser = jest.fn();
   const mockLogOutUser = jest.fn();
+  const mockChangeLogStatus = jest.fn();
   
   beforeEach( () => {
     wrapper = shallow(
@@ -16,7 +17,9 @@ describe('App', () => {
         user={{}}
         loadCards={mockLoadCards}
         captureUser={mockCaptureUser}
-        logOutUser={mockLogOutUser}/>,
+        logOutUser={mockLogOutUser}
+        changeLogStatus={mockChangeLogStatus}
+      />,
       { disableLifecycleMethods: true });
   });
 

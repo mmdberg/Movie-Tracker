@@ -12,7 +12,11 @@ describe('Card Container', () => {
     const mockAddFavorite = jest.fn();
     const movies = helper.moviesWrangler(mockData.mockMovies);
     wrapper = shallow(
-      <CardContainer movies={movies} handleClick={mockAddFavorite}/>
+      <CardContainer 
+        movies={movies} 
+        addFavorite={mockAddFavorite}
+        logStatus={true}
+      />
     );
   });
 

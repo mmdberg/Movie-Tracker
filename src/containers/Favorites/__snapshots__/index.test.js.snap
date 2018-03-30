@@ -1,10 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Favorite should match the snapshot 1`] = `
+exports[`Favorites should match the snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Unknown
+    addFavorite={[Function]}
     favorites={
         Array [
             Object {
@@ -17,7 +18,6 @@ ShallowWrapper {
             },
           ]
     }
-    handleClick={[Function]}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -33,7 +33,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <Unknown
-          addFavorite={undefined}
+          addFavorite={[Function]}
           information={
                     Object {
                               "id": 437670,
@@ -55,7 +55,7 @@ ShallowWrapper {
         "key": "437670",
         "nodeType": "function",
         "props": Object {
-          "addFavorite": undefined,
+          "addFavorite": [Function],
           "information": Object {
             "id": 437670,
             "overview": "A comedy that follows an con who lands a position at a",
@@ -80,7 +80,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Unknown
-            addFavorite={undefined}
+            addFavorite={[Function]}
             information={
                         Object {
                                     "id": 437670,
@@ -102,7 +102,7 @@ ShallowWrapper {
           "key": "437670",
           "nodeType": "function",
           "props": Object {
-            "addFavorite": undefined,
+            "addFavorite": [Function],
             "information": Object {
               "id": 437670,
               "overview": "A comedy that follows an con who lands a position at a",

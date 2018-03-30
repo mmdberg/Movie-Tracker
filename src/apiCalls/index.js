@@ -9,7 +9,7 @@ export const getMovies = async () => {
   return helper.moviesWrangler(movies.results);
 };
 
-export const addUser = async (user) => {
+export const addUser = async user => {
   try {
     const response = await fetch('/api/users/new/',
       {
@@ -31,7 +31,7 @@ export const addUser = async (user) => {
 
 };
 
-export const signIn = async (credentials) => {
+export const signIn = async credentials => {
   const response = await fetch('/api/users/', {
     method: 'POST',
     body: JSON.stringify(credentials),
@@ -46,10 +46,10 @@ export const signIn = async (credentials) => {
 
 export const getUsers = async () => {
   try {
-    const response = await fetch('/api/users')
-    const users = await response.json()
-    return users
+    const response = await fetch('/api/users');
+    const users = await response.json();
+    return users;
   } catch (error) {
-    console.log(error)
+    return error;
   }
-}
+};
