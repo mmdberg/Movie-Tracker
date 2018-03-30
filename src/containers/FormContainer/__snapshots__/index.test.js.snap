@@ -10,7 +10,7 @@ ShallowWrapper {
     match={
         Object {
             "params": Object {
-              "id": "",
+              "id": "login",
             },
           }
     }
@@ -33,7 +33,7 @@ ShallowWrapper {
       "handleSubmit": [Function],
       "name": "",
       "password": "",
-      "routeId": "",
+      "routeId": "login",
     },
     "ref": null,
     "rendered": null,
@@ -51,7 +51,7 @@ ShallowWrapper {
         "handleSubmit": [Function],
         "name": "",
         "password": "",
-        "routeId": "",
+        "routeId": "login",
       },
       "ref": null,
       "rendered": null,
