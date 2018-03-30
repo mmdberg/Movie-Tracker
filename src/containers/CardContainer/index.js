@@ -5,9 +5,9 @@ import { connect } from 'react-redux';
 import { Card } from '../../components/Card';
 import * as actions from '../../actions/';
 
-export const CardContainer = ({movies, handleClick}) => {
+export const CardContainer = ({movies, addFavorite, logStatus}) => {
   const moviesList = movies.map(movie => 
-    <Card information={movie} addFavorite={handleClick} key={movie.id}/>);
+    <Card information={movie} addFavorite={addFavorite} logStatus={logStatus} key={movie.id}/>);
   return (
     <div className="card-container">
       {moviesList}
@@ -16,11 +16,12 @@ export const CardContainer = ({movies, handleClick}) => {
 };
 
 export const mapStateToProps = state => ({
-  movies: state.movies
+  movies: state.movies,
+  logStatus: state.logStatus
 });
 
 export const mapDispatchToState = dispatch => ({
-  handleClick: movie => dispatch(actions.addFavorite(movie))
+  addFavorite: movie => dispatch(actions.addFavorite(movie))
 });
 
 export default connect(mapStateToProps, mapDispatchToState)(CardContainer);
@@ -33,5 +34,5 @@ CardContainer.propTypes = {
     voteAverage: PropTypes.number.isRequired,
     overview: PropTypes.string.isRequired
   })),
-  handleClick: PropTypes.func
+  addFavorite: PropTypes.func
 };

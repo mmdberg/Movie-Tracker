@@ -42,3 +42,14 @@ export const signIn = async (credentials) => {
   const parsedUser = await response.json();
   return parsedUser;
 };
+
+
+export const getUsers = async () => {
+  try {
+    const response = await fetch('/api/users')
+    const users = await response.json()
+    return users
+  } catch (error) {
+    console.log(error)
+  }
+}

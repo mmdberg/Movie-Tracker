@@ -5,9 +5,9 @@ import { connect } from 'react-redux';
 import { Card } from '../../components/Card';
 import * as actions from '../../actions/';
 
-export const Favorites = ({favorites, handleClick}) => {
+export const Favorites = ({favorites, addFavorite}) => {
   const favoritesList = favorites.map(movie => 
-    <Card information={movie} addFavorite={handleClick} key={movie.id}/>);
+    <Card information={movie} addFavorite={addFavorite} key={movie.id}/>);
   return (
     <div className='favorites-container'>
       {favoritesList}
@@ -20,12 +20,12 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  handleClick: movie => dispatch(actions.addFavorite(movie))
+  addFavorite: movie => dispatch(actions.addFavorite(movie))
 });
 
 export default connect(mapStateToProps)(Favorites);
 
 Favorites.propTypes = {
   favorites: PropTypes.array.isRequired,
-  handleClick: PropTypes.func.isRequired
+  addFavorite: PropTypes.func.isRequired
 };
