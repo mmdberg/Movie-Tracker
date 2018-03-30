@@ -86,4 +86,7 @@ describe('addUser', () => {
     });
   });
 
+  //get users
+  //add favorite
+
 });

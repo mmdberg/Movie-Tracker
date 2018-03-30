@@ -6,6 +6,9 @@ import { Card } from '../../components/Card';
 import * as actions from '../../actions/';
 
 export const Favorites = ({ favorites, addFavorite }) => {
+
+//need to pass remove function to these cards
+
   const favoritesList = favorites.map(movie => 
     <Card information={movie} addFavorite={addFavorite} key={movie.id}/>
   );

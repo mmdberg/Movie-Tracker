@@ -4,12 +4,21 @@ import './styles.css';
 import { connect } from 'react-redux';
 import { Card } from '../../components/Card';
 import * as actions from '../../actions/';
+import * as api from '../../apiCalls'
 
-export const CardContainer = ({ movies, addFavorite, logStatus }) => {
+export const CardContainer = ({ movies, addFavorite, logStatus, user }) => {
+  
+  const handleFavorite = async (movie) => {
+    addFavorite(movie);
+    const response = await api.addFavorite(movie, user);
+    const movieId = response.id;
+    console.log(movieId)
+  };
+
   const moviesList = movies.map(movie => 
     <Card 
       information={movie} 
-      addFavorite={addFavorite} 
+      addFavorite={handleFavorite} 
       logStatus={logStatus} 
       key={movie.id} 
     />
@@ -24,7 +33,8 @@ export const CardContainer = ({ movies, addFavorite, logStatus }) => {
 
 export const mapStateToProps = state => ({
   movies: state.movies,
-  logStatus: state.logStatus
+  logStatus: state.logStatus,
+  user: state.user
 });
 
 export const mapDispatchToState = dispatch => ({

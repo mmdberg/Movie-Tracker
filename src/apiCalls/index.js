@@ -26,7 +26,7 @@ export const addUser = async user => {
     const parsed = await response.json();
     return parsed;
   } catch (error) {
-    return error;
+    console.log('add user error', error);
   }
 
 };
@@ -50,6 +50,32 @@ export const getUsers = async () => {
     const users = await response.json();
     return users;
   } catch (error) {
-    return error;
+    console.log('get users error:', error);
   }
 };
+
+export const addFavorite = async (movie, user) => {
+  const movieObject = { 
+    movie_id: movie.id,
+    user_id: user.id,
+    title: movie.title,
+    poster_path: movie.posterPath,
+    release_date: movie.releaseDate,
+    vote_average: movie.voteAverage,
+    overview: movie.overview
+  }
+  try {const response = await fetch('/api/users/favorites/new', {
+    method: 'POST',
+    body: JSON.stringify(movieObject),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  console.log('response', response)
+  const favoriteResponse = await response.json()
+  console.log('favoriteResponse', favoriteResponse)
+  return favoriteResponse
+} catch (error) {
+  console.log('add favorite error:', error);
+}
+}
