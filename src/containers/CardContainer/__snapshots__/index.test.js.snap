@@ -44,6 +44,7 @@ ShallowWrapper {
                               "voteAverage": 6.2,
                             }
           }
+          logStatus={undefined}
 />,
       ],
       "className": "card-container",
@@ -64,6 +65,7 @@ ShallowWrapper {
             "title": "Suck Me Shakespeer 3",
             "voteAverage": 6.2,
           },
+          "logStatus": undefined,
         },
         "ref": null,
         "rendered": null,
@@ -91,6 +93,7 @@ ShallowWrapper {
                                     "voteAverage": 6.2,
                                   }
             }
+            logStatus={undefined}
 />,
         ],
         "className": "card-container",
@@ -111,6 +114,7 @@ ShallowWrapper {
               "title": "Suck Me Shakespeer 3",
               "voteAverage": 6.2,
             },
+            "logStatus": undefined,
           },
           "ref": null,
           "rendered": null,

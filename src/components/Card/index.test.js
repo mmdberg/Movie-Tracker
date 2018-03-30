@@ -9,7 +9,7 @@ describe('Card', () => {
   const mockAddFavorite = jest.fn();
   beforeEach(() => {
     wrapper = shallow(
-      <Card information={movie} addFavorite={mockAddFavorite} />
+      <Card information={movie} addFavorite={mockAddFavorite} logStatus={true}/>
     );
   });
 

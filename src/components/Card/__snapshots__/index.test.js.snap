@@ -16,6 +16,7 @@ ShallowWrapper {
             "voteAverage": 6.2,
           }
     }
+    logStatus={true}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
