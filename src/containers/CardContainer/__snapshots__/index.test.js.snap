@@ -5,7 +5,8 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Unknown
-    handleClick={[Function]}
+    addFavorite={[Function]}
+    logStatus={true}
     movies={
         Array [
             Object {
@@ -33,7 +34,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <Unknown
-          addFavorite={undefined}
+          addFavorite={[Function]}
           information={
                     Object {
                               "id": 437670,
@@ -44,7 +45,7 @@ ShallowWrapper {
                               "voteAverage": 6.2,
                             }
           }
-          logStatus={undefined}
+          logStatus={true}
 />,
       ],
       "className": "card-container",
@@ -56,7 +57,7 @@ ShallowWrapper {
         "key": "437670",
         "nodeType": "function",
         "props": Object {
-          "addFavorite": undefined,
+          "addFavorite": [Function],
           "information": Object {
             "id": 437670,
             "overview": "A comedy that follows an con who lands a position at a",
@@ -65,7 +66,7 @@ ShallowWrapper {
             "title": "Suck Me Shakespeer 3",
             "voteAverage": 6.2,
           },
-          "logStatus": undefined,
+          "logStatus": true,
         },
         "ref": null,
         "rendered": null,
@@ -82,7 +83,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Unknown
-            addFavorite={undefined}
+            addFavorite={[Function]}
             information={
                         Object {
                                     "id": 437670,
@@ -93,7 +94,7 @@ ShallowWrapper {
                                     "voteAverage": 6.2,
                                   }
             }
-            logStatus={undefined}
+            logStatus={true}
 />,
         ],
         "className": "card-container",
@@ -105,7 +106,7 @@ ShallowWrapper {
           "key": "437670",
           "nodeType": "function",
           "props": Object {
-            "addFavorite": undefined,
+            "addFavorite": [Function],
             "information": Object {
               "id": 437670,
               "overview": "A comedy that follows an con who lands a position at a",
@@ -114,7 +115,7 @@ ShallowWrapper {
               "title": "Suck Me Shakespeer 3",
               "voteAverage": 6.2,
             },
-            "logStatus": undefined,
+            "logStatus": true,
           },
           "ref": null,
           "rendered": null,

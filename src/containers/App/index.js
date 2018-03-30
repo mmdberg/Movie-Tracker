@@ -32,13 +32,12 @@ export class App extends Component {
                 <NavLink to='/favorites/'>Favorites</NavLink>
                 <button onClick={() => this.logOut()}>Log Out</button>
               </div>
-            ):
-              (
-                <div>
-                  <NavLink to='/forms/signup'>Sign Up</NavLink>
-                  <NavLink to='/forms/login'>Log In</NavLink>
-                </div>
-              )
+            ) : (
+              <div>
+                <NavLink to='/forms/signup'>Sign Up</NavLink>
+                <NavLink to='/forms/login'>Log In</NavLink>
+              </div>
+            )
           }
           <NavLink to='/'>Home</NavLink>
         </header>
@@ -62,7 +61,7 @@ export const mapDispatchToProps = dispatch => {
     loadCards: movies => dispatch(actions.loadCards(movies)),
     captureUser: user => dispatch(actions.captureUser(user)),
     logOutUser: () => dispatch(actions.logOutUser()),
-    changeLogStatus: (boolean) => dispatch(actions.changeLogStatus(boolean))
+    changeLogStatus: boolean => dispatch(actions.changeLogStatus(boolean))
   };
 };
 
@@ -74,7 +73,8 @@ App.propTypes = {
     email: PropTypes.string,
     id: PropTypes.number
   }),
-  logOutUser: PropTypes.func.isRequired
+  logOutUser: PropTypes.func.isRequired,
+  changeLogStatus: PropTypes.func.isRequired
 };
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

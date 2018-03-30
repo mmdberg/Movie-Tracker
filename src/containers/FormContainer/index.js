@@ -18,7 +18,7 @@ export class FormContainer extends Component {
     };
   }
 
-  handleChange = (event) => {
+  handleChange = event => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   }
@@ -30,7 +30,7 @@ export class FormContainer extends Component {
     if (id === 'login') {
       this.logIn({ email, password });
     } else {
-      this.addUser({name, email, password});
+      this.addUser({ name, email, password });
     }
   }
 
@@ -54,15 +54,19 @@ export class FormContainer extends Component {
   }
 
   addUser = async user => {
-    const userList = await api.getUsers()
-    const validation = userList.data.find(registeredUser => user.email === registeredUser.email)
+    const userList = await api.getUsers();
+    const validation = userList.data.find(registeredUser => 
+      user.email === registeredUser.email
+    );
+
     if (validation) {
       this.setState({
         name: '',
         email: '',
         password: '',
-        errorMessage: 'This email has already been used. Please log in or use a new email'
-      })
+        errorMessage: 
+          'This email has already been used. Please log in or use a new email'
+      });
     } else {
       const newUser = await api.addUser(user);
       this.props.captureUser({ ...user, id: newUser.id });
@@ -76,10 +80,10 @@ export class FormContainer extends Component {
   }
 
   render() {
-    const {name, email, password, errorMessage, loggedIn} = this.state;
-    const {id} = this.props.match.params;
-    return loggedIn ? <Redirect to="/" /> :
-    (<Form 
+    const { name, email, password, errorMessage, loggedIn } = this.state;
+    const { id } = this.props.match.params;
+    return loggedIn ? <Redirect to="/" /> : ( 
+      <Form 
         email={email}
         errorMessage={errorMessage}
         handleChange={this.handleChange}
@@ -99,7 +103,8 @@ const mapDispatchToProps = dispatch => ({
 
 FormContainer.propTypes = {
   captureUser: PropTypes.func.isRequired,
-  match: PropTypes.object.isRequired
+  match: PropTypes.object.isRequired,
+  changeLogStatus: PropTypes.func.isRequired
 };
 
 export default connect(null, mapDispatchToProps)(FormContainer);

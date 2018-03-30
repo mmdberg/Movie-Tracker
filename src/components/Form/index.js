@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Form = (
   {errorMessage, name, email, password, routeId, handleChange, handleSubmit}
@@ -33,6 +34,16 @@ const Form = (
       <p>{errorMessage}</p>
     </form>
   );
+};
+
+Form.propTypes = {
+  errorMessage: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  password: PropTypes.string.isRequired,
+  routeId: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired
 };
 
 export default Form;

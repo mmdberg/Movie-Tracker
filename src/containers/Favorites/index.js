@@ -5,9 +5,11 @@ import { connect } from 'react-redux';
 import { Card } from '../../components/Card';
 import * as actions from '../../actions/';
 
-export const Favorites = ({favorites, addFavorite}) => {
+export const Favorites = ({ favorites, addFavorite }) => {
   const favoritesList = favorites.map(movie => 
-    <Card information={movie} addFavorite={addFavorite} key={movie.id}/>);
+    <Card information={movie} addFavorite={addFavorite} key={movie.id}/>
+  );
+  
   return (
     <div className='favorites-container'>
       {favoritesList}

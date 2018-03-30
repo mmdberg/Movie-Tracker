@@ -2,16 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.css';
 
-export const Card = ({information, addFavorite, logStatus}) => {
+export const Card = ({ information, addFavorite, logStatus }) => {
   const { title, releaseDate, overview, posterPath, voteAverage } = information;
   const backgroundImage = `url(https://image.tmdb.org/t/p/w500/${posterPath})`;
   const handleClick = () => {
     if (logStatus) { 
-      addFavorite(information)
+      addFavorite(information);
     } else {
-      alert('Please Log In to Add A Favorite')
+      alert('Please Log In to Add A Favorite');
     }
-  }
+  };
+  
   return (
     <article 
       style={{backgroundImage}} 
@@ -33,7 +34,8 @@ Card.propTypes = {
     posterPath: PropTypes.string.isRequired,
     voteAverage: PropTypes.number.isRequired
   }),
-  addFavorite: PropTypes.func.isRequired
+  addFavorite: PropTypes.func.isRequired,
+  logStatus: PropTypes.bool.isRequired
 };
 
 

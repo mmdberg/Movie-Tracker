@@ -12,12 +12,11 @@ const devTools = window.__REDUX_DEVTOOLS_EXTENSION__
 
 const store = createStore(rootReducer, devTools);
 
-const router = (
+ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
       <App />
     </BrowserRouter>
   </Provider>
+  , document.getElementById('root')
 );
-
-ReactDOM.render(router, document.getElementById('root'));

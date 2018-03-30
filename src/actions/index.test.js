@@ -50,10 +50,9 @@ describe('Actions', () => {
         type: "CHANGE_LOG_STATUS",
         status: true 
       };
+      expect(actions.changeLogStatus(true)).toEqual(expected);
+    });
 
-      expect(actions.changeLogStatus(true)).toEqual(expected)
-    })
-
-  })
+  });
 
 });
