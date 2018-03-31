@@ -35,6 +35,7 @@ describe('FormContainer', () => {
       loggedIn: false,
       errorMessage: ''
     };
+
     expect(wrapper.state()).toEqual(expected);
   });
 
@@ -45,6 +46,7 @@ describe('FormContainer', () => {
         value: 'taco@taco'
       }
     };
+
     wrapper.instance().handleChange(mockEvent);
     expect(wrapper.state('email')).toEqual('taco@taco');
   });
@@ -55,6 +57,7 @@ describe('FormContainer', () => {
       email: 'taco@taco',
       password: 'taco'
     };
+
     wrapper.setState(expected);
     wrapper.instance().logIn = jest.fn();
     wrapper.instance().handleSubmit(mockEvent);
@@ -76,6 +79,7 @@ describe('FormContainer', () => {
         captureUser={mockCaptureUser}
         changeLogStatus={mockChangeLogStatus}
       />);
+
     wrapper.setState(expected);
     wrapper.instance().addUser = jest.fn();
     wrapper.instance().handleSubmit(mockEvent);
@@ -88,10 +92,18 @@ describe('FormContainer', () => {
       password: 'taco'
     };
 
-    it('should update error message in state on error', async () => {
+    it('should update error message in state and reset inputs on error', async () => {
+      const expected = {
+        name: '',
+        email: '',
+        password: '',
+        loggedIn: false,
+        errorMessage: 'Email and password do not match'
+      }
+
       await wrapper.instance().logIn(mockCredential);
-      expect(wrapper.state('errorMessage'))
-        .toEqual('Email and password do not match');
+      expect(wrapper.state())
+        .toEqual(expected);
     });
 
     it('should call signIn with the right params', () => {
@@ -129,6 +141,86 @@ describe('FormContainer', () => {
       });
       await wrapper.instance().logIn(mockCredential);
       expect(wrapper.state()).toEqual(expected);
+    });
+  });
+
+  describe('Add User', () => {
+    let mockMatch;
+    let wrapper;
+    const mockUser = {
+      email: 'taco@taco',
+      name: 'taco',
+      password: 'taco'
+    };
+    const mockUser2 = {
+      email: 'pizza@pizza',
+      name: 'pizza',
+      password: 'pizza'
+    }
+
+    beforeEach(() => {
+      mockMatch = { params: { id: 'signup'}};
+      wrapper = shallow(
+        <FormContainer 
+          match={mockMatch}
+          captureUser={mockCaptureUser}
+          changeLogStatus={mockChangeLogStatus}
+        />
+      );
+    });
+
+    it('should call getUsers', () => {
+      wrapper.instance().addUser(mockUser);
+      expect(api.getUsers).toHaveBeenCalled();
+    });
+
+    it('should update errorMessage and reset inputs if user email has been used', async () => {
+      const expected = {
+        name: '',
+        email: '',
+        loggedIn: false,
+        password: '',
+        errorMessage: 
+          'This email has already been used. Please log in or use a new email'
+      }
+      wrapper.setState({
+        name: 'cheese',
+        email: 'cheese@cheese'
+      })
+      await wrapper.instance().addUser(mockUser);
+      expect(wrapper.state()).toEqual(expected)
+    });
+
+    it('should call addUser with right params if user email has not been used', async () => {
+      await wrapper.instance().addUser(mockUser2);
+      expect(api.addUser).toHaveBeenCalledWith(mockUser2)
+    });
+
+    it('should call captureUser with the right params for new user', () => {
+      wrapper.instance().addUser(mockUser2);
+      expect(mockCaptureUser).toHaveBeenCalledWith({...mockUser2, id: 10})
+    });
+
+    it('should call changeLogStatus with the right params', () => {
+      wrapper.instance().addUser(mockUser2);
+      expect(mockChangeLogStatus).toHaveBeenCalledWith(true);
+    });
+
+    it('should reset inputs and set loggedIn state to true', async () => {
+      const expected = {
+        name: '',
+        email: '',
+        password: '',
+        loggedIn: true,
+        errorMessage: ''
+      }
+      wrapper.setState({
+        name: 'cheese',
+        email: 'cheese@cheese'
+      })
+      await wrapper.instance().addUser(mockUser2);
+      expect(wrapper.state()).toEqual(expected)
+
     });
   });
 });
