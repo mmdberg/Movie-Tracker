@@ -93,7 +93,7 @@ describe('FormContainer', () => {
       password: 'taco'
     };
 
-    it('should update error message in state and reset inputs on error', async () => {
+    it('should update error message and reset inputs on error', async () => {
       const expected = {
         name: '',
         email: '',

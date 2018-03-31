@@ -16,7 +16,6 @@ export const CardContainer = (
     addFavorite(movie);
     const response = await api.addFavorite(movie, user);
     const movieId = response.id;
-    console.log(movieId);
   };
 
   const cardCreator = source => source.map(movie =>
