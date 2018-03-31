@@ -28,7 +28,7 @@ export class FormContainer extends Component {
     const { email, password, name } = this.state;
     const { id } = this.props.match.params;
     if (id === 'login') {
-      this.logIn({ email, password });
+      this.logIn({ email: email.toLowerCase(), password });
     } else {
       this.addUser({ name, email, password });
     }
