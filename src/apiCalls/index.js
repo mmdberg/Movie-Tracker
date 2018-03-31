@@ -2,13 +2,15 @@ import apiKey from '../private/apiKey.js';
 import * as helper from '../helpers';
 
 export const getMovies = async () => {
-  const root = 'https://api.themoviedb.org/3/';
-  const response =
-    await fetch(`${root}movie/upcoming?api_key=${apiKey}&language=en-US`);
-  const movies = await response.json();
-  const movieWrang = helper.moviesWrangler(movies.results);
-  console.log('moviewrang', movieWrang);
-  return movieWrang;
+  try { 
+    const root = 'https://api.themoviedb.org/3/';
+    const response =
+      await fetch(`${root}movie/upcoming?api_key=${apiKey}&language=en-US`);
+    const movies = await response.json();
+    return helper.moviesWrangler(movies.results);
+  } catch (error) {
+    throw new Error('Unable to get movie data');
+  }
 };
 
 export const addUser = async user => {
@@ -28,7 +30,7 @@ export const addUser = async user => {
     const parsed = await response.json();
     return parsed;
   } catch (error) {
-    console.log('add user error', error);
+    throw new Error('Unable to add user');
   }
 
 };
@@ -52,7 +54,7 @@ export const getUsers = async () => {
     const users = await response.json();
     return users;
   } catch (error) {
-    console.log('get users error:', error);
+    throw new Error('Unable to get users');
   }
 };
 
@@ -61,7 +63,6 @@ export const getUserFavorites = async (id) => {
     const response = await fetch(`/api/users/${id}/favorites`);
     const parsedResponse = await response.json();
     const wrangler = helper.moviesWrangler(parsedResponse.data);
-    console.log('wrang', wrangler);
     return wrangler;
   } catch (error) {
     console.log('get user favorites', error);
@@ -88,12 +89,10 @@ export const addFavorite = async (movie, user) => {
         'Content-Type': 'application/json'
       }
     });
-    console.log('response', response);
     const favoriteResponse = await response.json();
-    console.log('favoriteResponse', favoriteResponse);
     return favoriteResponse;
   } catch (error) {
-    console.log('add favorite error:', error);
+    throw new Error('Unable to add favorite');
   }
 };
 
@@ -106,9 +105,10 @@ export const deleteFavorite = async (movie, user) => {
         'Content-Type': 'application/json'
       }
     });
-    const validation = response.json();
+    const validation = await response.json();
     return validation;
   } catch (error) {
-    return error;
+    console.log(error);
+    // throw new Error('Unable to delete favorite');
   }
 };

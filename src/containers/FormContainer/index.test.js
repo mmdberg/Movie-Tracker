@@ -93,7 +93,7 @@ describe('FormContainer', () => {
       password: 'taco'
     };
 
-    it('should update error message in state and reset inputs on error', async () => {
+    it('should update error message and reset inputs on error', async () => {
       const expected = {
         name: '',
         email: '',
@@ -175,7 +175,7 @@ describe('FormContainer', () => {
       expect(api.getUsers).toHaveBeenCalled();
     });
 
-    it('should update errorMessage and reset inputs if user email has been used', async () => {
+    it('should update errorMessage and inputs if email is used', async () => {
       const expected = {
         name: '',
         email: '',
@@ -192,7 +192,7 @@ describe('FormContainer', () => {
       expect(wrapper.state()).toEqual(expected);
     });
 
-    it('should call addUser with right params if user email has not been used', async () => {
+    it('should call addUser with right params if email is used', async () => {
       await wrapper.instance().addUser(mockUser2);
       expect(api.addUser).toHaveBeenCalledWith(mockUser2);
     });
