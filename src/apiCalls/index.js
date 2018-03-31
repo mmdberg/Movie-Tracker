@@ -52,7 +52,7 @@ export const getUsers = async () => {
     const users = await response.json();
     return users;
   } catch (error) {
-    console.log('get users error:', error);
+    throw new Error('Unable to get users');
   }
 };
 
@@ -106,9 +106,10 @@ export const deleteFavorite = async (movie, user) => {
         'Content-Type': 'application/json'
       }
     });
-    const validation = response.json();
+    const validation = await response.json();
     return validation;
   } catch (error) {
-    return error;
+    console.log(error)
+    // throw new Error('Unable to delete favorite');
   }
 };

@@ -14,10 +14,10 @@ describe('getMovies', () => {
   });
 
   it('should call fetch with the right parameters', () => {
+    const root = 'https://api.themoviedb.org/3/';
+    const expected = `${root}movie/upcoming?api_key=${apiKey}&language=en-US`;
+
     api.getMovies();
-    /*eslint-disable max-len*/
-    const expected = `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&language=en-US`;
-    /*eslint-enable max-len*/
     expect(window.fetch).toHaveBeenCalledWith(expected);
   });
 
@@ -56,9 +56,10 @@ describe('addUser', () => {
     ];
 
     api.addUser(mockUser);
-
     expect(window.fetch).toHaveBeenCalledWith(...expected);
   });
+
+});
 
   describe('signIn', () => {
     const mockCredentials = {
@@ -86,15 +87,38 @@ describe('addUser', () => {
     });
   });
 
+  describe('getUsers', () => {
+    it('should call fetch with the right parameters', () => {
+      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        ok:true,
+        json: () => Promise.resolve()
+      }));
+      api.getUsers()
+      expect(window.fetch).toHaveBeenCalledWith('/api/users')
+    });
+
+    it('should return error message on error', () => {
+      window.fetch = jest.fn().mockImplementation(() => Promise.reject({
+        status: 500
+      }));
+      const expected = new Error('Unable to get users')
+      expect(api.getUsers()).rejects.toEqual(expected)
+    });
+  });
+
+
+  //add favorite
+
   describe('deleteFavorite', () => {
     const mockUser = {id: 1};
     const mockMovie = {id: 2};
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       ok: true,
-      json: () => Promise.resolve()
+      json: () => Promise.resolve([{user: 1, movie: 2}])
     }));
+    //resolve to what validation is
 
-    it('should return an error if appropriate', async () => {
+    it.skip('should be called with the right params', () => {
       const expected = ['/api/1/favorites/2', {
         method: 'POST',
         body: JSON.stringify({ user: 1, movie: 2 }),
@@ -105,9 +129,13 @@ describe('addUser', () => {
       api.deleteFavorite(mockMovie, mockUser);
       expect(window.fetch).toHaveBeenCalledWith(...expected);
     });
+
+    it.skip('should return error message on error', () => {
+      window.fetch = jest.fn().mockImplementation(() => Promise.reject({
+        status: 500
+      }));
+      const expected = new Error('Unable to delete favorite')
+      expect(api.deleteFavorite(mockMovie, mockUser)).rejects.toEqual(expected)
+    })
   });
 
-  //get users
-  //add favorite
-
-});
