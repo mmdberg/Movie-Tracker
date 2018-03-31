@@ -11,10 +11,17 @@ export const CardContainer = (
   const { path } = match;
   let moviesList;
   
+  const handleFavorite = async (movie) => {
+    addFavorite(movie);
+    const response = await api.addFavorite(movie, user);
+    const movieId = response.id;
+    console.log(movieId);
+  };
+
   const cardCreator = source => source.map(movie =>
     <Card
       information={movie}
-      addFavorite={addFavorite}
+      handleFavorite={handleFavorite}
       logStatus={logStatus}
       key={movie.id}
     />
@@ -26,13 +33,6 @@ export const CardContainer = (
     moviesList = cardCreator(movies);
   }
 
-  const handleFavorite = async (movie) => {
-    addFavorite(movie);
-    const response = await api.addFavorite(movie, user);
-    const movieId = response.id;
-    console.log(movieId);
-  };
-  
   return (
     <div className="card-container">
       { moviesList }
