@@ -1,7 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Limelight');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+
+
 .movie-card {
-  width: 30%;
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 18em;
+  color: white;
+  margin: 2em;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.movie-card:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  transform: scale(1.1);
+}
+
+.movie-title {
+  width: 96%;
+  padding: .2em;
+  margin: 0 auto;
+  font-family: 'Limelight', cursive;
+   background: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    )
+}
+
+.movie-overview {
+  padding: .5em;
+  font-family: 'Open Sans Condensed', sans-serif;
+  line-height: 1;
+  height: 2em;
+  overflow: scroll;
+  margin-top: auto;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+    )
+}
+
+.favorite-btn {
+  margin-top: 0;
+  background-image: url('./film.png');
   background-size: cover;
   background-repeat: no-repeat;
-  height: 53em;
-  color: white;
+  color: #fff;
+  height: 2.5em;
+}
+
+.favorite-btn:hover {
+  border: 2px solid blue;
+}
+
+.info {
+  margin: 0;
 }

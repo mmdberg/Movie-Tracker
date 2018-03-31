@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink, Route, Switch, withRouter } from 'react-router-dom';
+import { NavLink, Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import CardContainer from '../CardContainer';
@@ -25,27 +25,30 @@ export class App extends Component {
   logOut = () => {
     this.props.changeLogStatus(false);
     this.props.logOutUser();
+
   }
 
   render = () => {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Welcome to Movie Tracker</h1>
-          <NavLink to='/'>Home</NavLink>
-          {
-            this.props.user.email ? (
-              <div>
-                <NavLink to='/favorites'>Favorites</NavLink>
-                <button onClick={() => this.logOut()}>Log Out</button>
-              </div>
-            ) : (
-              <div>
-                <NavLink to='/forms/signup'>Sign Up</NavLink>
-                <NavLink to='/forms/login'>Log In</NavLink>
-              </div>
-            )
-          }
+          <h1 className="App-title">MOVIE TRACKER</h1>
+          <nav className='nav-bar'>
+            <NavLink to='/'>Home</NavLink>
+            {
+              this.props.user.email ? (
+                <div>
+                  <NavLink to='/favorites'>Favorites</NavLink>
+                  <button onClick={() => this.logOut()}>Log Out</button>
+                </div>
+              ) : (
+                <div>
+                  <NavLink to='/forms/signup'>Sign Up</NavLink>
+                  <NavLink to='/forms/login'>Log In</NavLink>
+                </div>
+              )
+            }
+          </nav>
         </header>
         <Switch>
           <Route exact path='/' render={({ match }) =>
