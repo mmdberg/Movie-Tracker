@@ -89,12 +89,10 @@ export const addFavorite = async (movie, user) => {
         'Content-Type': 'application/json'
       }
     });
-    console.log('response', response);
     const favoriteResponse = await response.json();
-    console.log('favoriteResponse', favoriteResponse);
     return favoriteResponse;
   } catch (error) {
-    console.log('add favorite error:', error);
+    throw new Error('Unable to add favorite');
   }
 };
 

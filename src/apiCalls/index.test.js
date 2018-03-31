@@ -108,6 +108,7 @@ describe('getUsers', () => {
     api.getUsers();
     expect(window.fetch).toHaveBeenCalledWith('/api/users');
   });
+
   it('should return error message on error', () => {
     window.fetch = jest.fn().mockImplementation(() => Promise.reject({
       status: 500
@@ -117,8 +118,47 @@ describe('getUsers', () => {
   });
 });
 
+describe('addFavorite', () => {
+  const mockUser = {
+    email: 'taco@taco',
+    name: 'taco',
+    id: 2,
+    password: 'taco'
+  };
+  const movieObject = {
+    movie_id: 437670,
+    user_id: 2,
+    title: "Suck Me Shakespeer 3",
+    poster_path: "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
+    release_date: "2017-10-26",
+    vote_average: 6.2,
+    overview: "A comedy that follows an con who lands a position at a"
+  }
 
-//add favorite
+  it.skip('should call fetch with the right params', () => {
+    const expected = ['/api/users/favorites/new', {
+      method: 'POST',
+      body: JSON.stringify(movieObject),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }]
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      ok: true,
+      json: () => Promise.resolve({})
+    }));
+    api.addFavorite(movieObject, mockUser)
+    expect(window.fetch).toHaveBeenCalledWith(...expected)
+  });
+
+  it('should return error message on error', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.reject({
+      status: 500
+    }));
+    const expected = new Error('Unable to add favorite');
+    expect(api.addFavorite(movieObject, mockUser)).rejects.toEqual(expected);
+  });
+});
 
 describe('deleteFavorite', () => {
   const mockUser = {id: 1};
