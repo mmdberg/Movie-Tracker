@@ -29,13 +29,44 @@ describe('App', () => {
 });
 
 describe('mapDispatchToProps', () => {
-  it('should call dispatch with the right params', () => {
+  it('should call dispatch with the right params for loadCards', () => {
     const mockDispatch = jest.fn();
-
     const mapped = mapDispatchToProps(mockDispatch);
+    const expected = actions.loadCards(mockMovies);
+
     mapped.loadCards(mockMovies);
 
-    const expected = actions.loadCards(mockMovies);
+    expect(mockDispatch).toHaveBeenCalledWith(expected);
+  });
+
+  it('should call dispatch with the right params for captureUser', () => {
+    const mockUser = {name: 'taco', email: 'tac0@taco', password: 'burrito'};
+    const mockDispatch = jest.fn();
+    const mapped = mapDispatchToProps(mockDispatch);
+    const expected = actions.captureUser(mockUser);
+
+    mapped.captureUser(mockUser);
+
+    expect(mockDispatch).toHaveBeenCalledWith(expected);
+  });
+
+  it('should call dispatch with the right params for captureUser', () => {
+    const mockDispatch = jest.fn();
+    const mapped = mapDispatchToProps(mockDispatch);
+    const expected = actions.logOutUser();
+
+    mapped.logOutUser();
+
+    expect(mockDispatch).toHaveBeenCalledWith(expected);
+  });
+
+  it('should call dispatch with the right params for captureUser', () => {
+    const mockDispatch = jest.fn();
+    const mapped = mapDispatchToProps(mockDispatch);
+    const expected = actions.logOutUser();
+
+    mapped.logOutUser();
+
     expect(mockDispatch).toHaveBeenCalledWith(expected);
   });
 });
