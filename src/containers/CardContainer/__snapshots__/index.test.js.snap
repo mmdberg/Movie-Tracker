@@ -52,7 +52,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <Unknown
-          addFavorite={[Function]}
+          handleFavorite={[Function]}
           information={
                     Object {
                               "id": 437670,
@@ -75,7 +75,7 @@ ShallowWrapper {
         "key": "437670",
         "nodeType": "function",
         "props": Object {
-          "addFavorite": [Function],
+          "handleFavorite": [Function],
           "information": Object {
             "id": 437670,
             "overview": "A comedy that follows an con who lands a position at a",
@@ -101,7 +101,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Unknown
-            addFavorite={[Function]}
+            handleFavorite={[Function]}
             information={
                         Object {
                                     "id": 437670,
@@ -124,7 +124,7 @@ ShallowWrapper {
           "key": "437670",
           "nodeType": "function",
           "props": Object {
-            "addFavorite": [Function],
+            "handleFavorite": [Function],
             "information": Object {
               "id": 437670,
               "overview": "A comedy that follows an con who lands a position at a",
@@ -194,7 +194,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <Unknown
-          addFavorite={[Function]}
+          handleFavorite={[Function]}
           information={
                     Object {
                               "id": 437670,
@@ -217,7 +217,7 @@ ShallowWrapper {
         "key": "437670",
         "nodeType": "function",
         "props": Object {
-          "addFavorite": [Function],
+          "handleFavorite": [Function],
           "information": Object {
             "id": 437670,
             "overview": "A comedy that follows an con who lands a position at a",
@@ -243,7 +243,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Unknown
-            addFavorite={[Function]}
+            handleFavorite={[Function]}
             information={
                         Object {
                                     "id": 437670,
@@ -266,7 +266,7 @@ ShallowWrapper {
           "key": "437670",
           "nodeType": "function",
           "props": Object {
-            "addFavorite": [Function],
+            "handleFavorite": [Function],
             "information": Object {
               "id": 437670,
               "overview": "A comedy that follows an con who lands a position at a",

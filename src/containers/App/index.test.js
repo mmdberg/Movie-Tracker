@@ -1,5 +1,5 @@
 import React from 'react';
-import { App, mapDispatchToProps } from './index';
+import { App, mapDispatchToProps, mapStateToProps } from './index';
 import { shallow } from 'enzyme';
 import * as actions from '../../actions';
 import mockMovies from '../../mockData';
@@ -68,5 +68,22 @@ describe('mapDispatchToProps', () => {
     mapped.logOutUser();
 
     expect(mockDispatch).toHaveBeenCalledWith(expected);
+  });
+
+  it('should call dispatch with the right params for captureUser', () => {
+    const mockDispatch = jest.fn();
+    const mapped = mapDispatchToProps(mockDispatch);
+    const expected = actions.changeLogStatus(false);
+
+    mapped.changeLogStatus(false);
+
+    expect(mockDispatch).toHaveBeenCalledWith(expected);
+  });
+
+  describe('mapStateToProps', () => {
+    it('should return an object with user and user state', () => {
+      const expected = {user: {name: 'tom'}};
+      expect(mapStateToProps({ user: { name: 'tom' } })).toEqual(expected);
+    });
   });
 });
