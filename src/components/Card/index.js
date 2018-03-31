@@ -35,7 +35,7 @@ Card.propTypes = {
     voteAverage: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number
-    ]),
+    ])
   }),
   handleFavorite: PropTypes.func.isRequired,
   logStatus: PropTypes.bool.isRequired

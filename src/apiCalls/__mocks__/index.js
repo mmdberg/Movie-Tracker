@@ -21,10 +21,10 @@ export const getUsers = jest.fn().mockImplementation(() => Promise.resolve({
     password: 'taco'
   }],
   message: 'Retrieved All Users'
-}))
+}));
 
 export const addUser = jest.fn().mockImplementation(() => Promise.resolve({
   id: 10,
   message:"New user created",
   status:"success"
-}))
+}));

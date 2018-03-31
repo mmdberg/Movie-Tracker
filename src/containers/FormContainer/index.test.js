@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { FormContainer, mapDispatchToProps } from './index';
 import * as api from '../../apiCalls';
+import * as actions from '../../actions';
 
 jest.mock('../../apiCalls');
 
@@ -224,13 +225,23 @@ describe('FormContainer', () => {
   });
 
   describe('mapDispatchToProps', () => {
+    const mockDispatch = jest.fn();
+    
     it('should call dispatch with right params for captureUser', () => {
-      const mockUser = {name: 'tim'};
-      const mockDispatch = jest.fn();
       const mapped = mapDispatchToProps(mockDispatch);
-      expect(mockDispatch).toHaveBeenCalledWith()
+      const mockUser = {name: 'tim'};
+      
+      mapped.captureUser(mockUser);
+
+      expect(mockDispatch).toHaveBeenCalledWith(actions.captureUser(mockUser));
+    });
+
+    it('should call dispatch with right params for changeLogStatus', () => {
+      const mapped = mapDispatchToProps(mockDispatch);
+
+      mapped.changeLogStatus(false);
+
+      expect(mockDispatch).toHaveBeenCalledWith(actions.changeLogStatus(false));
     });
   });
 });
-
-

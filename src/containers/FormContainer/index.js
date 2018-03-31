@@ -97,7 +97,7 @@ export class FormContainer extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   captureUser: user => dispatch(actions.captureUser(user)),
   changeLogStatus: boolean => dispatch(actions.changeLogStatus(boolean))
 });

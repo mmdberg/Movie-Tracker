@@ -7,8 +7,8 @@ export const getMovies = async () => {
     await fetch(`${root}movie/upcoming?api_key=${apiKey}&language=en-US`);
   const movies = await response.json();
   const movieWrang = helper.moviesWrangler(movies.results);
-  console.log('moviewrang', movieWrang)
-  return movieWrang
+  console.log('moviewrang', movieWrang);
+  return movieWrang;
 };
 
 export const addUser = async user => {
@@ -59,16 +59,17 @@ export const getUsers = async () => {
 export const getUserFavorites = async (id) => {
   try {
     const response = await fetch(`/api/users/${id}/favorites`);
-    const parsedResponse = await response.json()
+    const parsedResponse = await response.json();
     const wrangler = helper.moviesWrangler(parsedResponse.data);
-    console.log('wrang', wrangler)
+    console.log('wrang', wrangler);
     return wrangler;
   } catch (error) {
-    console.log('get user favorites', error)
+    console.log('get user favorites', error);
   }
-}
+};
 
 export const addFavorite = async (movie, user) => {
+  /*eslint-disable camelcase*/
   const movieObject = {
     movie_id: movie.id,
     user_id: user.id,
@@ -78,6 +79,7 @@ export const addFavorite = async (movie, user) => {
     vote_average: movie.voteAverage,
     overview: movie.overview
   };
+  /*eslint-enable camelcase*/
   try {
     const response = await fetch('/api/users/favorites/new', {
       method: 'POST',

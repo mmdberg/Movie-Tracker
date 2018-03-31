@@ -25,4 +25,4 @@ export const changeLogStatus = status => ({
 export const loadFavorites = favorites => ({
   type: 'LOAD_FAVORITES',
   favorites
-})
+});
