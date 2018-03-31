@@ -36,6 +36,7 @@ ShallowWrapper {
             },
           ]
     }
+    user={Object {}}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -177,6 +178,7 @@ ShallowWrapper {
             },
           ]
     }
+    user={Object {}}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],

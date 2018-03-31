@@ -19,6 +19,7 @@ describe('Card Container', () => {
         addFavorite={mockAddFavorite}
         logStatus={true}
         match={mockHomeMatch}
+        user={{}}
       />
     );
   });
@@ -35,6 +36,7 @@ describe('Card Container', () => {
         addFavorite={mockAddFavorite}
         logStatus={true}
         match={mockFavoritesMatch}
+        user={{}}
       />
     );
     expect(wrapper).toMatchSnapshot();
