@@ -86,6 +86,27 @@ describe('addUser', () => {
     });
   });
 
+  describe('deleteFavorite', () => {
+    const mockUser = {id: 1};
+    const mockMovie = {id: 2};
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      ok: true,
+      json: () => Promise.resolve()
+    }));
+
+    it('should return an error if appropriate', async () => {
+      const expected = ['/api/1/favorites/2', {
+        method: 'POST',
+        body: JSON.stringify({ user: 1, movie: 2 }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }]
+      api.deleteFavorite(mockMovie, mockUser);
+      expect(window.fetch).toHaveBeenCalledWith(...expected);
+    });
+  });
+
   //get users
   //add favorite
 

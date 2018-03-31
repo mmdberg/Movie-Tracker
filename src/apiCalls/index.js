@@ -63,19 +63,36 @@ export const addFavorite = async (movie, user) => {
     release_date: movie.releaseDate,
     vote_average: movie.voteAverage,
     overview: movie.overview
+  };
+  try { 
+    const response = await fetch('/api/users/favorites/new', {
+      method: 'POST',
+      body: JSON.stringify(movieObject),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    console.log('response', response);
+    const favoriteResponse = await response.json();
+    console.log('favoriteResponse', favoriteResponse);
+    return favoriteResponse;
+  } catch (error) {
+    console.log('add favorite error:', error);
   }
-  try {const response = await fetch('/api/users/favorites/new', {
-    method: 'POST',
-    body: JSON.stringify(movieObject),
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })
-  console.log('response', response)
-  const favoriteResponse = await response.json()
-  console.log('favoriteResponse', favoriteResponse)
-  return favoriteResponse
-} catch (error) {
-  console.log('add favorite error:', error);
-}
-}
+};
+
+export const deleteFavorite = async (movie, user) => {
+  try {
+    const response = await fetch(`/api/${user.id}/favorites/${movie.id}`, {
+      method: 'POST',
+      body: JSON.stringify({user: user.id, movie: movie.id}),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    const validation = response.json();
+    return validation;
+  } catch (error) {
+    return error;
+  }
+};
