@@ -72,6 +72,7 @@ export class FormContainer extends Component {
       this.props.captureUser({ ...user, id: newUser.id });
       this.props.changeLogStatus(true);
       this.setState({
+        name: '',
         email: '',
         password: '',
         loggedIn: true
