@@ -8,9 +8,10 @@ import * as api from '../../apiCalls';
 
 export const CardContainer = (
   { movies, addFavorite, logStatus, match, favorites, user }) => {
+
   const { path } = match;
   let moviesList;
-  
+
   const handleFavorite = async (movie) => {
     addFavorite(movie);
     const response = await api.addFavorite(movie, user);

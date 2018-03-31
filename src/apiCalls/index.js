@@ -6,7 +6,9 @@ export const getMovies = async () => {
   const response =
     await fetch(`${root}movie/upcoming?api_key=${apiKey}&language=en-US`);
   const movies = await response.json();
-  return helper.moviesWrangler(movies.results);
+  const movieWrang = helper.moviesWrangler(movies.results);
+  console.log('moviewrang', movieWrang)
+  return movieWrang
 };
 
 export const addUser = async user => {
@@ -54,8 +56,20 @@ export const getUsers = async () => {
   }
 };
 
+export const getUserFavorites = async (id) => {
+  try {
+    const response = await fetch(`/api/users/${id}/favorites`);
+    const parsedResponse = await response.json()
+    const wrangler = helper.moviesWrangler(parsedResponse.data);
+    console.log('wrang', wrangler)
+    return wrangler;
+  } catch (error) {
+    console.log('get user favorites', error)
+  }
+}
+
 export const addFavorite = async (movie, user) => {
-  const movieObject = { 
+  const movieObject = {
     movie_id: movie.id,
     user_id: user.id,
     title: movie.title,
@@ -64,7 +78,7 @@ export const addFavorite = async (movie, user) => {
     vote_average: movie.voteAverage,
     overview: movie.overview
   };
-  try { 
+  try {
     const response = await fetch('/api/users/favorites/new', {
       method: 'POST',
       body: JSON.stringify(movieObject),

@@ -15,6 +15,13 @@ export class App extends Component {
     this.props.loadCards(movies);
   }
 
+  componentDidUpdate = async (prevProps, prevState) => {
+    if (prevProps.user !== this.props.user) {
+      const userFavs = await api.getUserFavorites(this.props.user.id)
+      this.props.loadFavorites(userFavs)
+    }
+  }
+
   logOut = () => {
     this.props.changeLogStatus(false);
     this.props.logOutUser();
@@ -41,11 +48,11 @@ export class App extends Component {
           }
         </header>
         <Switch>
-          <Route exact path='/' render={({ match }) => 
+          <Route exact path='/' render={({ match }) =>
             <CardContainer match={match} /> } />
-          <Route path='/forms/:id' render={({ match }) => 
+          <Route path='/forms/:id' render={({ match }) =>
             <FormContainer match={match} /> } />
-          <Route exact path='/favorites' render={({ match }) => 
+          <Route exact path='/favorites' render={({ match }) =>
             <CardContainer match={match} /> } />
         </Switch>
       </div>
@@ -58,6 +65,7 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
+  loadFavorites: favorites => dispatch(actions.loadFavorites(favorites)),
   loadCards: movies => dispatch(actions.loadCards(movies)),
   captureUser: user => dispatch(actions.captureUser(user)),
   logOutUser: () => dispatch(actions.logOutUser()),
