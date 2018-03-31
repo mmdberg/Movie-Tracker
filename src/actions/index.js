@@ -21,3 +21,8 @@ export const changeLogStatus = status => ({
   type: 'CHANGE_LOG_STATUS',
   status
 });
+
+export const loadFavorites = favorites => ({
+  type: 'LOAD_FAVORITES',
+  favorites
+})
