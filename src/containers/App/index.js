@@ -17,8 +17,8 @@ export class App extends Component {
 
   componentDidUpdate = async (prevProps, prevState) => {
     if (prevProps.user !== this.props.user) {
-      const userFavs = await api.getUserFavorites(this.props.user.id)
-      this.props.loadFavorites(userFavs)
+      const userFavs = await api.getUserFavorites(this.props.user.id);
+      this.props.loadFavorites(userFavs);
     }
   }
 

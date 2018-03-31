@@ -48,11 +48,11 @@ export const mapStateToProps = state => ({
   favorites: state.favorites
 });
 
-export const mapDispatchToState = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   addFavorite: movie => dispatch(actions.addFavorite(movie))
 });
 
-export default connect(mapStateToProps, mapDispatchToState)(CardContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(CardContainer);
 
 CardContainer.propTypes = {
   movies: PropTypes.arrayOf(PropTypes.shape({

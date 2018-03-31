@@ -6,12 +6,12 @@ import * as mockData from '../../mockData';
 describe('Card', () => {
   let wrapper;
   const movie = mockData.mockMovie[0];
-  const mockAddFavorite = jest.fn();
+  const mockHandleFavorite = jest.fn();
   beforeEach(() => {
     wrapper = shallow(
       <Card 
         information={movie} 
-        addFavorite={mockAddFavorite} 
+        handleFavorite={mockHandleFavorite} 
         logStatus={true}
       />
     );
@@ -23,7 +23,7 @@ describe('Card', () => {
 
   it('should call addFavorites with the right params on click', () => {
     wrapper.find('button').simulate('click');
-    expect(mockAddFavorite).toHaveBeenCalledWith(movie);
+    expect(mockHandleFavorite).toHaveBeenCalledWith(movie);
 
   });
 });

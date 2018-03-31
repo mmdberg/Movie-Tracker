@@ -101,7 +101,7 @@ describe('addUser', () => {
         headers: {
           'Content-Type': 'application/json'
         }
-      }]
+      }];
       api.deleteFavorite(mockMovie, mockUser);
       expect(window.fetch).toHaveBeenCalledWith(...expected);
     });

@@ -1,7 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { FormContainer } from './index';
+import { FormContainer, mapDispatchToProps } from './index';
 import * as api from '../../apiCalls';
+import * as actions from '../../actions';
 
 jest.mock('../../apiCalls');
 
@@ -99,7 +100,7 @@ describe('FormContainer', () => {
         password: '',
         loggedIn: false,
         errorMessage: 'Email and password do not match'
-      }
+      };
 
       await wrapper.instance().logIn(mockCredential);
       expect(wrapper.state())
@@ -156,7 +157,7 @@ describe('FormContainer', () => {
       email: 'pizza@pizza',
       name: 'pizza',
       password: 'pizza'
-    }
+    };
 
     beforeEach(() => {
       mockMatch = { params: { id: 'signup'}};
@@ -182,23 +183,23 @@ describe('FormContainer', () => {
         password: '',
         errorMessage: 
           'This email has already been used. Please log in or use a new email'
-      }
+      };
       wrapper.setState({
         name: 'cheese',
         email: 'cheese@cheese'
-      })
+      });
       await wrapper.instance().addUser(mockUser);
-      expect(wrapper.state()).toEqual(expected)
+      expect(wrapper.state()).toEqual(expected);
     });
 
     it('should call addUser with right params if user email has not been used', async () => {
       await wrapper.instance().addUser(mockUser2);
-      expect(api.addUser).toHaveBeenCalledWith(mockUser2)
+      expect(api.addUser).toHaveBeenCalledWith(mockUser2);
     });
 
     it('should call captureUser with the right params for new user', () => {
       wrapper.instance().addUser(mockUser2);
-      expect(mockCaptureUser).toHaveBeenCalledWith({...mockUser2, id: 10})
+      expect(mockCaptureUser).toHaveBeenCalledWith({...mockUser2, id: 10});
     });
 
     it('should call changeLogStatus with the right params', () => {
@@ -213,14 +214,34 @@ describe('FormContainer', () => {
         password: '',
         loggedIn: true,
         errorMessage: ''
-      }
+      };
       wrapper.setState({
         name: 'cheese',
         email: 'cheese@cheese'
-      })
+      });
       await wrapper.instance().addUser(mockUser2);
-      expect(wrapper.state()).toEqual(expected)
+      expect(wrapper.state()).toEqual(expected);
+    });
+  });
 
+  describe('mapDispatchToProps', () => {
+    const mockDispatch = jest.fn();
+    
+    it('should call dispatch with right params for captureUser', () => {
+      const mapped = mapDispatchToProps(mockDispatch);
+      const mockUser = {name: 'tim'};
+      
+      mapped.captureUser(mockUser);
+
+      expect(mockDispatch).toHaveBeenCalledWith(actions.captureUser(mockUser));
+    });
+
+    it('should call dispatch with right params for changeLogStatus', () => {
+      const mapped = mapDispatchToProps(mockDispatch);
+
+      mapped.changeLogStatus(false);
+
+      expect(mockDispatch).toHaveBeenCalledWith(actions.changeLogStatus(false));
     });
   });
 });
