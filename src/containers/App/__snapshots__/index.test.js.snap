@@ -32,6 +32,13 @@ ShallowWrapper {
           >
                     Welcome to Movie Tracker
           </h1>
+          <NavLink
+                    activeClassName="active"
+                    ariaCurrent="true"
+                    to="/"
+          >
+                    Home
+          </NavLink>
           <div>
                     <NavLink
                               activeClassName="active"
@@ -48,29 +55,21 @@ ShallowWrapper {
                               Log In
                     </NavLink>
           </div>
-          <NavLink
-                    activeClassName="active"
-                    ariaCurrent="true"
-                    to="/"
-          >
-                    Home
-          </NavLink>
 </header>,
         <Switch>
           <Route
-                    component={[Function]}
                     exact={true}
                     path="/"
+                    render={[Function]}
           />
           <Route
-                    exact={true}
                     path="/forms/:id"
                     render={[Function]}
           />
           <Route
-                    component={[Function]}
                     exact={true}
-                    path="/favorites/"
+                    path="/favorites"
+                    render={[Function]}
           />
 </Switch>,
       ],
@@ -89,6 +88,13 @@ ShallowWrapper {
 >
               Welcome to Movie Tracker
 </h1>,
+            <NavLink
+              activeClassName="active"
+              ariaCurrent="true"
+              to="/"
+>
+              Home
+</NavLink>,
             <div>
               <NavLink
                             activeClassName="active"
@@ -105,13 +111,6 @@ ShallowWrapper {
                             Log In
               </NavLink>
 </div>,
-            <NavLink
-              activeClassName="active"
-              ariaCurrent="true"
-              to="/"
->
-              Home
-</NavLink>,
           ],
           "className": "App-header",
         },
@@ -128,6 +127,20 @@ ShallowWrapper {
             "ref": null,
             "rendered": "Welcome to Movie Tracker",
             "type": "h1",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "activeClassName": "active",
+              "ariaCurrent": "true",
+              "children": "Home",
+              "to": "/",
+            },
+            "ref": null,
+            "rendered": "Home",
+            "type": [Function],
           },
           Object {
             "instance": null,
@@ -184,20 +197,6 @@ ShallowWrapper {
             ],
             "type": "div",
           },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "activeClassName": "active",
-              "ariaCurrent": "true",
-              "children": "Home",
-              "to": "/",
-            },
-            "ref": null,
-            "rendered": "Home",
-            "type": [Function],
-          },
         ],
         "type": "header",
       },
@@ -208,19 +207,18 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <Route
-              component={[Function]}
               exact={true}
               path="/"
+              render={[Function]}
 />,
             <Route
-              exact={true}
               path="/forms/:id"
               render={[Function]}
 />,
             <Route
-              component={[Function]}
               exact={true}
-              path="/favorites/"
+              path="/favorites"
+              render={[Function]}
 />,
           ],
         },
@@ -231,9 +229,9 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "component": [Function],
               "exact": true,
               "path": "/",
+              "render": [Function],
             },
             "ref": null,
             "rendered": null,
@@ -244,7 +242,6 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "exact": true,
               "path": "/forms/:id",
               "render": [Function],
             },
@@ -257,9 +254,9 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
-              "component": [Function],
               "exact": true,
-              "path": "/favorites/",
+              "path": "/favorites",
+              "render": [Function],
             },
             "ref": null,
             "rendered": null,
@@ -286,6 +283,13 @@ ShallowWrapper {
             >
                         Welcome to Movie Tracker
             </h1>
+            <NavLink
+                        activeClassName="active"
+                        ariaCurrent="true"
+                        to="/"
+            >
+                        Home
+            </NavLink>
             <div>
                         <NavLink
                                     activeClassName="active"
@@ -302,29 +306,21 @@ ShallowWrapper {
                                     Log In
                         </NavLink>
             </div>
-            <NavLink
-                        activeClassName="active"
-                        ariaCurrent="true"
-                        to="/"
-            >
-                        Home
-            </NavLink>
 </header>,
           <Switch>
             <Route
-                        component={[Function]}
                         exact={true}
                         path="/"
+                        render={[Function]}
             />
             <Route
-                        exact={true}
                         path="/forms/:id"
                         render={[Function]}
             />
             <Route
-                        component={[Function]}
                         exact={true}
-                        path="/favorites/"
+                        path="/favorites"
+                        render={[Function]}
             />
 </Switch>,
         ],
@@ -343,6 +339,13 @@ ShallowWrapper {
 >
                 Welcome to Movie Tracker
 </h1>,
+              <NavLink
+                activeClassName="active"
+                ariaCurrent="true"
+                to="/"
+>
+                Home
+</NavLink>,
               <div>
                 <NavLink
                                 activeClassName="active"
@@ -359,13 +362,6 @@ ShallowWrapper {
                                 Log In
                 </NavLink>
 </div>,
-              <NavLink
-                activeClassName="active"
-                ariaCurrent="true"
-                to="/"
->
-                Home
-</NavLink>,
             ],
             "className": "App-header",
           },
@@ -382,6 +378,20 @@ ShallowWrapper {
               "ref": null,
               "rendered": "Welcome to Movie Tracker",
               "type": "h1",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "activeClassName": "active",
+                "ariaCurrent": "true",
+                "children": "Home",
+                "to": "/",
+              },
+              "ref": null,
+              "rendered": "Home",
+              "type": [Function],
             },
             Object {
               "instance": null,
@@ -438,20 +448,6 @@ ShallowWrapper {
               ],
               "type": "div",
             },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "activeClassName": "active",
-                "ariaCurrent": "true",
-                "children": "Home",
-                "to": "/",
-              },
-              "ref": null,
-              "rendered": "Home",
-              "type": [Function],
-            },
           ],
           "type": "header",
         },
@@ -462,19 +458,18 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <Route
-                component={[Function]}
                 exact={true}
                 path="/"
+                render={[Function]}
 />,
               <Route
-                exact={true}
                 path="/forms/:id"
                 render={[Function]}
 />,
               <Route
-                component={[Function]}
                 exact={true}
-                path="/favorites/"
+                path="/favorites"
+                render={[Function]}
 />,
             ],
           },
@@ -485,9 +480,9 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "component": [Function],
                 "exact": true,
                 "path": "/",
+                "render": [Function],
               },
               "ref": null,
               "rendered": null,
@@ -498,7 +493,6 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "exact": true,
                 "path": "/forms/:id",
                 "render": [Function],
               },
@@ -511,9 +505,9 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "class",
               "props": Object {
-                "component": [Function],
                 "exact": true,
-                "path": "/favorites/",
+                "path": "/favorites",
+                "render": [Function],
               },
               "ref": null,
               "rendered": null,
