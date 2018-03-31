@@ -29,7 +29,7 @@ export const addUser = async user => {
     const parsed = await response.json();
     return parsed;
   } catch (error) {
-    console.log('add user error', error);
+    throw new Error('Unable to add user')
   }
 
 };

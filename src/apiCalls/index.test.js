@@ -37,21 +37,17 @@ describe('getMovies', () => {
 });
 
 describe('addUser', () => {
-  let mockUser;
+  const mockUser = {
+    name: 'Stevo',
+    email: 'stevo@taco.com',
+    password: 'taco'
+  };
 
-  beforeEach(() => {
-    mockUser = {
-      name: 'Stevo',
-      email: 'stevo@taco.com',
-      password: 'taco'
-    };
-    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+  it('should call fetch with the correct params', () => {
+    window.fetch = jest.fn().mockImplementationOnce(() => Promise.resolve({
       ok:true,
       json: () => Promise.resolve()
     }));
-  });
-
-  it('should call fetch with the correct params', () => {
     const expected = [
       '/api/users/new/',
       {
@@ -62,9 +58,17 @@ describe('addUser', () => {
         }
       }
     ];
-
     api.addUser(mockUser);
     expect(window.fetch).toHaveBeenCalledWith(...expected);
+  });
+
+  it('should return error message on error', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.reject({
+      status: 500
+    }));
+    const expected = new Error('Unable to add user');
+
+    expect(api.addUser(mockUser)).rejects.toEqual(expected);
   });
 
 });
@@ -74,11 +78,12 @@ describe('signIn', () => {
     email: 'taco@taco.taco',
     password: 'taco'
   };
-  window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-    ok:true,
-    json: () => Promise.resolve()
-  }));
+  
   it('should call fetch with the correct params', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      ok:true,
+      json: () => Promise.resolve()
+    }));
     const expected = [
       '/api/users/',
       {
