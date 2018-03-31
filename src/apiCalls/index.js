@@ -2,7 +2,8 @@ import apiKey from '../private/apiKey.js';
 import * as helper from '../helpers';
 
 export const getMovies = async () => {
-  try { const root = 'https://api.themoviedb.org/3/';
+  try { 
+    const root = 'https://api.themoviedb.org/3/';
     const response =
       await fetch(`${root}movie/upcoming?api_key=${apiKey}&language=en-US`);
     const movies = await response.json();
@@ -29,7 +30,7 @@ export const addUser = async user => {
     const parsed = await response.json();
     return parsed;
   } catch (error) {
-    throw new Error('Unable to add user')
+    throw new Error('Unable to add user');
   }
 
 };
@@ -62,7 +63,6 @@ export const getUserFavorites = async (id) => {
     const response = await fetch(`/api/users/${id}/favorites`);
     const parsedResponse = await response.json();
     const wrangler = helper.moviesWrangler(parsedResponse.data);
-    console.log('wrang', wrangler);
     return wrangler;
   } catch (error) {
     console.log('get user favorites', error);
@@ -108,7 +108,7 @@ export const deleteFavorite = async (movie, user) => {
     const validation = await response.json();
     return validation;
   } catch (error) {
-    console.log(error)
+    console.log(error);
     // throw new Error('Unable to delete favorite');
   }
 };

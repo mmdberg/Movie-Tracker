@@ -126,6 +126,7 @@ describe('addFavorite', () => {
     password: 'taco'
   };
   const movieObject = {
+  /*eslint-disable camelcase*/
     movie_id: 437670,
     user_id: 2,
     title: "Suck Me Shakespeer 3",
@@ -133,7 +134,8 @@ describe('addFavorite', () => {
     release_date: "2017-10-26",
     vote_average: 6.2,
     overview: "A comedy that follows an con who lands a position at a"
-  }
+  };
+  /*eslint-enable camelcase*/
 
   it.skip('should call fetch with the right params', () => {
     const expected = ['/api/users/favorites/new', {
@@ -142,13 +144,13 @@ describe('addFavorite', () => {
       headers: {
         'Content-Type': 'application/json'
       }
-    }]
+    }];
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       ok: true,
       json: () => Promise.resolve({})
     }));
-    api.addFavorite(movieObject, mockUser)
-    expect(window.fetch).toHaveBeenCalledWith(...expected)
+    api.addFavorite(movieObject, mockUser);
+    expect(window.fetch).toHaveBeenCalledWith(...expected);
   });
 
   it('should return error message on error', () => {
@@ -201,9 +203,10 @@ describe('deleteFavorite', () => {
       window.fetch = jest.fn().mockImplementation(() => Promise.reject({
         status: 500
       }));
-      const expected = new Error('Unable to delete favorite')
-      expect(api.deleteFavorite(mockMovie, mockUser)).rejects.toEqual(expected)
-    })
+      const expected = new Error('Unable to delete favorite');
+      expect(api.deleteFavorite(mockMovie, mockUser))
+        .rejects.toEqual(expected);
+    });
   });
 });
 
