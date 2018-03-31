@@ -50,12 +50,12 @@ describe('FormContainer', () => {
   });
 
   it('should call logIn with right params if user is on login page', () => {
-    const mockEvent = { preventDefault: jest.fn() }
+    const mockEvent = { preventDefault: jest.fn() };
     let expected = {
       email: 'taco@taco',
       password: 'taco'
-    }
-    wrapper.setState(expected)
+    };
+    wrapper.setState(expected);
     wrapper.instance().logIn = jest.fn();
     wrapper.instance().handleSubmit(mockEvent);
     expect(wrapper.instance().logIn).toHaveBeenCalledWith(expected);
@@ -63,20 +63,20 @@ describe('FormContainer', () => {
   });
 
   it('should call addUser with right params if user is on signup page', () => {
-    const mockEvent = { preventDefault: jest.fn() }
+    const mockEvent = { preventDefault: jest.fn() };
     let mockMatch = { params: { id: 'signup'}};
     let expected = {
       name: 'Taco',
       email: 'taco@taco',
       password: 'taco'
-    }
+    };
     let wrapper = shallow(
       <FormContainer 
         match={mockMatch}
         captureUser={mockCaptureUser}
         changeLogStatus={mockChangeLogStatus}
-      />)
-    wrapper.setState(expected)
+      />);
+    wrapper.setState(expected);
     wrapper.instance().addUser = jest.fn();
     wrapper.instance().handleSubmit(mockEvent);
     expect(wrapper.instance().addUser).toHaveBeenCalledWith(expected);
@@ -105,9 +105,9 @@ describe('FormContainer', () => {
         name: 'taco',
         id: 2,
         password: 'taco'
-      }
+      };
       wrapper.instance().logIn(mockCredential);
-      expect(mockCaptureUser).toHaveBeenCalledWith(expected)
+      expect(mockCaptureUser).toHaveBeenCalledWith(expected);
     });
 
     it('should call changeLogStatus with the right params', () => {
@@ -126,11 +126,9 @@ describe('FormContainer', () => {
       wrapper.setState({
         email: 'taco@taco',
         password: 'taco'
-      })
+      });
       await wrapper.instance().logIn(mockCredential);
-      expect(wrapper.state()).toEqual(expected)
+      expect(wrapper.state()).toEqual(expected);
     });
-
   });
-
 });
