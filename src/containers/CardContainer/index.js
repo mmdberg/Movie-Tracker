@@ -4,37 +4,33 @@ import './styles.css';
 import { connect } from 'react-redux';
 import { Card } from '../../components/Card';
 import * as actions from '../../actions/';
-import * as api from '../../apiCalls'
+import * as api from '../../apiCalls';
 
 export const CardContainer = (
   { movies, addFavorite, logStatus, match, favorites, user }) => {
   const { path } = match;
   let moviesList;
+  
+  const cardCreator = source => source.map(movie =>
+    <Card
+      information={movie}
+      addFavorite={addFavorite}
+      logStatus={logStatus}
+      key={movie.id}
+    />
+  );
+
   if (path === "/favorites") {
-    moviesList = favorites.map(movie => 
-      <Card
-        information={movie}
-        addFavorite={addFavorite}
-        logStatus={logStatus}
-        key={movie.id}
-      />
-    );
+    moviesList = cardCreator(favorites);
   } else {
-    moviesList = movies.map(movie => 
-      <Card 
-        information={movie} 
-        addFavorite={addFavorite} 
-        logStatus={logStatus} 
-        key={movie.id} 
-      />
-    );
+    moviesList = cardCreator(movies);
   }
 
   const handleFavorite = async (movie) => {
     addFavorite(movie);
     const response = await api.addFavorite(movie, user);
     const movieId = response.id;
-    console.log(movieId)
+    console.log(movieId);
   };
   
   return (
