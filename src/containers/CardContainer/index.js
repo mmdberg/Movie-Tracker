@@ -8,9 +8,10 @@ import * as api from '../../apiCalls';
 
 export const CardContainer = (
   { movies, addFavorite, logStatus, match, favorites, user }) => {
+
   const { path } = match;
   let moviesList;
-  
+
   const cardCreator = source => source.map(movie =>
     <Card
       information={movie}
@@ -21,7 +22,7 @@ export const CardContainer = (
   );
 
   if (path === "/favorites") {
-    moviesList = cardCreator(favorites);
+    moviesList = cardCreator(favorites[0]);
   } else {
     moviesList = cardCreator(movies);
   }
@@ -32,7 +33,7 @@ export const CardContainer = (
     const movieId = response.id;
     console.log(movieId);
   };
-  
+
   return (
     <div className="card-container">
       { moviesList }

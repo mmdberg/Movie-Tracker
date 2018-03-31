@@ -2,20 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.css';
 
-export const Card = ({ information, addFavorite, logStatus }) => {
+export const Card = ({ information, addFavorite, logStatus, user }) => {
   const { title, releaseDate, overview, posterPath, voteAverage } = information;
   const backgroundImage = `url(https://image.tmdb.org/t/p/w500/${posterPath})`;
   const handleClick = () => {
-    if (logStatus) { 
-      addFavorite(information);
+    if (logStatus) {
+      addFavorite(information, user);
     } else {
       alert('Please Log In to Add A Favorite');
     }
   };
-  
+
   return (
-    <article 
-      style={{backgroundImage}} 
+    <article
+      style={{backgroundImage}}
       className="movie-card">
       <h3>{title}</h3>
       <p>Released: {releaseDate}</p>
@@ -32,13 +32,11 @@ Card.propTypes = {
     releaseDate: PropTypes.string.isRequired,
     overview: PropTypes.string.isRequired,
     posterPath: PropTypes.string.isRequired,
-    voteAverage: PropTypes.number.isRequired
+    voteAverage: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]),
   }),
   addFavorite: PropTypes.func.isRequired,
   logStatus: PropTypes.bool.isRequired
 };
-
-
-
-
-
