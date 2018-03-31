@@ -4,7 +4,6 @@ import { CardContainer } from './index.js';
 import * as mockData from '../../mockData/';
 import * as helper from '../../helpers/';
 
-
 describe('Card Container', () => {
   let wrapper;
 

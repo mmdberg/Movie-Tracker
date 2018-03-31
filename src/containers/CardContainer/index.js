@@ -6,23 +6,36 @@ import { Card } from '../../components/Card';
 import * as actions from '../../actions/';
 import * as api from '../../apiCalls'
 
-export const CardContainer = ({ movies, addFavorite, logStatus, user }) => {
-  
+export const CardContainer = (
+  { movies, addFavorite, logStatus, match, favorites, user }) => {
+  const { path } = match;
+  let moviesList;
+  if (path === "/favorites") {
+    moviesList = favorites.map(movie => 
+      <Card
+        information={movie}
+        addFavorite={addFavorite}
+        logStatus={logStatus}
+        key={movie.id}
+      />
+    );
+  } else {
+    moviesList = movies.map(movie => 
+      <Card 
+        information={movie} 
+        addFavorite={addFavorite} 
+        logStatus={logStatus} 
+        key={movie.id} 
+      />
+    );
+  }
+
   const handleFavorite = async (movie) => {
     addFavorite(movie);
     const response = await api.addFavorite(movie, user);
     const movieId = response.id;
     console.log(movieId)
   };
-
-  const moviesList = movies.map(movie => 
-    <Card 
-      information={movie} 
-      addFavorite={handleFavorite} 
-      logStatus={logStatus} 
-      key={movie.id} 
-    />
-  );
   
   return (
     <div className="card-container">
@@ -34,7 +47,8 @@ export const CardContainer = ({ movies, addFavorite, logStatus, user }) => {
 export const mapStateToProps = state => ({
   movies: state.movies,
   logStatus: state.logStatus,
-  user: state.user
+  user: state.user,
+  favorites: state.favorites
 });
 
 export const mapDispatchToState = dispatch => ({
@@ -52,5 +66,8 @@ CardContainer.propTypes = {
     overview: PropTypes.string.isRequired
   })),
   addFavorite: PropTypes.func.isRequired,
-  logStatus: PropTypes.bool.isRequired
+  logStatus: PropTypes.bool.isRequired,
+  favorites: PropTypes.array.isRequired,
+  match: PropTypes.object,
+  user: PropTypes.object.isRequired
 };

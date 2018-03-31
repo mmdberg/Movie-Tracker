@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import * as api from '../../apiCalls/';
+import { NavLink, Route, Switch, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import * as actions from '../../actions';
-import './styles.css';
+import PropTypes from 'prop-types';
 import CardContainer from '../CardContainer';
-import Favorite from '../Favorites';
-import { Route, Switch, NavLink, withRouter } from 'react-router-dom';
 import FormContainer from '../FormContainer';
+import * as actions from '../../actions';
+import * as api from '../../apiCalls/';
+import './styles.css';
 
 export class App extends Component {
 
@@ -26,10 +25,11 @@ export class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Welcome to Movie Tracker</h1>
+          <NavLink to='/'>Home</NavLink>
           {
             this.props.user.email ? (
               <div>
-                <NavLink to='/favorites/'>Favorites</NavLink>
+                <NavLink to='/favorites'>Favorites</NavLink>
                 <button onClick={() => this.logOut()}>Log Out</button>
               </div>
             ) : (
@@ -39,13 +39,14 @@ export class App extends Component {
               </div>
             )
           }
-          <NavLink to='/'>Home</NavLink>
         </header>
         <Switch>
-          <Route exact path='/' component={CardContainer}/>
-          <Route exact path='/forms/:id' render={({match}) => 
-            <FormContainer match={match}/>} />
-          <Route exact path='/favorites/' component={Favorite}/>
+          <Route exact path='/' render={({ match }) => 
+            <CardContainer match={match} /> } />
+          <Route path='/forms/:id' render={({ match }) => 
+            <FormContainer match={match} /> } />
+          <Route exact path='/favorites' render={({ match }) => 
+            <CardContainer match={match} /> } />
         </Switch>
       </div>
     );
@@ -56,14 +57,12 @@ export const mapStateToProps = state => ({
   user: state.user
 });
 
-export const mapDispatchToProps = dispatch => {
-  return {
-    loadCards: movies => dispatch(actions.loadCards(movies)),
-    captureUser: user => dispatch(actions.captureUser(user)),
-    logOutUser: () => dispatch(actions.logOutUser()),
-    changeLogStatus: boolean => dispatch(actions.changeLogStatus(boolean))
-  };
-};
+export const mapDispatchToProps = dispatch => ({
+  loadCards: movies => dispatch(actions.loadCards(movies)),
+  captureUser: user => dispatch(actions.captureUser(user)),
+  logOutUser: () => dispatch(actions.logOutUser()),
+  changeLogStatus: boolean => dispatch(actions.changeLogStatus(boolean))
+});
 
 App.propTypes = {
   loadCards: PropTypes.func.isRequired,
