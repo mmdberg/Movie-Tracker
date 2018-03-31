@@ -17,11 +17,11 @@ export const Card = ({ information, handleFavorite, logStatus }) => {
     <article
       style={{backgroundImage}}
       className="movie-card">
-      <h3>{title}</h3>
-      <p>Released: {releaseDate}</p>
-      <p>Rating: {voteAverage}</p>
-      <p>{overview}</p>
-      <button onClick={handleClick}>Favorite</button>
+      <h3 className="movie-title">{title}</h3>
+      <button className="favorite-btn" onClick={handleClick}>Favorite</button>
+      <p className="info">Released: {releaseDate}</p>
+      <p className="info">Rating: {voteAverage}</p>
+      <p className="movie-overview">{overview}</p>
     </article>
   );
 };

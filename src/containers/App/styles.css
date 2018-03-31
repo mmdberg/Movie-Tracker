@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Limelight');
+
 .App {
   text-align: center;
 }
@@ -8,7 +10,13 @@
 }
 
 .App-header {
-  background-color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url('./movie-seats.jpg');
+  background-size: cover;
+  background-position: bottom;
   height: 150px;
   padding: 20px;
   color: white;
@@ -16,13 +24,31 @@
 
 .App-title {
   font-size: 1.5em;
+  font-family: 'Limelight', cursive;
+  background: black;
+  padding: .5em;
+  width: 20%;
+  margin: 0 0 1.2em 1.2em;
 }
 
 .App-intro {
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 1.5em;
+}
+
+a {
+  text-decoration: none;
+  margin-left: 2em;
+}
+
+a:visited {
+  color: #78000F;
 }
