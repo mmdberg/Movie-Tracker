@@ -9,7 +9,7 @@ describe('moviesWrangler', () => {
       overview: "A comedy that follows an con who lands a position at a",
       posterPath: "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
       voteAverage: 6.2,
-      id: 437670
+      movieId: 437670
     }];
     const wrangledData = helpers.moviesWrangler(mockData.mockMovies);
     expect(wrangledData).toEqual(expected);

@@ -26,3 +26,8 @@ export const loadFavorites = favorites => ({
   type: 'LOAD_FAVORITES',
   favorites
 });
+
+export const removeFavorite = movieId => ({
+  type: 'REMOVE_FAVORITE',
+  movieId
+});

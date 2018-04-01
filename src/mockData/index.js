@@ -16,7 +16,7 @@ export const mockMovies = [{
 }];
 
 export const mockMovie = [{
-  "id": 437670,
+  "movieId": 437670,
   "voteAverage": 6.2,
   "title": "Suck Me Shakespeer 3",
   "posterPath": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",

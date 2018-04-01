@@ -12,4 +12,8 @@ describe('Favorites Reducer', () => {
       .toEqual([mockMovie]);
   });
 
+  it('should remove movie from favorites array', () => {
+    expect(favoritesReducer([{movieId: 1}], actions.removeFavorite(1)))
+      .toEqual([]);
+  });
 });

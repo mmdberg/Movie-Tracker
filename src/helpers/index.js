@@ -8,6 +8,18 @@ export const moviesWrangler = movieArray => {
     voteAverage: movie.vote_average,
     posterPath: movie.poster_path,
     overview: movie.overview,
-    id: movie.id
+    movieId: movie.id
+  }));
+};
+
+export const favoritesWrangler = movieArray => {
+  return movieArray.map(movie => ({
+    title: movie.title,
+    releaseDate: movie.release_date,
+    voteAverage: movie.vote_average,
+    posterPath: movie.poster_path,
+    overview: movie.overview,
+    movieId: movie.movie_id,
+    favId: movie.id
   }));
 };

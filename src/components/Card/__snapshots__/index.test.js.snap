@@ -8,7 +8,7 @@ ShallowWrapper {
     handleFavorite={[Function]}
     information={
         Object {
-            "id": 437670,
+            "movieId": 437670,
             "overview": "A comedy that follows an con who lands a position at a",
             "posterPath": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
             "releaseDate": "2017-10-26",
@@ -31,25 +31,34 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <h3>
+        <h3
+          className="movie-title"
+>
           Suck Me Shakespeer 3
 </h3>,
-        <p>
-          Released: 
-          2017-10-26
-</p>,
-        <p>
-          Rating: 
-          6.2
-</p>,
-        <p>
-          A comedy that follows an con who lands a position at a
-</p>,
         <button
+          className="favorite-btn"
           onClick={[Function]}
 >
           Favorite
 </button>,
+        <p
+          className="info"
+>
+          Released: 
+          2017-10-26
+</p>,
+        <p
+          className="info"
+>
+          Rating: 
+          6.2
+</p>,
+        <p
+          className="movie-overview"
+>
+          A comedy that follows an con who lands a position at a
+</p>,
       ],
       "className": "movie-card",
       "style": Object {
@@ -64,6 +73,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "Suck Me Shakespeer 3",
+          "className": "movie-title",
         },
         "ref": null,
         "rendered": "Suck Me Shakespeer 3",
@@ -74,10 +84,24 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "children": "Favorite",
+          "className": "favorite-btn",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Favorite",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
           "children": Array [
             "Released: ",
             "2017-10-26",
           ],
+          "className": "info",
         },
         "ref": null,
         "rendered": Array [
@@ -95,6 +119,7 @@ ShallowWrapper {
             "Rating: ",
             6.2,
           ],
+          "className": "info",
         },
         "ref": null,
         "rendered": Array [
@@ -109,22 +134,11 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "A comedy that follows an con who lands a position at a",
+          "className": "movie-overview",
         },
         "ref": null,
         "rendered": "A comedy that follows an con who lands a position at a",
         "type": "p",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Favorite",
-          "onClick": [Function],
-        },
-        "ref": null,
-        "rendered": "Favorite",
-        "type": "button",
       },
     ],
     "type": "article",
@@ -136,25 +150,34 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <h3>
+          <h3
+            className="movie-title"
+>
             Suck Me Shakespeer 3
 </h3>,
-          <p>
-            Released: 
-            2017-10-26
-</p>,
-          <p>
-            Rating: 
-            6.2
-</p>,
-          <p>
-            A comedy that follows an con who lands a position at a
-</p>,
           <button
+            className="favorite-btn"
             onClick={[Function]}
 >
             Favorite
 </button>,
+          <p
+            className="info"
+>
+            Released: 
+            2017-10-26
+</p>,
+          <p
+            className="info"
+>
+            Rating: 
+            6.2
+</p>,
+          <p
+            className="movie-overview"
+>
+            A comedy that follows an con who lands a position at a
+</p>,
         ],
         "className": "movie-card",
         "style": Object {
@@ -169,6 +192,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "Suck Me Shakespeer 3",
+            "className": "movie-title",
           },
           "ref": null,
           "rendered": "Suck Me Shakespeer 3",
@@ -179,10 +203,24 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "children": "Favorite",
+            "className": "favorite-btn",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Favorite",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
             "children": Array [
               "Released: ",
               "2017-10-26",
             ],
+            "className": "info",
           },
           "ref": null,
           "rendered": Array [
@@ -200,6 +238,7 @@ ShallowWrapper {
               "Rating: ",
               6.2,
             ],
+            "className": "info",
           },
           "ref": null,
           "rendered": Array [
@@ -214,22 +253,11 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "A comedy that follows an con who lands a position at a",
+            "className": "movie-overview",
           },
           "ref": null,
           "rendered": "A comedy that follows an con who lands a position at a",
           "type": "p",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Favorite",
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": "Favorite",
-          "type": "button",
         },
       ],
       "type": "article",

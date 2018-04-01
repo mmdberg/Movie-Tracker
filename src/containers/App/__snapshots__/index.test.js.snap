@@ -30,31 +30,35 @@ ShallowWrapper {
           <h1
                     className="App-title"
           >
-                    Welcome to Movie Tracker
+                    MOVIE TRACKER
           </h1>
-          <NavLink
-                    activeClassName="active"
-                    ariaCurrent="true"
-                    to="/"
+          <nav
+                    className="nav-bar"
           >
-                    Home
-          </NavLink>
-          <div>
                     <NavLink
                               activeClassName="active"
                               ariaCurrent="true"
-                              to="/forms/signup"
+                              to="/"
                     >
-                              Sign Up
+                              Home
                     </NavLink>
-                    <NavLink
-                              activeClassName="active"
-                              ariaCurrent="true"
-                              to="/forms/login"
-                    >
-                              Log In
-                    </NavLink>
-          </div>
+                    <div>
+                              <NavLink
+                                        activeClassName="active"
+                                        ariaCurrent="true"
+                                        to="/forms/signup"
+                              >
+                                        Sign Up
+                              </NavLink>
+                              <NavLink
+                                        activeClassName="active"
+                                        ariaCurrent="true"
+                                        to="/forms/login"
+                              >
+                                        Log In
+                              </NavLink>
+                    </div>
+          </nav>
 </header>,
         <Switch>
           <Route
@@ -86,31 +90,35 @@ ShallowWrapper {
             <h1
               className="App-title"
 >
-              Welcome to Movie Tracker
+              MOVIE TRACKER
 </h1>,
-            <NavLink
-              activeClassName="active"
-              ariaCurrent="true"
-              to="/"
+            <nav
+              className="nav-bar"
 >
-              Home
-</NavLink>,
-            <div>
               <NavLink
                             activeClassName="active"
                             ariaCurrent="true"
-                            to="/forms/signup"
+                            to="/"
               >
-                            Sign Up
+                            Home
               </NavLink>
-              <NavLink
-                            activeClassName="active"
-                            ariaCurrent="true"
-                            to="/forms/login"
-              >
-                            Log In
-              </NavLink>
-</div>,
+              <div>
+                            <NavLink
+                                          activeClassName="active"
+                                          ariaCurrent="true"
+                                          to="/forms/signup"
+                            >
+                                          Sign Up
+                            </NavLink>
+                            <NavLink
+                                          activeClassName="active"
+                                          ariaCurrent="true"
+                                          to="/forms/login"
+                            >
+                                          Log In
+                            </NavLink>
+              </div>
+</nav>,
           ],
           "className": "App-header",
         },
@@ -121,26 +129,12 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Welcome to Movie Tracker",
+              "children": "MOVIE TRACKER",
               "className": "App-title",
             },
             "ref": null,
-            "rendered": "Welcome to Movie Tracker",
+            "rendered": "MOVIE TRACKER",
             "type": "h1",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "activeClassName": "active",
-              "ariaCurrent": "true",
-              "children": "Home",
-              "to": "/",
-            },
-            "ref": null,
-            "rendered": "Home",
-            "type": [Function],
           },
           Object {
             "instance": null,
@@ -151,18 +145,28 @@ ShallowWrapper {
                 <NavLink
                   activeClassName="active"
                   ariaCurrent="true"
-                  to="/forms/signup"
+                  to="/"
 >
-                  Sign Up
+                  Home
 </NavLink>,
-                <NavLink
-                  activeClassName="active"
-                  ariaCurrent="true"
-                  to="/forms/login"
->
-                  Log In
-</NavLink>,
+                <div>
+                  <NavLink
+                                    activeClassName="active"
+                                    ariaCurrent="true"
+                                    to="/forms/signup"
+                  >
+                                    Sign Up
+                  </NavLink>
+                  <NavLink
+                                    activeClassName="active"
+                                    ariaCurrent="true"
+                                    to="/forms/login"
+                  >
+                                    Log In
+                  </NavLink>
+</div>,
               ],
+              "className": "nav-bar",
             },
             "ref": null,
             "rendered": Array [
@@ -173,29 +177,70 @@ ShallowWrapper {
                 "props": Object {
                   "activeClassName": "active",
                   "ariaCurrent": "true",
-                  "children": "Sign Up",
-                  "to": "/forms/signup",
+                  "children": "Home",
+                  "to": "/",
                 },
                 "ref": null,
-                "rendered": "Sign Up",
+                "rendered": "Home",
                 "type": [Function],
               },
               Object {
                 "instance": null,
                 "key": undefined,
-                "nodeType": "function",
+                "nodeType": "host",
                 "props": Object {
-                  "activeClassName": "active",
-                  "ariaCurrent": "true",
-                  "children": "Log In",
-                  "to": "/forms/login",
+                  "children": Array [
+                    <NavLink
+                      activeClassName="active"
+                      ariaCurrent="true"
+                      to="/forms/signup"
+>
+                      Sign Up
+</NavLink>,
+                    <NavLink
+                      activeClassName="active"
+                      ariaCurrent="true"
+                      to="/forms/login"
+>
+                      Log In
+</NavLink>,
+                  ],
                 },
                 "ref": null,
-                "rendered": "Log In",
-                "type": [Function],
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "activeClassName": "active",
+                      "ariaCurrent": "true",
+                      "children": "Sign Up",
+                      "to": "/forms/signup",
+                    },
+                    "ref": null,
+                    "rendered": "Sign Up",
+                    "type": [Function],
+                  },
+                  Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "activeClassName": "active",
+                      "ariaCurrent": "true",
+                      "children": "Log In",
+                      "to": "/forms/login",
+                    },
+                    "ref": null,
+                    "rendered": "Log In",
+                    "type": [Function],
+                  },
+                ],
+                "type": "div",
               },
             ],
-            "type": "div",
+            "type": "nav",
           },
         ],
         "type": "header",
@@ -281,31 +326,35 @@ ShallowWrapper {
             <h1
                         className="App-title"
             >
-                        Welcome to Movie Tracker
+                        MOVIE TRACKER
             </h1>
-            <NavLink
-                        activeClassName="active"
-                        ariaCurrent="true"
-                        to="/"
+            <nav
+                        className="nav-bar"
             >
-                        Home
-            </NavLink>
-            <div>
                         <NavLink
                                     activeClassName="active"
                                     ariaCurrent="true"
-                                    to="/forms/signup"
+                                    to="/"
                         >
-                                    Sign Up
+                                    Home
                         </NavLink>
-                        <NavLink
-                                    activeClassName="active"
-                                    ariaCurrent="true"
-                                    to="/forms/login"
-                        >
-                                    Log In
-                        </NavLink>
-            </div>
+                        <div>
+                                    <NavLink
+                                                activeClassName="active"
+                                                ariaCurrent="true"
+                                                to="/forms/signup"
+                                    >
+                                                Sign Up
+                                    </NavLink>
+                                    <NavLink
+                                                activeClassName="active"
+                                                ariaCurrent="true"
+                                                to="/forms/login"
+                                    >
+                                                Log In
+                                    </NavLink>
+                        </div>
+            </nav>
 </header>,
           <Switch>
             <Route
@@ -337,31 +386,35 @@ ShallowWrapper {
               <h1
                 className="App-title"
 >
-                Welcome to Movie Tracker
+                MOVIE TRACKER
 </h1>,
-              <NavLink
-                activeClassName="active"
-                ariaCurrent="true"
-                to="/"
+              <nav
+                className="nav-bar"
 >
-                Home
-</NavLink>,
-              <div>
                 <NavLink
                                 activeClassName="active"
                                 ariaCurrent="true"
-                                to="/forms/signup"
+                                to="/"
                 >
-                                Sign Up
+                                Home
                 </NavLink>
-                <NavLink
-                                activeClassName="active"
-                                ariaCurrent="true"
-                                to="/forms/login"
-                >
-                                Log In
-                </NavLink>
-</div>,
+                <div>
+                                <NavLink
+                                                activeClassName="active"
+                                                ariaCurrent="true"
+                                                to="/forms/signup"
+                                >
+                                                Sign Up
+                                </NavLink>
+                                <NavLink
+                                                activeClassName="active"
+                                                ariaCurrent="true"
+                                                to="/forms/login"
+                                >
+                                                Log In
+                                </NavLink>
+                </div>
+</nav>,
             ],
             "className": "App-header",
           },
@@ -372,26 +425,12 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Welcome to Movie Tracker",
+                "children": "MOVIE TRACKER",
                 "className": "App-title",
               },
               "ref": null,
-              "rendered": "Welcome to Movie Tracker",
+              "rendered": "MOVIE TRACKER",
               "type": "h1",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "activeClassName": "active",
-                "ariaCurrent": "true",
-                "children": "Home",
-                "to": "/",
-              },
-              "ref": null,
-              "rendered": "Home",
-              "type": [Function],
             },
             Object {
               "instance": null,
@@ -402,18 +441,28 @@ ShallowWrapper {
                   <NavLink
                     activeClassName="active"
                     ariaCurrent="true"
-                    to="/forms/signup"
+                    to="/"
 >
-                    Sign Up
+                    Home
 </NavLink>,
-                  <NavLink
-                    activeClassName="active"
-                    ariaCurrent="true"
-                    to="/forms/login"
->
-                    Log In
-</NavLink>,
+                  <div>
+                    <NavLink
+                                        activeClassName="active"
+                                        ariaCurrent="true"
+                                        to="/forms/signup"
+                    >
+                                        Sign Up
+                    </NavLink>
+                    <NavLink
+                                        activeClassName="active"
+                                        ariaCurrent="true"
+                                        to="/forms/login"
+                    >
+                                        Log In
+                    </NavLink>
+</div>,
                 ],
+                "className": "nav-bar",
               },
               "ref": null,
               "rendered": Array [
@@ -424,29 +473,70 @@ ShallowWrapper {
                   "props": Object {
                     "activeClassName": "active",
                     "ariaCurrent": "true",
-                    "children": "Sign Up",
-                    "to": "/forms/signup",
+                    "children": "Home",
+                    "to": "/",
                   },
                   "ref": null,
-                  "rendered": "Sign Up",
+                  "rendered": "Home",
                   "type": [Function],
                 },
                 Object {
                   "instance": null,
                   "key": undefined,
-                  "nodeType": "function",
+                  "nodeType": "host",
                   "props": Object {
-                    "activeClassName": "active",
-                    "ariaCurrent": "true",
-                    "children": "Log In",
-                    "to": "/forms/login",
+                    "children": Array [
+                      <NavLink
+                        activeClassName="active"
+                        ariaCurrent="true"
+                        to="/forms/signup"
+>
+                        Sign Up
+</NavLink>,
+                      <NavLink
+                        activeClassName="active"
+                        ariaCurrent="true"
+                        to="/forms/login"
+>
+                        Log In
+</NavLink>,
+                    ],
                   },
                   "ref": null,
-                  "rendered": "Log In",
-                  "type": [Function],
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "activeClassName": "active",
+                        "ariaCurrent": "true",
+                        "children": "Sign Up",
+                        "to": "/forms/signup",
+                      },
+                      "ref": null,
+                      "rendered": "Sign Up",
+                      "type": [Function],
+                    },
+                    Object {
+                      "instance": null,
+                      "key": undefined,
+                      "nodeType": "function",
+                      "props": Object {
+                        "activeClassName": "active",
+                        "ariaCurrent": "true",
+                        "children": "Log In",
+                        "to": "/forms/login",
+                      },
+                      "ref": null,
+                      "rendered": "Log In",
+                      "type": [Function],
+                    },
+                  ],
+                  "type": "div",
                 },
               ],
-              "type": "div",
+              "type": "nav",
             },
           ],
           "type": "header",

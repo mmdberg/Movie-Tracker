@@ -7,35 +7,44 @@ import * as actions from '../../actions/';
 import * as api from '../../apiCalls';
 
 export const CardContainer = (
-  { movies, addFavorite, logStatus, match, favorites, user }) => {
+  { movies, addFavorite, removeFavorite, logStatus, match, favorites, user }
+) => {
 
   const { path } = match;
-  let moviesList;
-
-  const handleFavorite = async (movie) => {
-    addFavorite(movie);
-    const response = await api.addFavorite(movie, user);
-    const movieId = response.id;
+  
+  const handleFavorite = movie => {
+    const alreadyFavorited = favorites.some(fav => 
+      fav.movieId === movie.movieId);
+    
+    if (alreadyFavorited) {
+      api.removeFavorite(movie, user);
+      removeFavorite(movie); 
+    } else {
+      addFavorite(movie);
+      api.addFavorite(movie, user);
+    }
   };
 
-  const cardCreator = source => source.map(movie =>
+  const cardsCreator = source => source.map(movie =>
     <Card
       information={movie}
       handleFavorite={handleFavorite}
       logStatus={logStatus}
-      key={movie.id}
+      key={movie.movieId}
     />
   );
 
-  if (path === "/favorites") {
-    moviesList = cardCreator(favorites);
-  } else {
-    moviesList = cardCreator(movies);
-  }
+  const determineMoviesListByPath = () => {
+    if (path === "/favorites") {
+      return cardsCreator(favorites);
+    } else {
+      return cardsCreator(movies);
+    }
+  };
 
   return (
     <div className="card-container">
-      { moviesList }
+      { determineMoviesListByPath() }
     </div>
   );
 };
@@ -48,7 +57,8 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  addFavorite: movie => dispatch(actions.addFavorite(movie))
+  addFavorite: movie => dispatch(actions.addFavorite(movie)),
+  removeFavorite: movie => dispatch(actions.removeFavorite(movie.movieId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CardContainer);
@@ -62,6 +72,7 @@ CardContainer.propTypes = {
     overview: PropTypes.string.isRequired
   })),
   addFavorite: PropTypes.func.isRequired,
+  removeFavorite: PropTypes.func.isRequired,
   logStatus: PropTypes.bool.isRequired,
   favorites: PropTypes.array.isRequired,
   match: PropTypes.object,
