@@ -23,4 +23,3 @@ export const mockMovie = [{
   "overview": "A comedy that follows an con who lands a position at a",
   "releaseDate": "2017-10-26"
 }];
-
