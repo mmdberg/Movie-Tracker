@@ -21,7 +21,7 @@ export const Card = ({ information, handleFavorite, logStatus, className }) => {
       className={className}>
       <div className='gradient'>
         <h3 className="movie-title">{title}</h3>
-        <button className="favorite-btn" onClick={handleClick}>Favorite</button>
+        <button className="favorite-btn" onClick={handleClick}>Favorite <img src="{}" alt=""/></button>
         <div className="movie-info-shadow">
           <p className="info">Released: {cleanDate}</p>
           <p className="info">Rating: {voteAverage}</p>

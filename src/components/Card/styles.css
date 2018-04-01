@@ -51,11 +51,11 @@
 .movie-overview {
   padding: .5em;
   font-family: 'Open Sans Condensed', sans-serif;
-  line-height: 1;
+/*  line-height: 1;*/
   height: 2.5em;
   position: absolute;
   bottom: 0;
-  font-size: 12px;
+  font-size: 10px;
   overflow: scroll;
   margin: 3px;
   background: linear-gradient(
