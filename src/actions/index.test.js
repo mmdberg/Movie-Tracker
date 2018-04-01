@@ -25,6 +25,17 @@ describe('Actions', () => {
     });
   });
 
+  describe('REMOVE_FAVORITE', () => {
+    it('should return action type of remove favorite', () => {
+      const expected = {
+        type: 'REMOVE_FAVORITE',
+        movieId: 1
+      };
+
+      expect(actions.removeFavorite(1)).toEqual(expected);
+    });
+  });
+
   describe('CAPTURE_USER', () => {
     it('should return action type of capture user', () => {
       const user = {name: "Bill", email: "Bill@gmail.com", id: 5};
