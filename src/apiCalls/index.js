@@ -103,6 +103,7 @@ export const removeFavorite = (movie, user) => {
       { method: 'DELETE'}
     );
   } catch (error) {
+    console.log(error)
     throw new Error('Unable to delete favorite ', movie.title);
   }
 };
