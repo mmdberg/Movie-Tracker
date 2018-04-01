@@ -44,7 +44,11 @@ export const CardContainer = (
 
   const determineMoviesListByPath = () => {
     if (path === "/favorites") {
+      if (favorites.length === 0) {
+        return <p className='no-favorites'>You have no favorites saved</p>
+      } else {
       return cardsCreator(favorites);
+      }
     } else {
       return cardsCreator(movies);
     }

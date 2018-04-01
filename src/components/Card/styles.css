@@ -84,3 +84,8 @@
 .info {
   margin: 0;
 }
+
+button img {
+  height: 10px;
+  width: auto;
+}

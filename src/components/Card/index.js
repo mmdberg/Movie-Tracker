@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.css';
+import star from './star.svg';
 
 export const Card = ({ information, handleFavorite, logStatus, className }) => {
   const { title, releaseDate, overview, posterPath, voteAverage } = information;
@@ -14,6 +15,7 @@ export const Card = ({ information, handleFavorite, logStatus, className }) => {
       alert('Please Log In to Add A Favorite');
     }
   };
+  const none = '';
 
   return (
     <article
@@ -21,7 +23,10 @@ export const Card = ({ information, handleFavorite, logStatus, className }) => {
       className={className}>
       <div className='gradient'>
         <h3 className="movie-title">{title}</h3>
-        <button className="favorite-btn" onClick={handleClick}>Favorite <img src="{}" alt=""/></button>
+        <button className="favorite-btn" onClick={handleClick}>
+          Favorite 
+          <img src={(className==='favorite movie-card') ? star: none} alt=""/>
+        </button>
         <div className="movie-info-shadow">
           <p className="info">Released: {cleanDate}</p>
           <p className="info">Rating: {voteAverage}</p>
