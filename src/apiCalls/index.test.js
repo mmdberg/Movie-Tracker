@@ -5,6 +5,34 @@ import {moviesWrangler} from '../helpers';
 
 jest.mock('../helpers');
 
+describe('getUserFavorites', () => {
+  beforeEach( () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      ok: true,
+      json: () => Promise.resolve({ data: mockData.mockMovies })
+    }));
+  });
+
+  it('should call fetch with the right params', () => {
+    api.getUserFavorites(4)
+    expect(window.fetch).toHaveBeenCalledWith('/api/users/4/favorites')
+  });
+
+  it('should call movies wrangler with the right params', () => {
+    api.moviesWrangler = jest.fn();
+    api.getUserFavorites()
+    expect(moviesWrangler).toHaveBeenCalledWith(mockData.mockMovies)
+  });
+
+  it('should throw an error on error', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.reject({
+      status: 500
+    }));
+    const expected = new Error('Unable to get favorites data');
+    expect(api.getUserFavorites()).rejects.toEqual(expected)
+  });
+});
+
 describe('getMovies', () => {
   beforeEach(() => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
@@ -78,7 +106,7 @@ describe('signIn', () => {
     email: 'taco@taco.taco',
     password: 'taco'
   };
-  
+
   it('should call fetch with the correct params', () => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       ok:true,
@@ -209,4 +237,3 @@ describe('deleteFavorite', () => {
     });
   });
 });
-

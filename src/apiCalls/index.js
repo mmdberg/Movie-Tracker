@@ -2,7 +2,7 @@ import apiKey from '../private/apiKey.js';
 import * as helper from '../helpers';
 
 export const getMovies = async () => {
-  try { 
+  try {
     const root = 'https://api.themoviedb.org/3/';
     const response =
       await fetch(`${root}movie/upcoming?api_key=${apiKey}&language=en-US`);
@@ -65,7 +65,7 @@ export const getUserFavorites = async (id) => {
     const wrangler = helper.favoritesWrangler(parsedResponse.data);
     return wrangler;
   } catch (error) {
-    throw new Error('Unable to retrieve favorites');
+    throw new Error('Unable to get favorites data');
   }
 };
 
