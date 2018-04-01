@@ -62,7 +62,7 @@ export const getUserFavorites = async (id) => {
   try {
     const response = await fetch(`/api/users/${id}/favorites`);
     const parsedResponse = await response.json();
-    const wrangler = helper.moviesWrangler(parsedResponse.data);
+    const wrangler = helper.favoritesWrangler(parsedResponse.data);
     return wrangler;
   } catch (error) {
     throw new Error('Unable to get favorites data');
@@ -72,7 +72,7 @@ export const getUserFavorites = async (id) => {
 export const addFavorite = async (movie, user) => {
   /*eslint-disable camelcase*/
   const movieObject = {
-    movie_id: movie.id,
+    movie_id: movie.movieId,
     user_id: user.id,
     title: movie.title,
     poster_path: movie.posterPath,
@@ -96,19 +96,13 @@ export const addFavorite = async (movie, user) => {
   }
 };
 
-export const deleteFavorite = async (movie, user) => {
+export const removeFavorite = (movie, user) => {
   try {
-    const response = await fetch(`/api/${user.id}/favorites/${movie.id}`, {
-      method: 'POST',
-      body: JSON.stringify({user: user.id, movie: movie.id}),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-    const validation = await response.json();
-    return validation;
+    fetch(
+      `/api/users/${user.id}/favorites/${movie.movieId}`, 
+      { method: 'DELETE'}
+    );
   } catch (error) {
-    console.log(error);
-    // throw new Error('Unable to delete favorite');
+    throw new Error('Unable to delete favorite ', movie.title);
   }
 };

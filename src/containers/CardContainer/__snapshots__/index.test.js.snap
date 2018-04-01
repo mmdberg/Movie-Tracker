@@ -9,7 +9,7 @@ ShallowWrapper {
     favorites={
         Array [
             Object {
-              "id": 437670,
+              "movieId": 437670,
               "overview": "A comedy that follows an con who lands a position at a",
               "posterPath": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
               "releaseDate": "2017-10-26",
@@ -27,7 +27,7 @@ ShallowWrapper {
     movies={
         Array [
             Object {
-              "id": 437670,
+              "movieId": 437670,
               "overview": "A comedy that follows an con who lands a position at a",
               "posterPath": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
               "releaseDate": "2017-10-26",
@@ -36,6 +36,7 @@ ShallowWrapper {
             },
           ]
     }
+    removeFavorite={[Function]}
     user={Object {}}
 />,
   Symbol(enzyme.__renderer__): Object {
@@ -55,7 +56,7 @@ ShallowWrapper {
           handleFavorite={[Function]}
           information={
                     Object {
-                              "id": 437670,
+                              "movieId": 437670,
                               "overview": "A comedy that follows an con who lands a position at a",
                               "posterPath": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
                               "releaseDate": "2017-10-26",
@@ -77,7 +78,7 @@ ShallowWrapper {
         "props": Object {
           "handleFavorite": [Function],
           "information": Object {
-            "id": 437670,
+            "movieId": 437670,
             "overview": "A comedy that follows an con who lands a position at a",
             "posterPath": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
             "releaseDate": "2017-10-26",
@@ -104,7 +105,7 @@ ShallowWrapper {
             handleFavorite={[Function]}
             information={
                         Object {
-                                    "id": 437670,
+                                    "movieId": 437670,
                                     "overview": "A comedy that follows an con who lands a position at a",
                                     "posterPath": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
                                     "releaseDate": "2017-10-26",
@@ -126,7 +127,7 @@ ShallowWrapper {
           "props": Object {
             "handleFavorite": [Function],
             "information": Object {
-              "id": 437670,
+              "movieId": 437670,
               "overview": "A comedy that follows an con who lands a position at a",
               "posterPath": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
               "releaseDate": "2017-10-26",
@@ -169,7 +170,7 @@ ShallowWrapper {
     movies={
         Array [
             Object {
-              "id": 437670,
+              "movieId": 437670,
               "overview": "A comedy that follows an con who lands a position at a",
               "posterPath": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
               "releaseDate": "2017-10-26",
@@ -178,6 +179,7 @@ ShallowWrapper {
             },
           ]
     }
+    removeFavorite={[Function]}
     user={Object {}}
 />,
   Symbol(enzyme.__renderer__): Object {
@@ -197,7 +199,7 @@ ShallowWrapper {
           handleFavorite={[Function]}
           information={
                     Object {
-                              "id": 437670,
+                              "movieId": 437670,
                               "overview": "A comedy that follows an con who lands a position at a",
                               "posterPath": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
                               "releaseDate": "2017-10-26",
@@ -219,7 +221,7 @@ ShallowWrapper {
         "props": Object {
           "handleFavorite": [Function],
           "information": Object {
-            "id": 437670,
+            "movieId": 437670,
             "overview": "A comedy that follows an con who lands a position at a",
             "posterPath": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
             "releaseDate": "2017-10-26",
@@ -246,7 +248,7 @@ ShallowWrapper {
             handleFavorite={[Function]}
             information={
                         Object {
-                                    "id": 437670,
+                                    "movieId": 437670,
                                     "overview": "A comedy that follows an con who lands a position at a",
                                     "posterPath": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
                                     "releaseDate": "2017-10-26",
@@ -268,7 +270,7 @@ ShallowWrapper {
           "props": Object {
             "handleFavorite": [Function],
             "information": Object {
-              "id": 437670,
+              "movieId": 437670,
               "overview": "A comedy that follows an con who lands a position at a",
               "posterPath": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
               "releaseDate": "2017-10-26",

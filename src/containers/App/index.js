@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink, Route, Switch, withRouter, Redirect } from 'react-router-dom';
+import { NavLink, Route, Switch, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import CardContainer from '../CardContainer';
@@ -15,8 +15,7 @@ export class App extends Component {
     this.props.loadCards(movies);
   }
 
-  componentDidUpdate = async (prevProps, prevState) => {
-    console.log(this.props.user.id)
+  componentDidUpdate = async (prevProps) => {
     if (prevProps.user !== this.props.user) {
       const userFavs = await api.getUserFavorites(this.props.user.id);
       this.props.loadFavorites(userFavs);
@@ -85,7 +84,8 @@ App.propTypes = {
     id: PropTypes.number
   }),
   logOutUser: PropTypes.func.isRequired,
-  changeLogStatus: PropTypes.func.isRequired
+  changeLogStatus: PropTypes.func.isRequired,
+  loadFavorites: PropTypes.func.isRequired
 };
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
