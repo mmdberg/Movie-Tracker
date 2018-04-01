@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.css';
 
-export const Card = ({ information, handleFavorite, logStatus }) => {
+export const Card = ({ information, handleFavorite, logStatus, className }) => {
   const { title, releaseDate, overview, posterPath, voteAverage } = information;
   const backgroundImage = `url(https://image.tmdb.org/t/p/w500/${posterPath})`;
   const handleClick = () => {
@@ -16,7 +16,7 @@ export const Card = ({ information, handleFavorite, logStatus }) => {
   return (
     <article
       style={{backgroundImage}}
-      className="movie-card">
+      className={className}>
       <h3 className="movie-title">{title}</h3>
       <button className="favorite-btn" onClick={handleClick}>Favorite</button>
       <p className="info">Released: {releaseDate}</p>
@@ -38,5 +38,6 @@ Card.propTypes = {
     ])
   }),
   handleFavorite: PropTypes.func.isRequired,
-  logStatus: PropTypes.bool.isRequired
+  logStatus: PropTypes.bool.isRequired,
+  className: PropTypes.string
 };

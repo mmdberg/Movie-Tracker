@@ -25,14 +25,22 @@ export const CardContainer = (
     }
   };
 
-  const cardsCreator = source => source.map(movie =>
-    <Card
+  const cardsCreator = source => source.map(movie => {
+    var cardStyle = 'movie-card';
+    favorites.forEach(favorite => {
+      if (movie.title === favorite.title) {
+        cardStyle = 'favorite movie-card';
+      }
+    });
+    
+    return <Card
       information={movie}
       handleFavorite={handleFavorite}
       logStatus={logStatus}
       key={movie.movieId}
-    />
-  );
+      className={cardStyle}
+    />;
+  });
 
   const determineMoviesListByPath = () => {
     if (path === "/favorites") {

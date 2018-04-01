@@ -14,14 +14,14 @@ describe('getUserFavorites', () => {
   });
 
   it('should call fetch with the right params', () => {
-    api.getUserFavorites(4)
-    expect(window.fetch).toHaveBeenCalledWith('/api/users/4/favorites')
+    api.getUserFavorites(4);
+    expect(window.fetch).toHaveBeenCalledWith('/api/users/4/favorites');
   });
 
   it('should call movies wrangler with the right params', () => {
     api.moviesWrangler = jest.fn();
-    api.getUserFavorites()
-    expect(moviesWrangler).toHaveBeenCalledWith(mockData.mockMovies)
+    api.getUserFavorites();
+    expect(moviesWrangler).toHaveBeenCalledWith(mockData.mockMovies);
   });
 
   it('should throw an error on error', () => {
@@ -29,7 +29,7 @@ describe('getUserFavorites', () => {
       status: 500
     }));
     const expected = new Error('Unable to get favorites data');
-    expect(api.getUserFavorites()).rejects.toEqual(expected)
+    expect(api.getUserFavorites()).rejects.toEqual(expected);
   });
 });
 
