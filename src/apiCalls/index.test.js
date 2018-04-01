@@ -121,10 +121,12 @@ describe('getUsers', () => {
 
 describe('getUserFavorites', () => {
   beforeEach( () => {
+    /*eslint-disable id-blacklist*/
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       ok: true,
       json: () => Promise.resolve({ data: mockData.mockMovies })
     }));
+    /*eslint-enable camelcase*/
   });
 
   it('should call fetch with the right params', () => {
