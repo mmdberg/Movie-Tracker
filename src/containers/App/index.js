@@ -13,7 +13,7 @@ export class App extends Component {
   componentDidMount = () => this.fetchRecentMovies();
 
   componentDidUpdate = async (prevProps) => {
-    if (prevProps.user !== this.props.user) {
+    if (prevProps.user !== this.props.user && this.props.user) {
       this.fetchLoggedInUserData();
     }
   }
@@ -31,6 +31,7 @@ export class App extends Component {
   logOut = () => {
     this.props.changeLogStatus(false);
     this.props.logOutUser();
+    this.props.loadFavorites([]);
   }
 
   render = () => {

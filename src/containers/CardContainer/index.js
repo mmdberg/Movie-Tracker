@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Redirect} from 'react-router-dom';
 import './styles.css';
 import { connect } from 'react-redux';
 import { Card } from '../../components/Card';
@@ -44,14 +45,15 @@ export const CardContainer = (
 
   const determineMoviesListByPath = () => {
     if (path === "/favorites") {
-      if (favorites.length === 0) {
-        return <p className='no-favorites'>You have no favorites saved</p>;
-      } else {
-        return cardsCreator(favorites);
+      if (!user) {
+        return <Redirect to='/' />;
       }
-    } else {
-      return cardsCreator(movies);
-    }
+      if (!favorites.length) {
+        return <p className='no-favorites'>You have no favorites saved</p>;
+      } 
+      return cardsCreator(favorites);
+    } 
+    return cardsCreator(movies);
   };
 
   return (
