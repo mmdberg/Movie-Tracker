@@ -33,4 +33,19 @@ describe('Form', () => {
     );
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('should show an errorMessage if appropriate', () => {
+    const wrapper = shallow(
+      <Form
+        errorMessage={"An error occured"}
+        name={''}
+        email={''}
+        password={''}
+        routeId={'login'}
+        handleChange={mockHandleChange}
+        handleSubmit={mockHandleSubmit}
+      />
+    );
+    expect(wrapper).toMatchSnapshot();
+  });
 });
