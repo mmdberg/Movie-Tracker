@@ -4,3 +4,7 @@
   justify-content: center;
   align-items: center;
 }
+
+.no-favorites {
+  margin: 16px 0 0 26px;
+}

@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.css';
+import star from './star.svg';
 
-export const Card = ({ information, handleFavorite, logStatus }) => {
+export const Card = ({ information, handleFavorite, logStatus, className }) => {
   const { title, releaseDate, overview, posterPath, voteAverage } = information;
   const backgroundImage = `url(https://image.tmdb.org/t/p/w500/${posterPath})`;
+  const cleanYear = releaseDate.split('').splice(0, 5).splice(0, 4).join('')
+  const cleanDate = [releaseDate, '-', cleanYear].join('').split('').splice(5).join('')
   const handleClick = () => {
     if (logStatus) {
       handleFavorite(information);
@@ -12,16 +15,24 @@ export const Card = ({ information, handleFavorite, logStatus }) => {
       alert('Please Log In to Add A Favorite');
     }
   };
+  const none = '';
 
   return (
     <article
       style={{backgroundImage}}
-      className="movie-card">
-      <h3 className="movie-title">{title}</h3>
-      <button className="favorite-btn" onClick={handleClick}>Favorite</button>
-      <p className="info">Released: {releaseDate}</p>
-      <p className="info">Rating: {voteAverage}</p>
-      <p className="movie-overview">{overview}</p>
+      className={className}>
+      <div className='gradient'>
+        <h3 className="movie-title">{title}</h3>
+        <button className="favorite-btn" onClick={handleClick}>
+          Favorite 
+          <img src={(className==='favorite movie-card') ? star: none} alt=""/>
+        </button>
+        <div className="movie-info-shadow">
+          <p className="info">Released: {cleanDate}</p>
+          <p className="info">Rating: {voteAverage}</p>
+        </div>
+          <p className="movie-overview">{overview}</p>
+      </div>
     </article>
   );
 };
@@ -38,5 +49,6 @@ Card.propTypes = {
     ])
   }),
   handleFavorite: PropTypes.func.isRequired,
-  logStatus: PropTypes.bool.isRequired
+  logStatus: PropTypes.bool.isRequired,
+  className: PropTypes.string
 };
