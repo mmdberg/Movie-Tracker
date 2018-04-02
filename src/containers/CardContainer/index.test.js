@@ -56,6 +56,15 @@ describe('Card Container', () => {
 
       expect(mockDispatch).toHaveBeenCalledWith(actions.addFavorite(mockMovie));
     });
+
+    it('should call dispatch with right params for removeFavorite', () => {
+      const mapped = mapDispatchToProps(mockDispatch);
+      const mockMovie = mockData.mockMovie;
+      mapped.removeFavorite(mockMovie);
+      expect(mockDispatch).toHaveBeenCalledWith(
+        actions.removeFavorite(mockMovie.movieId)
+      );
+    });
   });
 
   describe('mapStateToProps', () => {
