@@ -135,9 +135,9 @@ describe('getUserFavorites', () => {
   });
 
   it('should call movies wrangler with the right params', () => {
-    api.moviesWrangler = jest.fn();
+    api.favoritesWrangler = jest.fn();
     api.getUserFavorites();
-    expect(moviesWrangler).toHaveBeenCalledWith(mockData.mockMovies);
+    expect(api.favoritesWrangler).toHaveBeenCalledWith(mockData.mockMovies);
   });
 
   it('should throw an error on error', () => {
@@ -202,7 +202,7 @@ describe('deleteFavorite', () => {
       ok: true,
       json: () => Promise.resolve({})
     }));
-    const expected = ['/api/users/1/favorites/2', 
+    const expected = ['/api/users/1/favorites/2',
       { method: 'DELETE'}];
     api.removeFavorite(mockMovie, mockUser);
     expect(window.fetch).toHaveBeenCalledWith(...expected);
