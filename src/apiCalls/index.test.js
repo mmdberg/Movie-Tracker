@@ -1,7 +1,7 @@
 import * as api from './index.js';
 import apiKey from '../private/apiKey';
 import * as mockData from '../mockData';
-import {moviesWrangler} from '../helpers';
+import { favoritesWrangler, moviesWrangler } from '../helpers';
 
 jest.mock('../helpers');
 
@@ -135,9 +135,8 @@ describe('getUserFavorites', () => {
   });
 
   it('should call movies wrangler with the right params', () => {
-    api.favoritesWrangler = jest.fn();
     api.getUserFavorites();
-    expect(api.favoritesWrangler).toHaveBeenCalledWith(mockData.mockMovies);
+    expect(favoritesWrangler).toHaveBeenCalledWith(mockData.mockMovies);
   });
 
   it('should throw an error on error', () => {
@@ -180,7 +179,7 @@ describe('addFavorite', () => {
       ok: true,
       json: () => Promise.resolve({})
     }));
-    api.addFavorite(movieObject, mockUser);
+    api.addFavorite(mockData.mockMovie[0], mockUser);
     expect(window.fetch).toHaveBeenCalledWith(...expected);
   });
 

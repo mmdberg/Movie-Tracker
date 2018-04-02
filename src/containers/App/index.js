@@ -10,22 +10,27 @@ import './styles.css';
 
 export class App extends Component {
 
-  componentDidMount = async () => {
+  componentDidMount = () => this.fetchRecentMovies();
+
+  componentDidUpdate = async (prevProps) => {
+    if (prevProps.user !== this.props.user) {
+      this.fetchLoggedInUserData()
+    }
+  }
+
+  fetchRecentMovies = async () => {
     const movies = await api.getMovies();
     this.props.loadCards(movies);
   }
 
-  componentDidUpdate = async (prevProps) => {
-    if (prevProps.user !== this.props.user) {
-      const userFavs = await api.getUserFavorites(this.props.user.id);
-      this.props.loadFavorites(userFavs);
-    }
+  fetchLoggedInUserData = async () => {
+    const userFavs = await api.getUserFavorites(this.props.user.id);
+    this.props.loadFavorites(userFavs);
   }
 
   logOut = () => {
     this.props.changeLogStatus(false);
     this.props.logOutUser();
-
   }
 
   render = () => {
@@ -36,7 +41,7 @@ export class App extends Component {
           <nav className='nav-bar'>
             <NavLink to='/'>Home</NavLink>
             {
-              this.props.user.email ? (
+              this.props.user ? (
                 <div>
                   <NavLink to='/favorites'>Favorites</NavLink>
                   <button className='logout' onClick={() => this.logOut()}>

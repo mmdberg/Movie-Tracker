@@ -8,8 +8,13 @@ ShallowWrapper {
     captureUser={[Function]}
     changeLogStatus={[Function]}
     loadCards={[Function]}
+    loadFavorites={[Function]}
     logOutUser={[Function]}
-    user={Object {}}
+    user={
+        Object {
+            "id": 1,
+          }
+    }
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -46,17 +51,16 @@ ShallowWrapper {
                               <NavLink
                                         activeClassName="active"
                                         ariaCurrent="true"
-                                        to="/forms/signup"
+                                        to="/favorites"
                               >
-                                        Sign Up
+                                        Favorites
                               </NavLink>
-                              <NavLink
-                                        activeClassName="active"
-                                        ariaCurrent="true"
-                                        to="/forms/login"
+                              <button
+                                        className="logout"
+                                        onClick={[Function]}
                               >
-                                        Log In
-                              </NavLink>
+                                        Log Out
+                              </button>
                     </div>
           </nav>
 </header>,
@@ -106,17 +110,16 @@ ShallowWrapper {
                             <NavLink
                                           activeClassName="active"
                                           ariaCurrent="true"
-                                          to="/forms/signup"
+                                          to="/favorites"
                             >
-                                          Sign Up
+                                          Favorites
                             </NavLink>
-                            <NavLink
-                                          activeClassName="active"
-                                          ariaCurrent="true"
-                                          to="/forms/login"
+                            <button
+                                          className="logout"
+                                          onClick={[Function]}
                             >
-                                          Log In
-                            </NavLink>
+                                          Log Out
+                            </button>
               </div>
 </nav>,
           ],
@@ -153,17 +156,16 @@ ShallowWrapper {
                   <NavLink
                                     activeClassName="active"
                                     ariaCurrent="true"
-                                    to="/forms/signup"
+                                    to="/favorites"
                   >
-                                    Sign Up
+                                    Favorites
                   </NavLink>
-                  <NavLink
-                                    activeClassName="active"
-                                    ariaCurrent="true"
-                                    to="/forms/login"
+                  <button
+                                    className="logout"
+                                    onClick={[Function]}
                   >
-                                    Log In
-                  </NavLink>
+                                    Log Out
+                  </button>
 </div>,
               ],
               "className": "nav-bar",
@@ -193,17 +195,16 @@ ShallowWrapper {
                     <NavLink
                       activeClassName="active"
                       ariaCurrent="true"
-                      to="/forms/signup"
+                      to="/favorites"
 >
-                      Sign Up
+                      Favorites
 </NavLink>,
-                    <NavLink
-                      activeClassName="active"
-                      ariaCurrent="true"
-                      to="/forms/login"
+                    <button
+                      className="logout"
+                      onClick={[Function]}
 >
-                      Log In
-</NavLink>,
+                      Log Out
+</button>,
                   ],
                 },
                 "ref": null,
@@ -215,26 +216,25 @@ ShallowWrapper {
                     "props": Object {
                       "activeClassName": "active",
                       "ariaCurrent": "true",
-                      "children": "Sign Up",
-                      "to": "/forms/signup",
+                      "children": "Favorites",
+                      "to": "/favorites",
                     },
                     "ref": null,
-                    "rendered": "Sign Up",
+                    "rendered": "Favorites",
                     "type": [Function],
                   },
                   Object {
                     "instance": null,
                     "key": undefined,
-                    "nodeType": "function",
+                    "nodeType": "host",
                     "props": Object {
-                      "activeClassName": "active",
-                      "ariaCurrent": "true",
-                      "children": "Log In",
-                      "to": "/forms/login",
+                      "children": "Log Out",
+                      "className": "logout",
+                      "onClick": [Function],
                     },
                     "ref": null,
-                    "rendered": "Log In",
-                    "type": [Function],
+                    "rendered": "Log Out",
+                    "type": "button",
                   },
                 ],
                 "type": "div",
@@ -342,17 +342,16 @@ ShallowWrapper {
                                     <NavLink
                                                 activeClassName="active"
                                                 ariaCurrent="true"
-                                                to="/forms/signup"
+                                                to="/favorites"
                                     >
-                                                Sign Up
+                                                Favorites
                                     </NavLink>
-                                    <NavLink
-                                                activeClassName="active"
-                                                ariaCurrent="true"
-                                                to="/forms/login"
+                                    <button
+                                                className="logout"
+                                                onClick={[Function]}
                                     >
-                                                Log In
-                                    </NavLink>
+                                                Log Out
+                                    </button>
                         </div>
             </nav>
 </header>,
@@ -402,17 +401,16 @@ ShallowWrapper {
                                 <NavLink
                                                 activeClassName="active"
                                                 ariaCurrent="true"
-                                                to="/forms/signup"
+                                                to="/favorites"
                                 >
-                                                Sign Up
+                                                Favorites
                                 </NavLink>
-                                <NavLink
-                                                activeClassName="active"
-                                                ariaCurrent="true"
-                                                to="/forms/login"
+                                <button
+                                                className="logout"
+                                                onClick={[Function]}
                                 >
-                                                Log In
-                                </NavLink>
+                                                Log Out
+                                </button>
                 </div>
 </nav>,
             ],
@@ -449,17 +447,16 @@ ShallowWrapper {
                     <NavLink
                                         activeClassName="active"
                                         ariaCurrent="true"
-                                        to="/forms/signup"
+                                        to="/favorites"
                     >
-                                        Sign Up
+                                        Favorites
                     </NavLink>
-                    <NavLink
-                                        activeClassName="active"
-                                        ariaCurrent="true"
-                                        to="/forms/login"
+                    <button
+                                        className="logout"
+                                        onClick={[Function]}
                     >
-                                        Log In
-                    </NavLink>
+                                        Log Out
+                    </button>
 </div>,
                 ],
                 "className": "nav-bar",
@@ -489,17 +486,16 @@ ShallowWrapper {
                       <NavLink
                         activeClassName="active"
                         ariaCurrent="true"
-                        to="/forms/signup"
+                        to="/favorites"
 >
-                        Sign Up
+                        Favorites
 </NavLink>,
-                      <NavLink
-                        activeClassName="active"
-                        ariaCurrent="true"
-                        to="/forms/login"
+                      <button
+                        className="logout"
+                        onClick={[Function]}
 >
-                        Log In
-</NavLink>,
+                        Log Out
+</button>,
                     ],
                   },
                   "ref": null,
@@ -511,26 +507,25 @@ ShallowWrapper {
                       "props": Object {
                         "activeClassName": "active",
                         "ariaCurrent": "true",
-                        "children": "Sign Up",
-                        "to": "/forms/signup",
+                        "children": "Favorites",
+                        "to": "/favorites",
                       },
                       "ref": null,
-                      "rendered": "Sign Up",
+                      "rendered": "Favorites",
                       "type": [Function],
                     },
                     Object {
                       "instance": null,
                       "key": undefined,
-                      "nodeType": "function",
+                      "nodeType": "host",
                       "props": Object {
-                        "activeClassName": "active",
-                        "ariaCurrent": "true",
-                        "children": "Log In",
-                        "to": "/forms/login",
+                        "children": "Log Out",
+                        "className": "logout",
+                        "onClick": [Function],
                       },
                       "ref": null,
-                      "rendered": "Log In",
-                      "type": [Function],
+                      "rendered": "Log Out",
+                      "type": "button",
                     },
                   ],
                   "type": "div",

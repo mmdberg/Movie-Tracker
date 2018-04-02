@@ -1,5 +1,7 @@
+import * as mockData from '../../mockData';
+
 /*eslint-disable id-blacklist*/
-export const signIn = jest.fn().mockImplementationOnce(() => 
+export const signIn = jest.fn().mockImplementationOnce(() =>
   Promise.reject({}))
   .mockImplementation(() => Promise.resolve({
     status: 'success',
@@ -28,3 +30,9 @@ export const addUser = jest.fn().mockImplementation(() => Promise.resolve({
   message:"New user created",
   status:"success"
 }));
+
+export const getMovies = jest.fn().mockImplementation(() =>
+  Promise.resolve(mockData.mockMovie));
+
+export const getUserFavorites = jest.fn().mockImplementation(() =>
+  Promise.resolve(mockData.mockMovie));
