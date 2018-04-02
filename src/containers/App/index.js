@@ -10,14 +10,14 @@ import './styles.css';
 
 export class App extends Component {
 
-  componentDidMount = () => {
+  componentDidMount = async () => {
     this.fetchRecentMovies();
     const lastUser = JSON.parse(localStorage.getItem('Last User'));
     if (lastUser) {
-      this.props.captureUser(lastUser)
+      this.props.captureUser(lastUser);
       const userFavs = await api.getUserFavorites(lastUser.id);
       this.props.loadFavorites(userFavs);
-      this.props.changeLogStatus(true)
+      this.props.changeLogStatus(true);
     }
   }
 
@@ -36,14 +36,14 @@ export class App extends Component {
   fetchLoggedInUserData = async () => {
     const userFavs = await api.getUserFavorites(this.props.user.id);
     this.props.loadFavorites(userFavs);
-    localStorage.setItem('Last User', JSON.stringify(this.props.user))
+    localStorage.setItem('Last User', JSON.stringify(this.props.user));
   }
 
   logOut = () => {
     this.props.changeLogStatus(false);
     this.props.logOutUser();
     this.props.loadFavorites([]);
-    localStorage.clear()
+    localStorage.clear();
   }
 
   render = () => {
@@ -84,8 +84,7 @@ export class App extends Component {
 }
 
 export const mapStateToProps = state => ({
-  user: state.user,
-  // favorites: state.favorites
+  user: state.user
 });
 
 export const mapDispatchToProps = dispatch => ({
