@@ -53,6 +53,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <Unknown
+          className="favorite movie-card"
           handleFavorite={[Function]}
           information={
                     Object {
@@ -76,6 +77,7 @@ ShallowWrapper {
         "key": "437670",
         "nodeType": "function",
         "props": Object {
+          "className": "favorite movie-card",
           "handleFavorite": [Function],
           "information": Object {
             "movieId": 437670,
@@ -102,6 +104,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Unknown
+            className="favorite movie-card"
             handleFavorite={[Function]}
             information={
                         Object {
@@ -125,6 +128,7 @@ ShallowWrapper {
           "key": "437670",
           "nodeType": "function",
           "props": Object {
+            "className": "favorite movie-card",
             "handleFavorite": [Function],
             "information": Object {
               "movieId": 437670,
@@ -196,6 +200,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <Unknown
+          className="movie-card"
           handleFavorite={[Function]}
           information={
                     Object {
@@ -219,6 +224,7 @@ ShallowWrapper {
         "key": "437670",
         "nodeType": "function",
         "props": Object {
+          "className": "movie-card",
           "handleFavorite": [Function],
           "information": Object {
             "movieId": 437670,
@@ -245,6 +251,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <Unknown
+            className="movie-card"
             handleFavorite={[Function]}
             information={
                         Object {
@@ -268,6 +275,7 @@ ShallowWrapper {
           "key": "437670",
           "nodeType": "function",
           "props": Object {
+            "className": "movie-card",
             "handleFavorite": [Function],
             "information": Object {
               "movieId": 437670,

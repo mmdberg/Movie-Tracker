@@ -30,121 +30,53 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [
+      "children": <div
+        className="gradient"
+>
         <h3
-          className="movie-title"
->
-          Suck Me Shakespeer 3
-</h3>,
+                className="movie-title"
+        >
+                Suck Me Shakespeer 3
+        </h3>
         <button
-          className="favorite-btn"
-          onClick={[Function]}
->
-          Favorite
-</button>,
+                className="favorite-btn"
+                onClick={[Function]}
+        >
+                Favorite
+                <img
+                        alt=""
+                        src=""
+                />
+        </button>
+        <div
+                className="movie-info-shadow"
+        >
+                <p
+                        className="info"
+                >
+                        Released: 
+                        10-26-2017
+                </p>
+                <p
+                        className="info"
+                >
+                        Rating: 
+                        6.2
+                </p>
+        </div>
         <p
-          className="info"
->
-          Released: 
-          2017-10-26
-</p>,
-        <p
-          className="info"
->
-          Rating: 
-          6.2
-</p>,
-        <p
-          className="movie-overview"
->
-          A comedy that follows an con who lands a position at a
-</p>,
-      ],
-      "className": "movie-card",
+                className="movie-overview"
+        >
+                A comedy that follows an con who lands a position at a
+        </p>
+</div>,
+      "className": undefined,
       "style": Object {
         "backgroundImage": "url(https://image.tmdb.org/t/p/w500//cypnifmPJ5JbTjzpZI6MwJdvP7.jpg)",
       },
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Suck Me Shakespeer 3",
-          "className": "movie-title",
-        },
-        "ref": null,
-        "rendered": "Suck Me Shakespeer 3",
-        "type": "h3",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Favorite",
-          "className": "favorite-btn",
-          "onClick": [Function],
-        },
-        "ref": null,
-        "rendered": "Favorite",
-        "type": "button",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            "Released: ",
-            "2017-10-26",
-          ],
-          "className": "info",
-        },
-        "ref": null,
-        "rendered": Array [
-          "Released: ",
-          "2017-10-26",
-        ],
-        "type": "p",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            "Rating: ",
-            6.2,
-          ],
-          "className": "info",
-        },
-        "ref": null,
-        "rendered": Array [
-          "Rating: ",
-          6.2,
-        ],
-        "type": "p",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "A comedy that follows an con who lands a position at a",
-          "className": "movie-overview",
-        },
-        "ref": null,
-        "rendered": "A comedy that follows an con who lands a position at a",
-        "type": "p",
-      },
-    ],
-    "type": "article",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
+    "rendered": Object {
       "instance": null,
       "key": undefined,
       "nodeType": "host",
@@ -160,29 +92,34 @@ ShallowWrapper {
             onClick={[Function]}
 >
             Favorite
+            <img
+                        alt=""
+                        src=""
+            />
 </button>,
-          <p
-            className="info"
+          <div
+            className="movie-info-shadow"
 >
-            Released: 
-            2017-10-26
-</p>,
-          <p
-            className="info"
->
-            Rating: 
-            6.2
-</p>,
+            <p
+                        className="info"
+            >
+                        Released: 
+                        10-26-2017
+            </p>
+            <p
+                        className="info"
+            >
+                        Rating: 
+                        6.2
+            </p>
+</div>,
           <p
             className="movie-overview"
 >
             A comedy that follows an con who lands a position at a
 </p>,
         ],
-        "className": "movie-card",
-        "style": Object {
-          "backgroundImage": "url(https://image.tmdb.org/t/p/w500//cypnifmPJ5JbTjzpZI6MwJdvP7.jpg)",
-        },
+        "className": "gradient",
       },
       "ref": null,
       "rendered": Array [
@@ -203,12 +140,32 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Favorite",
+            "children": Array [
+              "Favorite",
+              <img
+                alt=""
+                src=""
+/>,
+            ],
             "className": "favorite-btn",
             "onClick": [Function],
           },
           "ref": null,
-          "rendered": "Favorite",
+          "rendered": Array [
+            "Favorite",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "",
+                "src": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+          ],
           "type": "button",
         },
         Object {
@@ -217,35 +174,61 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              "Released: ",
-              "2017-10-26",
+              <p
+                className="info"
+>
+                Released: 
+                10-26-2017
+</p>,
+              <p
+                className="info"
+>
+                Rating: 
+                6.2
+</p>,
             ],
-            "className": "info",
+            "className": "movie-info-shadow",
           },
           "ref": null,
           "rendered": Array [
-            "Released: ",
-            "2017-10-26",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Released: ",
+                  "10-26-2017",
+                ],
+                "className": "info",
+              },
+              "ref": null,
+              "rendered": Array [
+                "Released: ",
+                "10-26-2017",
+              ],
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Rating: ",
+                  6.2,
+                ],
+                "className": "info",
+              },
+              "ref": null,
+              "rendered": Array [
+                "Rating: ",
+                6.2,
+              ],
+              "type": "p",
+            },
           ],
-          "type": "p",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              "Rating: ",
-              6.2,
-            ],
-            "className": "info",
-          },
-          "ref": null,
-          "rendered": Array [
-            "Rating: ",
-            6.2,
-          ],
-          "type": "p",
+          "type": "div",
         },
         Object {
           "instance": null,
@@ -260,6 +243,231 @@ ShallowWrapper {
           "type": "p",
         },
       ],
+      "type": "div",
+    },
+    "type": "article",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="gradient"
+>
+          <h3
+                    className="movie-title"
+          >
+                    Suck Me Shakespeer 3
+          </h3>
+          <button
+                    className="favorite-btn"
+                    onClick={[Function]}
+          >
+                    Favorite
+                    <img
+                              alt=""
+                              src=""
+                    />
+          </button>
+          <div
+                    className="movie-info-shadow"
+          >
+                    <p
+                              className="info"
+                    >
+                              Released: 
+                              10-26-2017
+                    </p>
+                    <p
+                              className="info"
+                    >
+                              Rating: 
+                              6.2
+                    </p>
+          </div>
+          <p
+                    className="movie-overview"
+          >
+                    A comedy that follows an con who lands a position at a
+          </p>
+</div>,
+        "className": undefined,
+        "style": Object {
+          "backgroundImage": "url(https://image.tmdb.org/t/p/w500//cypnifmPJ5JbTjzpZI6MwJdvP7.jpg)",
+        },
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h3
+              className="movie-title"
+>
+              Suck Me Shakespeer 3
+</h3>,
+            <button
+              className="favorite-btn"
+              onClick={[Function]}
+>
+              Favorite
+              <img
+                            alt=""
+                            src=""
+              />
+</button>,
+            <div
+              className="movie-info-shadow"
+>
+              <p
+                            className="info"
+              >
+                            Released: 
+                            10-26-2017
+              </p>
+              <p
+                            className="info"
+              >
+                            Rating: 
+                            6.2
+              </p>
+</div>,
+            <p
+              className="movie-overview"
+>
+              A comedy that follows an con who lands a position at a
+</p>,
+          ],
+          "className": "gradient",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Suck Me Shakespeer 3",
+              "className": "movie-title",
+            },
+            "ref": null,
+            "rendered": "Suck Me Shakespeer 3",
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Favorite",
+                <img
+                  alt=""
+                  src=""
+/>,
+              ],
+              "className": "favorite-btn",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Favorite",
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "alt": "",
+                  "src": "",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": "img",
+              },
+            ],
+            "type": "button",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <p
+                  className="info"
+>
+                  Released: 
+                  10-26-2017
+</p>,
+                <p
+                  className="info"
+>
+                  Rating: 
+                  6.2
+</p>,
+              ],
+              "className": "movie-info-shadow",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Released: ",
+                    "10-26-2017",
+                  ],
+                  "className": "info",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Released: ",
+                  "10-26-2017",
+                ],
+                "type": "p",
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    "Rating: ",
+                    6.2,
+                  ],
+                  "className": "info",
+                },
+                "ref": null,
+                "rendered": Array [
+                  "Rating: ",
+                  6.2,
+                ],
+                "type": "p",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "A comedy that follows an con who lands a position at a",
+              "className": "movie-overview",
+            },
+            "ref": null,
+            "rendered": "A comedy that follows an con who lands a position at a",
+            "type": "p",
+          },
+        ],
+        "type": "div",
+      },
       "type": "article",
     },
   ],

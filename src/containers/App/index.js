@@ -39,7 +39,9 @@ export class App extends Component {
               this.props.user.email ? (
                 <div>
                   <NavLink to='/favorites'>Favorites</NavLink>
-                  <button className='logout' onClick={() => this.logOut()}>Log Out</button>
+                  <button className='logout' onClick={() => this.logOut()}>
+                    Log Out
+                  </button>
                 </div>
               ) : (
                 <div>
