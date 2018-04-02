@@ -5,7 +5,7 @@ describe('User Reducer', () => {
   const mockUser = {name: "bill", email: "bill@gmail.com", id: 5};
 
   it('should return default state', () => {
-    expect(userReducer(undefined, {})).toEqual({});
+    expect(userReducer(undefined, {})).toEqual(null);
   });
 
   it('should add user to store', () => {
@@ -14,6 +14,6 @@ describe('User Reducer', () => {
   });
 
   it('should remove user from the store', () => {
-    expect(userReducer(mockUser, actions.logOutUser())).toEqual({});
+    expect(userReducer(mockUser, actions.logOutUser())).toEqual(null);
   });
 });
