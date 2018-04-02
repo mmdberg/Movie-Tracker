@@ -62,7 +62,7 @@ export const CardContainer = (
 };
 
 export const mapStateToProps = ({movies, logStatus, user, favorites}) => 
-  ({movies, logStatus, user, favorites});
+  ({ movies, logStatus, user, favorites });
 
 export const mapDispatchToProps = dispatch => ({
   addFavorite: movie => dispatch(actions.addFavorite(movie)),
