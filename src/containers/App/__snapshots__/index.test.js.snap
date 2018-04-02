@@ -12,7 +12,10 @@ ShallowWrapper {
     logOutUser={[Function]}
     user={
         Object {
+            "email": "taco@taco",
             "id": 1,
+            "name": "Taco",
+            "password": "taco",
           }
     }
 />,

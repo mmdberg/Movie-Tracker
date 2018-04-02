@@ -44,6 +44,7 @@ export class FormContainer extends Component {
         password: '',
         loggedIn: true
       });
+
     } catch (error) {
       this.setState({
         errorMessage: 'Email and password do not match',
