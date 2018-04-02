@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Redirect} from 'react-router-dom';
 import './styles.css';
 import { connect } from 'react-redux';
 import { Card } from '../../components/Card';
@@ -20,12 +21,12 @@ export const CardContainer = (
       api.removeFavorite(movie, user);
       removeFavorite(movie); 
     } else {
-      addFavorite(movie);
       api.addFavorite(movie, user);
+      addFavorite(movie);
     }
   };
 
-  const cardsCreator = source => source.map(movie => {
+  const cardsCreator = sourceArray => sourceArray.map(movie => {
     var cardStyle = 'movie-card';
     favorites.forEach(favorite => {
       if (movie.title === favorite.title) {
@@ -44,14 +45,15 @@ export const CardContainer = (
 
   const determineMoviesListByPath = () => {
     if (path === "/favorites") {
-      if (favorites.length === 0) {
-        return <p className='no-favorites'>You have no favorites saved</p>;
-      } else {
-        return cardsCreator(favorites);
+      if (!user) {
+        return <Redirect to='/' />;
       }
-    } else {
-      return cardsCreator(movies);
-    }
+      if (!favorites.length) {
+        return <p className='no-favorites'>You have no favorites saved</p>;
+      } 
+      return cardsCreator(favorites);
+    } 
+    return cardsCreator(movies);
   };
 
   return (
@@ -61,12 +63,8 @@ export const CardContainer = (
   );
 };
 
-export const mapStateToProps = state => ({
-  movies: state.movies,
-  logStatus: state.logStatus,
-  user: state.user,
-  favorites: state.favorites
-});
+export const mapStateToProps = ({movies, logStatus, user, favorites}) => 
+  ({ movies, logStatus, user, favorites });
 
 export const mapDispatchToProps = dispatch => ({
   addFavorite: movie => dispatch(actions.addFavorite(movie)),

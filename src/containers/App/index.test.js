@@ -123,7 +123,6 @@ describe('mapDispatchToProps', () => {
 
     expect(mockDispatch).toHaveBeenCalledWith(expected);
   });
-
 });
 
 describe('mapStateToProps', () => {

@@ -215,5 +215,4 @@ describe('deleteFavorite', () => {
     expect(api.removeFavorite(mockMovie, mockUser))
       .rejects.toEqual(expected);
   });
-
 });

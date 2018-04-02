@@ -26,7 +26,7 @@ export const Card = ({ information, handleFavorite, logStatus, className }) => {
         <h3 className="movie-title">{title}</h3>
         <button className="favorite-btn" onClick={handleClick}>
           Favorite 
-          <img src={(className==='favorite movie-card') ? star: none} alt=""/>
+          <img src={(className === 'favorite movie-card') ? star: none} alt=""/>
         </button>
         <div className="movie-info-shadow">
           <p className="info">Released: {cleanDate}</p>
