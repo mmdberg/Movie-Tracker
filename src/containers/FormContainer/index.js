@@ -32,6 +32,7 @@ export class FormContainer extends Component {
     } else {
       this.addUser({ name, email, password });
     }
+
   }
 
   logIn = async credentials => {
@@ -44,6 +45,7 @@ export class FormContainer extends Component {
         password: '',
         loggedIn: true
       });
+
     } catch (error) {
       this.setState({
         errorMessage: 'Email and password do not match',
@@ -97,6 +99,11 @@ export class FormContainer extends Component {
   }
 }
 
+export const mapStateToProps = state => ({
+  user: state.user,
+  favorites: state.favorites
+})
+
 export const mapDispatchToProps = dispatch => ({
   captureUser: user => dispatch(actions.captureUser(user)),
   changeLogStatus: boolean => dispatch(actions.changeLogStatus(boolean))
@@ -108,4 +115,4 @@ FormContainer.propTypes = {
   changeLogStatus: PropTypes.func.isRequired
 };
 
-export default connect(null, mapDispatchToProps)(FormContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(FormContainer);
