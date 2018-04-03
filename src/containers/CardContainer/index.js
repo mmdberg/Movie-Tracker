@@ -35,7 +35,7 @@ export const CardContainer = (
 
   const handleInfoDisplay = movieId => {
     if (displayedMovie === movieId) {
-      hideMovieInfo(movieId);
+      hideMovieInfo();
     } else {
       showMovieInfoById(movieId);
     }
