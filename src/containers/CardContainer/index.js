@@ -12,12 +12,12 @@ export const CardContainer = (
     addFavorite, 
     removeFavorite,
     showMovieInfoById,
-    hideMovieInfoById,
+    hideMovieInfo,
     logStatus, 
     match, 
     favorites, 
     user, 
-    infoIds }
+    displayedMovie }
 ) => {
 
   const handleFavorite = movie => {
@@ -34,8 +34,8 @@ export const CardContainer = (
   };
 
   const handleInfoDisplay = movieId => {
-    if (infoIds.includes(movieId)) {
-      hideMovieInfoById(movieId);
+    if (displayedMovie === movieId) {
+      hideMovieInfo(movieId);
     } else {
       showMovieInfoById(movieId);
     }
@@ -44,7 +44,7 @@ export const CardContainer = (
   const cardsCreator = sourceArray => sourceArray.map(movie => {
     let favBtnClass = user ? '' : 'favsHidden';
     const favClass = sourceArray === favorites ? 'favorite' : '';
-    const infoDisplayed = infoIds.includes(movie.movieId) ? "displayInfo" : '';
+    const displayInfo = displayedMovie === movie.movieId ? "displayInfo" : '';
     return <Card
       information={movie}
       handleFavorite={handleFavorite}
@@ -52,13 +52,13 @@ export const CardContainer = (
       key={movie.movieId}
       favBtnClass={favBtnClass}
       isFavorited={favClass}
-      infoDisplayed={infoDisplayed}
+      displayInfo={displayInfo}
       handleInfoDisplay={handleInfoDisplay}
     />;
   });
 
-  const { path } = match;
   const determineMoviesListByPath = () => {
+    const { path } = match;
     if (path === "/favorites") {
       if (!user) {
         return <Redirect to='/' />;
@@ -79,15 +79,15 @@ export const CardContainer = (
 };
 
 export const mapStateToProps = (
-  {movies, logStatus, user, favorites, infoIds}
+  {movies, logStatus, user, favorites, displayedMovie}
 ) => 
-  ({ movies, logStatus, user, favorites, infoIds });
+  ({ movies, logStatus, user, favorites, displayedMovie });
 
 export const mapDispatchToProps = dispatch => ({
   addFavorite: movie => dispatch(actions.addFavorite(movie)),
   removeFavorite: movie => dispatch(actions.removeFavorite(movie.movieId)),
   showMovieInfoById: movieId => dispatch(actions.showMovieInfoById(movieId)),
-  hideMovieInfoById: movieId => dispatch(actions.hideMovieInfoById(movieId))
+  hideMovieInfo: movieId => dispatch(actions.hideMovieInfo(movieId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CardContainer);
@@ -106,7 +106,10 @@ CardContainer.propTypes = {
   favorites: PropTypes.array.isRequired,
   match: PropTypes.object,
   user: PropTypes.object,
-  infoIds: PropTypes.array.isRequired,
+  displayedMovie: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string
+  ]).isRequired,
   showMovieInfoById: PropTypes.func.isRequired,
-  hideMovieInfoById: PropTypes.func.isRequired
+  hideMovieInfo: PropTypes.func.isRequired
 };

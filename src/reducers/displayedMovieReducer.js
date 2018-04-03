@@ -1,9 +1,9 @@
-const displayedMovieReducer = (state = null, action) => {
+const displayedMovieReducer = (state = '', action) => {
   switch (action.type) {
   case 'SHOW_MOVIE_INFO_BY_ID':
     return action.movieId;
   case 'HIDE_MOVIE_INFO':
-    return null;
+    return '';
   default:
     return state;
   }

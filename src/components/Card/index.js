@@ -8,7 +8,7 @@ export const Card = (
     handleFavorite, 
     logStatus, 
     isFavorited, 
-    infoDisplayed, 
+    displayInfo, 
     handleInfoDisplay,
     favBtnClass }
 ) => {
@@ -21,9 +21,11 @@ export const Card = (
     voteAverage } = information;
   const backgroundImage = `url(https://image.tmdb.org/t/p/w500/${posterPath})`;
   const cleanYear = releaseDate.split('').splice(0, 5).splice(0, 4).join('');
-  const cleanDate =
-    [releaseDate, '-', cleanYear].join('').split('').splice(5).join('');
+  const cleanDate = [releaseDate, '-', cleanYear]
+    .join('').split('').splice(5).join('');
   const favStarSrc = isFavorited.includes('favorite') ? star : '';
+  const favText = isFavorited.includes('favorite') ? 
+    "REMOVE FAVORITE" : "FAVORITE";
 
   const handleFavBtnClick = () => {
     if (logStatus) {
@@ -32,16 +34,23 @@ export const Card = (
       alert('Please Log In to Add A Favorite');
     }
   };
+
+  const handleCardClick = event => {
+    if (event.target.name !== 'favoriteBtn') {
+      handleInfoDisplay(movieId);
+    }
+  };
   
   return (
     <article
       style={{backgroundImage}}
-      className={`movie-card ${isFavorited} ${infoDisplayed}`}
-      onClick={() => handleInfoDisplay(movieId)}>
+      className={`movie-card ${isFavorited} ${displayInfo}`}
+      onClick={event => handleCardClick(event)}>
       <button 
+        name="favoriteBtn"
         className={`favorite-btn ${favBtnClass}`} 
         onClick={() => handleFavBtnClick()}>
-        Favorite 
+        {favText}
         <img src={favStarSrc} alt=""/>
       </button>
       <div className="movie-info">
@@ -69,7 +78,7 @@ Card.propTypes = {
   logStatus: PropTypes.bool.isRequired,
   className: PropTypes.string,
   isFavorited: PropTypes.string,
-  infoDisplayed: PropTypes.string.isRequired,
+  displayInfo: PropTypes.string.isRequired,
   handleInfoDisplay: PropTypes.func.isRequired,
   favBtnClass: PropTypes.string.isRequired
 };

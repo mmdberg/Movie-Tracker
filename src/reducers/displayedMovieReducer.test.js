@@ -3,7 +3,7 @@ import displayedMovieReducer from './displayedMovieReducer';
 
 describe('displayedMovieReducer', () => {
   it('should return a default state', () => {
-    expect(displayedMovieReducer(undefined, {})).toEqual(null);
+    expect(displayedMovieReducer(undefined, {})).toEqual('');
   });
 
   it('should add movieIds to its array', () => {
@@ -12,6 +12,6 @@ describe('displayedMovieReducer', () => {
   });
 
   it('should remove movieIds from its array', () => {
-    expect(displayedMovieReducer(1, actions.hideMovieInfo())).toEqual(null);
+    expect(displayedMovieReducer(1, actions.hideMovieInfo())).toEqual('');
   }); 
 });
