@@ -103,3 +103,7 @@ button img {
 .displayInfo:hover .details-prompt {
   display: none;
 }
+
+.active {
+  text-decoration: underline;
+}

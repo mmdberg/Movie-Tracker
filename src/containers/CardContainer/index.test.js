@@ -1,9 +1,12 @@
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import React from 'react';
 import { CardContainer, mapDispatchToProps, mapStateToProps } from './index.js';
 import * as mockData from '../../mockData/';
 import * as helper from '../../helpers/';
 import * as actions from '../../actions';
+import * as api from '../../apiCalls';
+
+jest.mock('../../apiCalls');
 
 describe('Card Container', () => {
   let wrapper;
@@ -14,6 +17,12 @@ describe('Card Container', () => {
   const mockRemoveFavorite = jest.fn();
   const mockShowMovieInfoById = jest.fn();
   const mockHideMovieInfo = jest.fn();
+  const mockUser = {
+    name: 'Taco',
+    id: 1,
+    email: 'taco@taco',
+    password: 'taco'
+  };
 
   beforeEach(() => {
     wrapper = shallow(
@@ -27,7 +36,7 @@ describe('Card Container', () => {
         removeFavorite={mockRemoveFavorite}
         logStatus={true}
         match={mockHomeMatch}
-        user={{}}
+        user={mockUser}
       />
     );
   });
@@ -52,6 +61,75 @@ describe('Card Container', () => {
       />
     );
     expect(wrapper).toMatchSnapshot();
+  });
+
+  describe('handleFavorite', () => {
+    let wrapper;
+
+    beforeEach(() => {
+      wrapper = mount(
+        <CardContainer
+          displayedMovie={''}
+          showMovieInfoById={mockShowMovieInfoById}
+          hideMovieInfo={mockHideMovieInfo}
+          movies={movies}
+          favorites={mockData.mockMovie}
+          addFavorite={mockAddFavorite}
+          removeFavorite={mockRemoveFavorite}
+          logStatus={true}
+          match={mockHomeMatch}
+          user={mockUser}
+        />
+      );
+    });
+
+    it('should remove favorite from database if movie is in favorite', () => {
+      wrapper.find('button').simulate('click');
+      expect(api.removeFavorite).toHaveBeenCalledWith(movies[0], mockUser);
+    });
+
+    it('should remove favorite from store if movie is in favorite', () => {
+      wrapper.find('button').simulate('click');
+      expect(mockRemoveFavorite).toHaveBeenCalledWith(movies[0]);
+    });
+
+    it('should add favorite to db if movie is in favorites', () => {
+      wrapper = mount(
+        <CardContainer
+          displayedMovie={''}
+          showMovieInfoById={mockShowMovieInfoById}
+          hideMovieInfo={mockHideMovieInfo}
+          movies={movies}
+          favorites={[]}
+          addFavorite={mockAddFavorite}
+          removeFavorite={mockRemoveFavorite}
+          logStatus={true}
+          match={mockHomeMatch}
+          user={mockUser}
+        />
+      );
+      wrapper.find('button').simulate('click');
+      expect(api.addFavorite).toHaveBeenCalledWith(movies[0], mockUser);
+    });
+
+    it('should add favorite to store if movie is in favorites', () => {
+      wrapper = mount(
+        <CardContainer
+          displayedMovie={''}
+          showMovieInfoById={mockShowMovieInfoById}
+          hideMovieInfo={mockHideMovieInfo}
+          movies={movies}
+          favorites={[]}
+          addFavorite={mockAddFavorite}
+          removeFavorite={mockRemoveFavorite}
+          logStatus={true}
+          match={mockHomeMatch}
+          user={mockUser}
+        />
+      );
+      wrapper.find('button').simulate('click');
+      expect(mockAddFavorite).toHaveBeenCalledWith(movies[0]);
+    });
   });
 
   describe('mapDispatchToProps', () => {

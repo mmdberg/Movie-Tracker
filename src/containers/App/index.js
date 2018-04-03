@@ -51,7 +51,7 @@ export class App extends Component {
         <header className="App-header">
           <h1 className="App-title">MOVIE TRACKER</h1>
           <nav className='nav-bar'>
-            <NavLink to='/'>Home</NavLink>
+            <NavLink exact to='/'>Home</NavLink>
             {
               this.props.user ? (
                 <div>
