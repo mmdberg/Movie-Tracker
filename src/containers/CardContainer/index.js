@@ -12,14 +12,14 @@ export const CardContainer = (
 ) => {
 
   const { path } = match;
-  
+
   const handleFavorite = movie => {
-    const alreadyFavorited = favorites.some(fav => 
+    const alreadyFavorited = favorites.some(fav =>
       fav.movieId === movie.movieId);
-    
+
     if (alreadyFavorited) {
       api.removeFavorite(movie, user);
-      removeFavorite(movie); 
+      removeFavorite(movie);
     } else {
       api.addFavorite(movie, user);
       addFavorite(movie);
@@ -27,19 +27,26 @@ export const CardContainer = (
   };
 
   const cardsCreator = sourceArray => sourceArray.map(movie => {
+    let favBtnClass = user ? '' : 'favsHidden';
+
+    // let cardStyle = sourceArray === favorites ?
+    //   'movie-card ' : "favorite movie-card";
+    //   console.log(favorites)
     var cardStyle = 'movie-card';
     favorites.forEach(favorite => {
       if (movie.title === favorite.title) {
         cardStyle = 'favorite movie-card';
       }
     });
-    
+    console.log(cardStyle)
+
     return <Card
       information={movie}
       handleFavorite={handleFavorite}
       logStatus={logStatus}
       key={movie.movieId}
       className={cardStyle}
+      favBtnClass={favBtnClass}
     />;
   });
 
@@ -50,9 +57,9 @@ export const CardContainer = (
       }
       if (!favorites.length) {
         return <p className='no-favorites'>You have no favorites saved</p>;
-      } 
+      }
       return cardsCreator(favorites);
-    } 
+    }
     return cardsCreator(movies);
   };
 
@@ -63,7 +70,7 @@ export const CardContainer = (
   );
 };
 
-export const mapStateToProps = ({movies, logStatus, user, favorites}) => 
+export const mapStateToProps = ({movies, logStatus, user, favorites}) =>
   ({ movies, logStatus, user, favorites });
 
 export const mapDispatchToProps = dispatch => ({

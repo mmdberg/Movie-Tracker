@@ -81,6 +81,10 @@
   background-color: magenta
 }
 
+.favsHidden {
+  display: none
+}
+
 .info {
   margin: 0;
 }
