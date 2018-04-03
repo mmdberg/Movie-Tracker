@@ -10,6 +10,10 @@ describe('Card', () => {
   beforeEach(() => {
     wrapper = shallow(
       <Card 
+        displayInfo={''}
+        handleInfoDisplay={jest.fn()}
+        favBtnClass={''}
+        isFavorited={''}
         information={movie} 
         handleFavorite={mockHandleFavorite} 
         logStatus={true}

@@ -1,3 +1,412 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Card should match the snapshot 1`] = `undefined`;
+exports[`Card should match the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Unknown
+    displayInfo=""
+    favBtnClass=""
+    handleFavorite={[Function]}
+    handleInfoDisplay={[Function]}
+    information={
+        Object {
+            "movieId": 437670,
+            "overview": "A comedy that follows an con who lands a position at a",
+            "posterPath": "/cypnifmPJ5JbTjzpZI6MwJdvP7.jpg",
+            "releaseDate": "2017-10-26",
+            "title": "Suck Me Shakespeer 3",
+            "voteAverage": 6.2,
+          }
+    }
+    isFavorited=""
+    logStatus={true}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <button
+          className="favorite-btn "
+          name="favoriteBtn"
+          onClick={[Function]}
+>
+          FAVORITE
+          <img
+                    alt=""
+                    src=""
+          />
+</button>,
+        <div
+          className="movie-info"
+>
+          <h3
+                    className="movie-title"
+          >
+                    Suck Me Shakespeer 3
+          </h3>
+          <p
+                    className="info"
+          >
+                    Released: 
+                    10-26-2017
+          </p>
+          <p
+                    className="info"
+          >
+                    Rating: 
+                    6.2
+          </p>
+          <p
+                    className="info"
+          >
+                    A comedy that follows an con who lands a position at a
+          </p>
+</div>,
+      ],
+      "className": "movie-card  ",
+      "onClick": [Function],
+      "style": Object {
+        "backgroundImage": "url(https://image.tmdb.org/t/p/w500//cypnifmPJ5JbTjzpZI6MwJdvP7.jpg)",
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "FAVORITE",
+            <img
+              alt=""
+              src=""
+/>,
+          ],
+          "className": "favorite-btn ",
+          "name": "favoriteBtn",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": Array [
+          "FAVORITE",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "",
+              "src": "",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+        ],
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h3
+              className="movie-title"
+>
+              Suck Me Shakespeer 3
+</h3>,
+            <p
+              className="info"
+>
+              Released: 
+              10-26-2017
+</p>,
+            <p
+              className="info"
+>
+              Rating: 
+              6.2
+</p>,
+            <p
+              className="info"
+>
+              A comedy that follows an con who lands a position at a
+</p>,
+          ],
+          "className": "movie-info",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Suck Me Shakespeer 3",
+              "className": "movie-title",
+            },
+            "ref": null,
+            "rendered": "Suck Me Shakespeer 3",
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Released: ",
+                "10-26-2017",
+              ],
+              "className": "info",
+            },
+            "ref": null,
+            "rendered": Array [
+              "Released: ",
+              "10-26-2017",
+            ],
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Rating: ",
+                6.2,
+              ],
+              "className": "info",
+            },
+            "ref": null,
+            "rendered": Array [
+              "Rating: ",
+              6.2,
+            ],
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "A comedy that follows an con who lands a position at a",
+              "className": "info",
+            },
+            "ref": null,
+            "rendered": "A comedy that follows an con who lands a position at a",
+            "type": "p",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "article",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <button
+            className="favorite-btn "
+            name="favoriteBtn"
+            onClick={[Function]}
+>
+            FAVORITE
+            <img
+                        alt=""
+                        src=""
+            />
+</button>,
+          <div
+            className="movie-info"
+>
+            <h3
+                        className="movie-title"
+            >
+                        Suck Me Shakespeer 3
+            </h3>
+            <p
+                        className="info"
+            >
+                        Released: 
+                        10-26-2017
+            </p>
+            <p
+                        className="info"
+            >
+                        Rating: 
+                        6.2
+            </p>
+            <p
+                        className="info"
+            >
+                        A comedy that follows an con who lands a position at a
+            </p>
+</div>,
+        ],
+        "className": "movie-card  ",
+        "onClick": [Function],
+        "style": Object {
+          "backgroundImage": "url(https://image.tmdb.org/t/p/w500//cypnifmPJ5JbTjzpZI6MwJdvP7.jpg)",
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "FAVORITE",
+              <img
+                alt=""
+                src=""
+/>,
+            ],
+            "className": "favorite-btn ",
+            "name": "favoriteBtn",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": Array [
+            "FAVORITE",
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "",
+                "src": "",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+          ],
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h3
+                className="movie-title"
+>
+                Suck Me Shakespeer 3
+</h3>,
+              <p
+                className="info"
+>
+                Released: 
+                10-26-2017
+</p>,
+              <p
+                className="info"
+>
+                Rating: 
+                6.2
+</p>,
+              <p
+                className="info"
+>
+                A comedy that follows an con who lands a position at a
+</p>,
+            ],
+            "className": "movie-info",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Suck Me Shakespeer 3",
+                "className": "movie-title",
+              },
+              "ref": null,
+              "rendered": "Suck Me Shakespeer 3",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Released: ",
+                  "10-26-2017",
+                ],
+                "className": "info",
+              },
+              "ref": null,
+              "rendered": Array [
+                "Released: ",
+                "10-26-2017",
+              ],
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Rating: ",
+                  6.2,
+                ],
+                "className": "info",
+              },
+              "ref": null,
+              "rendered": Array [
+                "Rating: ",
+                6.2,
+              ],
+              "type": "p",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "A comedy that follows an con who lands a position at a",
+                "className": "info",
+              },
+              "ref": null,
+              "rendered": "A comedy that follows an con who lands a position at a",
+              "type": "p",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "article",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

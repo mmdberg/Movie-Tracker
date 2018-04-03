@@ -12,10 +12,15 @@ describe('Card Container', () => {
   const mockFavoritesMatch = {path: '/favorites'};
   const mockAddFavorite = jest.fn();
   const mockRemoveFavorite = jest.fn();
+  const mockShowMovieInfoById = jest.fn();
+  const mockHideMovieInfo = jest.fn();
 
   beforeEach(() => {
     wrapper = shallow(
       <CardContainer 
+        displayedMovie={''}
+        showMovieInfoById={mockShowMovieInfoById}
+        hideMovieInfo={mockHideMovieInfo}
         favorites={[]}
         movies={movies} 
         addFavorite={mockAddFavorite}
@@ -34,6 +39,9 @@ describe('Card Container', () => {
   it('should match a snapshot for favorites route', () => {
     wrapper = shallow(
       <CardContainer
+        displayedMovie={''}
+        showMovieInfoById={mockShowMovieInfoById}
+        hideMovieInfo={mockHideMovieInfo}
         movies={movies}
         favorites={mockData.mockMovie}
         addFavorite={mockAddFavorite}
