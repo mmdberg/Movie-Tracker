@@ -97,6 +97,14 @@ describe('signIn', () => {
     api.signIn(mockCredentials);
     expect(window.fetch).toHaveBeenCalledWith(...expected);
   });
+
+  it('should return an error if appropriate', () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.reject({
+      status: 500
+    }));
+    const expected = new Error('Unable to sign in');
+    expect(api.signIn(mockCredentials)).rejects.toEqual(expected);
+  });
 });
 
 describe('getUsers', () => {
@@ -206,7 +214,7 @@ describe('removeFavorite', () => {
   });
   
   it('should return error message on error', async () => {
-    window.fetch = jest.fn().mockImplementationOnce(() => Promise.reject({
+    window.fetch = jest.fn().mockImplementation(() => Promise.reject({
       status: 500
     }));
     const expected = new Error('Unable to delete favorite');

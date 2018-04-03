@@ -4,8 +4,12 @@ import * as helper from '../helpers';
 export const getMovies = async () => {
   try {
     const root = 'https://api.themoviedb.org/3/';
-    const response =
-      await fetch(`${root}movie/upcoming?api_key=${apiKey}&language=en-US`);
+    const response = await fetch(
+      `${root}movie/upcoming?api_key=${apiKey}&language=en-US`
+    );
+    if (response.status >= 400) {
+      throw new Error('Unable to get movie data');
+    }
     const movies = await response.json();
     return helper.moviesWrangler(movies.results);
   } catch (error) {
@@ -27,8 +31,10 @@ export const addUser = async user => {
           'Content-Type': 'application/json'
         }
       });
-    const parsed = await response.json();
-    return parsed;
+    if (response.status >= 400) {
+      throw new Error('Unable to add user');
+    }
+    return await response.json();
   } catch (error) {
     throw new Error('Unable to add user');
   }
@@ -36,23 +42,31 @@ export const addUser = async user => {
 };
 
 export const signIn = async credentials => {
-  const response = await fetch('/api/users/', {
-    method: 'POST',
-    body: JSON.stringify(credentials),
-    headers: {
-      'Content-Type': 'application/json'
+  try {
+    const response = await fetch('/api/users/', {
+      method: 'POST',
+      body: JSON.stringify(credentials),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    if (response.status >= 400) {
+      throw new Error('Unable to sign in');
     }
-  });
-  const parsedUser = await response.json();
-  return parsedUser;
+    return await response.json();
+  } catch (error) {
+    throw new Error('Unable to sign in');
+  }
 };
 
 
 export const getUsers = async () => {
   try {
     const response = await fetch('/api/users');
-    const users = await response.json();
-    return users;
+    if (response.status >= 400) {
+      throw new Error('Unable to get users');
+    }
+    return await response.json();
   } catch (error) {
     throw new Error('Unable to get users');
   }
@@ -61,9 +75,11 @@ export const getUsers = async () => {
 export const getUserFavorites = async (id) => {
   try {
     const response = await fetch(`/api/users/${id}/favorites`);
+    if (response.status >= 400) {
+      throw new Error('Unable to get favorites data');
+    }
     const parsedResponse = await response.json();
-    const wrangler = helper.favoritesWrangler(parsedResponse.data);
-    return wrangler;
+    return helper.favoritesWrangler(parsedResponse.data);
   } catch (error) {
     throw new Error('Unable to get favorites data');
   }
@@ -89,8 +105,10 @@ export const addFavorite = async (movie, user) => {
         'Content-Type': 'application/json'
       }
     });
-    const favoriteResponse = await response.json();
-    return favoriteResponse;
+    if (response.status >= 400) {
+      throw new Error('Unable to add favorite');  
+    }
+    return await response.json();
   } catch (error) {
     throw new Error('Unable to add favorite');
   }
