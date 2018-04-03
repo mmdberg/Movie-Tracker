@@ -46,6 +46,11 @@ ShallowWrapper {
                     src=""
           />
 </button>,
+        <p
+          className="details-prompt"
+>
+          Click For Details
+</p>,
         <div
           className="movie-info"
 >
@@ -114,6 +119,18 @@ ShallowWrapper {
           },
         ],
         "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Click For Details",
+          "className": "details-prompt",
+        },
+        "ref": null,
+        "rendered": "Click For Details",
+        "type": "p",
       },
       Object {
         "instance": null,
@@ -232,6 +249,11 @@ ShallowWrapper {
                         src=""
             />
 </button>,
+          <p
+            className="details-prompt"
+>
+            Click For Details
+</p>,
           <div
             className="movie-info"
 >
@@ -300,6 +322,18 @@ ShallowWrapper {
             },
           ],
           "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Click For Details",
+            "className": "details-prompt",
+          },
+          "ref": null,
+          "rendered": "Click For Details",
+          "type": "p",
         },
         Object {
           "instance": null,

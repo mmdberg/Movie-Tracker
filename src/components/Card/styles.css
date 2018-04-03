@@ -17,9 +17,19 @@
   cursor: pointer;
 }
 
+.details-prompt {
+  display: none;
+}
+
 .movie-card:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   transform: scale(1.1);
+}
+
+.movie-card:hover .details-prompt {
+  display: block;
+  margin: 50% 0;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .movie-title {
@@ -76,6 +86,10 @@ button img {
   transform: rotateY(180deg);
 }
 
+.displayInfo .details-prompt {
+  display: none;
+}
+
 .displayInfo .movie-info,
 .displayInfo .favorite-btn {
   display: block;
@@ -84,4 +98,8 @@ button img {
 
 .displayInfo:hover {
   transform: scale(1.1) rotateY(180deg);
+}
+
+.displayInfo:hover .details-prompt {
+  display: none;
 }

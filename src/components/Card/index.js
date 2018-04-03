@@ -53,6 +53,7 @@ export const Card = (
         {favText}
         <img src={favStarSrc} alt=""/>
       </button>
+      <p className='details-prompt'>Click For Details</p>
       <div className="movie-info">
         <h3 className="movie-title">{title}</h3>
         <p className="info">Released: {cleanDate}</p>
