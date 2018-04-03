@@ -43,7 +43,8 @@ export const CardContainer = (
 
   const cardsCreator = sourceArray => sourceArray.map(movie => {
     let favBtnClass = user ? '' : 'favsHidden';
-    const favClass = sourceArray === favorites ? 'favorite' : '';
+    const favClass = 
+      favorites.some(fav => fav.movieId === movie.movieId) ? 'favorite' : '';
     const displayInfo = displayedMovie === movie.movieId ? "displayInfo" : '';
     return <Card
       information={movie}

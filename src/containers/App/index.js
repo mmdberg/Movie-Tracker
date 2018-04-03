@@ -32,7 +32,6 @@ export class App extends Component {
     this.props.loadCards(movies);
   }
 
-
   fetchLoggedInUserData = async () => {
     const userFavs = await api.getUserFavorites(this.props.user.id);
     this.props.loadFavorites(userFavs);

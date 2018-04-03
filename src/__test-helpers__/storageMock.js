@@ -1,4 +1,4 @@
-class LocalStorage {
+export class LocalStorage {
   constructor() {
     this.store = {};
   }
@@ -15,5 +15,3 @@ class LocalStorage {
     this.store = {};
   }
 }
-
-global.localStorage = new LocalStorage;
