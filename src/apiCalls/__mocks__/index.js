@@ -36,3 +36,9 @@ export const getMovies = jest.fn().mockImplementation(() =>
 
 export const getUserFavorites = jest.fn().mockImplementation(() =>
   Promise.resolve(mockData.mockMovie));
+
+export const removeFavorite = jest.fn(). mockImplementation(() => 
+  Promise.resolve());
+
+export const addFavorite = jest.fn(). mockImplementation(() => 
+  Promise.resolve());

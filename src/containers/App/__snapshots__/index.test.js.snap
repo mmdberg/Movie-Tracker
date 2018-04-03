@@ -46,6 +46,7 @@ ShallowWrapper {
                     <NavLink
                               activeClassName="active"
                               ariaCurrent="true"
+                              exact={true}
                               to="/"
                     >
                               Home
@@ -105,6 +106,7 @@ ShallowWrapper {
               <NavLink
                             activeClassName="active"
                             ariaCurrent="true"
+                            exact={true}
                             to="/"
               >
                             Home
@@ -151,6 +153,7 @@ ShallowWrapper {
                 <NavLink
                   activeClassName="active"
                   ariaCurrent="true"
+                  exact={true}
                   to="/"
 >
                   Home
@@ -183,6 +186,7 @@ ShallowWrapper {
                   "activeClassName": "active",
                   "ariaCurrent": "true",
                   "children": "Home",
+                  "exact": true,
                   "to": "/",
                 },
                 "ref": null,
@@ -337,6 +341,7 @@ ShallowWrapper {
                         <NavLink
                                     activeClassName="active"
                                     ariaCurrent="true"
+                                    exact={true}
                                     to="/"
                         >
                                     Home
@@ -396,6 +401,7 @@ ShallowWrapper {
                 <NavLink
                                 activeClassName="active"
                                 ariaCurrent="true"
+                                exact={true}
                                 to="/"
                 >
                                 Home
@@ -442,6 +448,7 @@ ShallowWrapper {
                   <NavLink
                     activeClassName="active"
                     ariaCurrent="true"
+                    exact={true}
                     to="/"
 >
                     Home
@@ -474,6 +481,7 @@ ShallowWrapper {
                     "activeClassName": "active",
                     "ariaCurrent": "true",
                     "children": "Home",
+                    "exact": true,
                     "to": "/",
                   },
                   "ref": null,

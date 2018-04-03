@@ -202,7 +202,14 @@ ShallowWrapper {
     }
     removeFavorite={[Function]}
     showMovieInfoById={[Function]}
-    user={Object {}}
+    user={
+        Object {
+            "email": "taco@taco",
+            "id": 1,
+            "name": "Taco",
+            "password": "taco",
+          }
+    }
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
