@@ -5,8 +5,8 @@ A dynamic application using React and Redux to allow a user to favorite a list o
 
 ## Collaborators
 A group project with
-[Maddy Dannenberg](https://github.com/mmdberg)
-[Jon Sweet](https://github.com/JSweet314)
+[Maddy Dannenberg](https://github.com/mmdberg),
+[Jon Sweet](https://github.com/JSweet314), 
 [Steven Lee Lawson](https://github.com/stevenleelawson)
 
 ## Screenshots
