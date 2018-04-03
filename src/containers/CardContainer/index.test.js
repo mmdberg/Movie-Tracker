@@ -132,6 +132,46 @@ describe('Card Container', () => {
     });
   });
 
+  describe('handleInfoDisplay', () => {
+    it('should call hideMovieInfo if movies match', () => {
+      wrapper = mount(
+        <CardContainer
+          displayedMovie={437670}
+          showMovieInfoById={mockShowMovieInfoById}
+          hideMovieInfo={mockHideMovieInfo}
+          movies={movies}
+          favorites={[]}
+          addFavorite={mockAddFavorite}
+          removeFavorite={mockRemoveFavorite}
+          logStatus={true}
+          match={mockHomeMatch}
+          user={mockUser}
+        />
+      );
+      wrapper.find('article').simulate('click');
+      expect(mockHideMovieInfo).toHaveBeenCalled();
+    });
+
+    it('should call showMovieInfoById if movies do not match', () => {
+      wrapper = mount(
+        <CardContainer
+          displayedMovie={1}
+          showMovieInfoById={mockShowMovieInfoById}
+          hideMovieInfo={mockHideMovieInfo}
+          movies={movies}
+          favorites={[]}
+          addFavorite={mockAddFavorite}
+          removeFavorite={mockRemoveFavorite}
+          logStatus={true}
+          match={mockHomeMatch}
+          user={mockUser}
+        />
+      );
+      wrapper.find('article').simulate('click');
+      expect(mockShowMovieInfoById).toHaveBeenCalledWith(437670);
+    });
+  });
+
   describe('mapDispatchToProps', () => {
     const mockDispatch = jest.fn();
     it('should call dispatch with right params for addFavorite', () => {
