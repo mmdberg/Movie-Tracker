@@ -5,7 +5,6 @@ import { favoritesWrangler, moviesWrangler } from '../helpers';
 
 jest.mock('../helpers');
 
-
 describe('getMovies', () => {
   beforeEach(() => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
@@ -192,27 +191,25 @@ describe('addFavorite', () => {
   });
 });
 
-describe('deleteFavorite', () => {
-  const mockUser = {id: 1};
-  const mockMovie = {movieId: 2, title: 'Breakaway'};
-
-  it('should be called with the right params', () => {
+describe('removeFavorite', () => {
+  const mockUser = { id: 1 };
+  const mockMovie = { movieId: 2, title: 'Breakaway' };
+ 
+  it('should call fetch with the right params', () => {
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-      ok: true,
-      json: () => Promise.resolve({})
+      status: 200,
+      json: () => Promise.resolve()
     }));
-    const expected = ['/api/users/1/favorites/2',
-      { method: 'DELETE'}];
+    const expected = ['/api/users/1/favorites/2', { method: 'DELETE' }];
     api.removeFavorite(mockMovie, mockUser);
     expect(window.fetch).toHaveBeenCalledWith(...expected);
   });
-
-  it.skip('should return error message on error', () => {
-    window.fetch = jest.fn().mockImplementation(() => Promise.reject({
+  
+  it('should return error message on error', async () => {
+    window.fetch = jest.fn().mockImplementationOnce(() => Promise.reject({
       status: 500
     }));
-    const expected = new Error('Unable to delete favorite', 'Breakaway');
-    expect(api.removeFavorite(mockMovie, mockUser))
-      .rejects.toEqual(expected);
+    const expected = new Error('Unable to delete favorite');
+    expect(api.removeFavorite(mockMovie, mockUser)).rejects.toEqual(expected);
   });
 });
