@@ -63,7 +63,24 @@ describe('Actions', () => {
       };
       expect(actions.changeLogStatus(true)).toEqual(expected);
     });
-
   });
 
+  describe('SHOW_MOVIE_INFO_BY_ID', () => {
+    it('should return action type show movie info by id', () => {
+      const expected = {
+        type: "SHOW_MOVIE_INFO_BY_ID",
+        movieId: 1
+      };
+      expect(actions.showMovieInfoById(1)).toEqual(expected);
+    });
+  });
+
+  describe('HIDE_MOVIE_INFO', () => {
+    it('should return action type hide movie info', () => {
+      const expected = {
+        type: "HIDE_MOVIE_INFO"
+      };
+      expect(actions.hideMovieInfo()).toEqual(expected);
+    });
+  });
 });

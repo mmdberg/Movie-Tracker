@@ -31,3 +31,12 @@ export const removeFavorite = movieId => ({
   type: 'REMOVE_FAVORITE',
   movieId
 });
+
+export const showMovieInfoById = movieId => ({
+  type: 'SHOW_MOVIE_INFO_BY_ID',
+  movieId
+});
+
+export const hideMovieInfo = () => ({
+  type: 'HIDE_MOVIE_INFO'
+});
