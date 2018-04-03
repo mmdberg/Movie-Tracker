@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles.css';
 import PropTypes from 'prop-types';
 
 const Form = (
@@ -7,8 +8,8 @@ const Form = (
   const display = routeId === 'signup' ? "inline" : "none";
   const submitText = routeId === 'signup' ? "Sign Up" : "Log In";
   return (
-    <form onSubmit={event => handleSubmit(event)}>
-      <input 
+    <form className='form' onSubmit={event => handleSubmit(event)}>
+      <input
         style={{display}}
         type='text'
         name='name'

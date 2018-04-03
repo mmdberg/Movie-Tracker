@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import './styles.css';
 import star from './star.svg';
 
-export const Card = ({ information, handleFavorite, logStatus, className }) => {
+export const Card = ({ information, handleFavorite, logStatus, className, favBtnClass }) => {
   const { title, releaseDate, overview, posterPath, voteAverage } = information;
   const backgroundImage = `url(https://image.tmdb.org/t/p/w500/${posterPath})`;
   const cleanYear = releaseDate.split('').splice(0, 5).splice(0, 4).join('');
-  const cleanDate = 
+  const cleanDate =
     [releaseDate, '-', cleanYear].join('').split('').splice(5).join('');
   const handleClick = () => {
     if (logStatus) {
@@ -24,8 +24,8 @@ export const Card = ({ information, handleFavorite, logStatus, className }) => {
       className={className}>
       <div className='gradient'>
         <h3 className="movie-title">{title}</h3>
-        <button className="favorite-btn" onClick={handleClick}>
-          Favorite 
+        <button className={`favorite-btn ${favBtnClass}`} onClick={handleClick}>
+          Favorite
           <img src={(className === 'favorite movie-card') ? star: none} alt=""/>
         </button>
         <div className="movie-info-shadow">
