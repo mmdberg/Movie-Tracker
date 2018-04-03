@@ -96,13 +96,17 @@ export const addFavorite = async (movie, user) => {
   }
 };
 
-export const removeFavorite = (movie, user) => {
+export const removeFavorite = async (movie, user) => {
   try {
-    fetch(
+    const response = await fetch(
       `/api/users/${user.id}/favorites/${movie.movieId}`, 
-      { method: 'DELETE'}
+      {method: 'DELETE'}
     );
+    if (response.status >= 400) {
+      throw new Error('Unable to delete favorite');  
+    }
+    return await response.json();
   } catch (error) {
-    throw new Error('Unable to delete favorite ', movie.title);
+    throw new Error('Unable to delete favorite');
   }
 };
