@@ -1,28 +1,14 @@
 import React from 'react';
 import { App, mapDispatchToProps, mapStateToProps } from './index';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import * as actions from '../../actions';
 import * as mockData from '../../mockData';
 import * as api from '../../apiCalls';
+import { LocalStorage } from '../../__test-helpers__/storageMock.js';
+
+window.localStorage = new LocalStorage();
 
 jest.mock('../../apiCalls');
-
-class LocalStorage {
-  constructor() {
-    this.store = {};
-  }
-  setItem(key, string) {
-    this.store[key] = string;
-  }
-  getItem(key) {
-    return this.store[key];
-  }
-  clear() {
-    this.store = {};
-  }
-}
-
-global.localStorage = new LocalStorage;
 
 describe('App', () => {
   let wrapper;
@@ -41,7 +27,6 @@ describe('App', () => {
   };
 
   beforeEach( () => {
-
     wrapper = shallow(
       <App
         user={mockUser}
@@ -58,16 +43,33 @@ describe('App', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-
   it('should be able to fetch recent movies', () => {
     wrapper.instance().fetchRecentMovies();
     expect(api.getMovies).toHaveBeenCalled();
   });
 
-  it.skip('should load user and favorites if user in local storage', () => {
-
+  it('should load user and favorites if user in local storage', () => {
     localStorage.setItem('Last User', JSON.stringify(mockUser));
-    const itemsInStorage = JSON.parse(localStorage.getItem('Last User')).length;
+    wrapper.instance().componentDidMount();
+    expect(mockCaptureUser).toHaveBeenCalledWith(mockUser);
+  });
+
+  it('should get user favorites from user in local storage', () => {
+    localStorage.setItem('Last User', JSON.stringify(mockUser));
+    wrapper.instance().componentDidMount();
+    expect(api.getUserFavorites).toHaveBeenCalledWith(1);
+  });
+
+  it('should load favorites for user in local storage', () => {
+    localStorage.setItem('Last User', JSON.stringify(mockUser));
+    wrapper.instance().componentDidMount();
+    expect(mockLoadFavorites).toHaveBeenCalled();
+  });
+
+  it('should change logged in status if user is in local storage', () => {
+    localStorage.setItem('Last User', JSON.stringify(mockUser));
+    wrapper.instance().componentDidMount();
+    expect(mockChangeLogStatus).toHaveBeenCalledWith(true);
   });
 
   it('should call loadCards after fetching recents', () => {
@@ -91,11 +93,9 @@ describe('App', () => {
     expect(mockFetchLoggedInUserData).toHaveBeenCalled();
   });
 
-  it.skip('should set local storage after fetching user data', () => {
-    localStorage.clear();    
+  it('should set local storage after fetching user data', () => { 
     wrapper.instance().fetchLoggedInUserData();
-    const itemsInStorage = JSON.parse(localStorage.getItem("Last User"));
-    expect(itemsInStorage.length).toEqual(1);
+    expect(localStorage.getItem('Last User')).toBeDefined();
   });
 
   it('should fetch movies after mounting', () => {
