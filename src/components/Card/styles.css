@@ -5,26 +5,20 @@
 .movie-card {
   display: flex;
   flex-direction: column;
-  width: 25%;
-
+  width: 20%;
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  height: 18em;
+  height: 25rem;
   color: white;
   margin: 1.5em;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  transition: all 1s cubic-bezier(.25,.8,.25,1);
+  cursor: pointer;
 }
 
-.gradient {
-    background: linear-gradient(
-                    rgba(212, 212, 212, 0.3),
-                    rgba(194, 192, 192, 0.6));
-    position: relative;
-    z-index: 1;
-    height: 100%;
-      display: flex;
-  flex-direction: column;
+.details-prompt {
+  display: none;
 }
 
 .movie-card:hover {
@@ -32,36 +26,28 @@
   transform: scale(1.1);
 }
 
+.movie-card:hover .details-prompt {
+  display: block;
+  margin: 50% 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
 .movie-title {
-  width: 96%;
+  width: 100%;
   padding: .2em;
   margin: 0 auto;
   font-family: 'Limelight', cursive;
-   background: linear-gradient(
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
-    )
-}
-
-.movie-info-shadow {
-  background-color: #808080bd;
-  margin: 0 10px;
-}
-
-.movie-overview {
-  padding: .5em;
-  font-family: 'Open Sans Condensed', sans-serif;
-/*  line-height: 1;*/
-  height: 2.5em;
-  position: absolute;
-  bottom: 0;
-  font-size: 10px;
-  overflow: scroll;
-  margin: 3px;
   background: linear-gradient(
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.5)
-    )
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.25));
+}
+
+.movie-info {
+  background-color: #808080bd;
+  height: 100%;
+  display: none;
+  overflow:scroll;
+  padding: 1rem;
 }
 
 .favorite-btn {
@@ -70,7 +56,9 @@
   background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
-  height: 2.5em;
+  height: 2.5rem;
+  padding: 0.5rem 0 0 0;
+  display: none;
 }
 
 .favorite-btn:hover {
@@ -92,4 +80,26 @@
 button img {
   height: 10px;
   width: auto;
+}
+
+.displayInfo {
+  transform: rotateY(180deg);
+}
+
+.displayInfo .details-prompt {
+  display: none;
+}
+
+.displayInfo .movie-info,
+.displayInfo .favorite-btn {
+  display: block;
+  transform: rotateY(180deg)
+}
+
+.displayInfo:hover {
+  transform: scale(1.1) rotateY(180deg);
+}
+
+.displayInfo:hover .details-prompt {
+  display: none;
 }

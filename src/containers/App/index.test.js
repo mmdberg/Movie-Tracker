@@ -18,7 +18,7 @@ class LocalStorage {
     return this.store[key];
   }
   clear() {
-    this.store = {}
+    this.store = {};
   }
 }
 
@@ -68,7 +68,7 @@ describe('App', () => {
 
     localStorage.setItem('Last User', JSON.stringify(mockUser));
     const itemsInStorage = JSON.parse(localStorage.getItem('Last User')).length;
-  })
+  });
 
   it('should call loadCards after fetching recents', () => {
     wrapper.instance().fetchRecentMovies();
@@ -92,11 +92,11 @@ describe('App', () => {
   });
 
   it.skip('should set local storage after fetching user data', () => {
-    localStorage.clear()    
+    localStorage.clear();    
     wrapper.instance().fetchLoggedInUserData();
     const itemsInStorage = JSON.parse(localStorage.getItem("Last User"));
-    expect(itemsInStorage.length).toEqual(1)
-  })
+    expect(itemsInStorage.length).toEqual(1);
+  });
 
   it('should fetch movies after mounting', () => {
     wrapper.instance().fetchRecentMovies = mockFetchRecentMovies;

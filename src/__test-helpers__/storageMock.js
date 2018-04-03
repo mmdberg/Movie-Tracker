@@ -12,7 +12,7 @@ class LocalStorage {
   }
 
   clear() {
-    this.store = {}
+    this.store = {};
   }
 }
 

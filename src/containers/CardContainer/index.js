@@ -8,10 +8,17 @@ import * as actions from '../../actions/';
 import * as api from '../../apiCalls';
 
 export const CardContainer = (
-  { movies, addFavorite, removeFavorite, logStatus, match, favorites, user }
+  { movies,
+    addFavorite, 
+    removeFavorite,
+    showMovieInfoById,
+    hideMovieInfo,
+    logStatus, 
+    match, 
+    favorites, 
+    user, 
+    displayedMovie }
 ) => {
-
-  const { path } = match;
 
   const handleFavorite = movie => {
     const alreadyFavorited = favorites.some(fav =>
@@ -26,31 +33,32 @@ export const CardContainer = (
     }
   };
 
+  const handleInfoDisplay = movieId => {
+    if (displayedMovie === movieId) {
+      hideMovieInfo(movieId);
+    } else {
+      showMovieInfoById(movieId);
+    }
+  };
+
   const cardsCreator = sourceArray => sourceArray.map(movie => {
     let favBtnClass = user ? '' : 'favsHidden';
-
-    // let cardStyle = sourceArray === favorites ?
-    //   'movie-card ' : "favorite movie-card";
-    //   console.log(favorites)
-    var cardStyle = 'movie-card';
-    favorites.forEach(favorite => {
-      if (movie.title === favorite.title) {
-        cardStyle = 'favorite movie-card';
-      }
-    });
-    console.log(cardStyle)
-
+    const favClass = sourceArray === favorites ? 'favorite' : '';
+    const displayInfo = displayedMovie === movie.movieId ? "displayInfo" : '';
     return <Card
       information={movie}
       handleFavorite={handleFavorite}
       logStatus={logStatus}
       key={movie.movieId}
-      className={cardStyle}
       favBtnClass={favBtnClass}
+      isFavorited={favClass}
+      displayInfo={displayInfo}
+      handleInfoDisplay={handleInfoDisplay}
     />;
   });
 
   const determineMoviesListByPath = () => {
+    const { path } = match;
     if (path === "/favorites") {
       if (!user) {
         return <Redirect to='/' />;
@@ -70,12 +78,16 @@ export const CardContainer = (
   );
 };
 
-export const mapStateToProps = ({movies, logStatus, user, favorites}) =>
-  ({ movies, logStatus, user, favorites });
+export const mapStateToProps = (
+  {movies, logStatus, user, favorites, displayedMovie}
+) => 
+  ({ movies, logStatus, user, favorites, displayedMovie });
 
 export const mapDispatchToProps = dispatch => ({
   addFavorite: movie => dispatch(actions.addFavorite(movie)),
-  removeFavorite: movie => dispatch(actions.removeFavorite(movie.movieId))
+  removeFavorite: movie => dispatch(actions.removeFavorite(movie.movieId)),
+  showMovieInfoById: movieId => dispatch(actions.showMovieInfoById(movieId)),
+  hideMovieInfo: movieId => dispatch(actions.hideMovieInfo(movieId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CardContainer);
@@ -93,5 +105,11 @@ CardContainer.propTypes = {
   logStatus: PropTypes.bool.isRequired,
   favorites: PropTypes.array.isRequired,
   match: PropTypes.object,
-  user: PropTypes.object.isRequired
+  user: PropTypes.object,
+  displayedMovie: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string
+  ]).isRequired,
+  showMovieInfoById: PropTypes.func.isRequired,
+  hideMovieInfo: PropTypes.func.isRequired
 };
