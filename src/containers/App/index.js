@@ -21,7 +21,7 @@ export class App extends Component {
     }
   }
 
-  componentDidUpdate = async (prevProps) => {
+  componentDidUpdate = async prevProps => {
     if (prevProps.user !== this.props.user && this.props.user) {
       this.fetchLoggedInUserData();
     }

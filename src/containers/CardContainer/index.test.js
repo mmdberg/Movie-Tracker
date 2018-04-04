@@ -191,6 +191,23 @@ describe('Card Container', () => {
         actions.removeFavorite(mockMovie.movieId)
       );
     });
+
+    it('should call dispatch with right params for hideMovieInfo', () => {
+      const mapped = mapDispatchToProps(mockDispatch);
+      mapped.hideMovieInfo();
+      expect(mockDispatch).toHaveBeenCalledWith(
+        actions.hideMovieInfo()
+      );
+    });
+
+    it('should call dispatch with right params for showMovieInfoById', () => {
+      const mapped = mapDispatchToProps(mockDispatch);
+      const mockMovie = mockData.mockMovie;
+      mapped.showMovieInfoById(mockMovie.movieId);
+      expect(mockDispatch).toHaveBeenCalledWith(
+        actions.showMovieInfoById(mockMovie.movieId)
+      );
+    });
   });
 
   describe('mapStateToProps', () => {

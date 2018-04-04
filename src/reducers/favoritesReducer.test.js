@@ -16,4 +16,9 @@ describe('Favorites Reducer', () => {
     expect(favoritesReducer([{movieId: 1}], actions.removeFavorite(1)))
       .toEqual([]);
   });
+
+  it('should load an array of favorites from a DB', () => {
+    expect(favoritesReducer(undefined, actions.loadFavorites([mockMovie])))
+      .toEqual([mockMovie]);
+  });
 });
