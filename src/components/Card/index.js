@@ -18,7 +18,8 @@ export const Card = (
     releaseDate, 
     overview, 
     posterPath, 
-    voteAverage } = information;
+    voteAverage 
+  } = information;
   const backgroundImage = `url(https://image.tmdb.org/t/p/w500/${posterPath})`;
   const cleanYear = releaseDate.split('').splice(0, 5).splice(0, 4).join('');
   const cleanDate = [releaseDate, '-', cleanYear]

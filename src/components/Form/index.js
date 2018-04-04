@@ -3,7 +3,7 @@ import './styles.css';
 import PropTypes from 'prop-types';
 
 const Form = (
-  {errorMessage, name, email, password, routeId, handleChange, handleSubmit}
+  { errorMessage, name, email, password, routeId, handleChange, handleSubmit }
 ) => {
   const display = routeId === 'signup' ? "inline" : "none";
   const submitText = routeId === 'signup' ? "Sign Up" : "Log In";

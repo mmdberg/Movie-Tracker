@@ -43,8 +43,8 @@ export const CardContainer = (
 
   const cardsCreator = sourceArray => sourceArray.map(movie => {
     let favBtnClass = user ? '' : 'favsHidden';
-    const favClass = 
-      favorites.some(fav => fav.movieId === movie.movieId) ? 'favorite' : '';
+    const favClass = favorites.some(fav => fav.movieId === movie.movieId) ? 
+      'favorite' : '';
     const displayInfo = displayedMovie === movie.movieId ? "displayInfo" : '';
     return <Card
       information={movie}
@@ -88,7 +88,7 @@ export const mapDispatchToProps = dispatch => ({
   addFavorite: movie => dispatch(actions.addFavorite(movie)),
   removeFavorite: movie => dispatch(actions.removeFavorite(movie.movieId)),
   showMovieInfoById: movieId => dispatch(actions.showMovieInfoById(movieId)),
-  hideMovieInfo: movieId => dispatch(actions.hideMovieInfo(movieId))
+  hideMovieInfo: () => dispatch(actions.hideMovieInfo())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CardContainer);
